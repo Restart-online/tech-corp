@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page__home">
+				<section class="hero">
+					<div class="hero__wrapper">
+						<div class="hero__container">
+							<div class="hero__body">
+								<h1 class="hero__title">Надежный IT-аутсорсинг
+									для вашего бизнеса</h1>
+								<ul class="hero__list">
+									<li class="hero__item">Бесплатный выезд и доставка оборудования</li>
+									<li class="hero__item">Более 45 услуг, которые помогут качественно решить любую проблему</li>
+									<li class="hero__item">Ремонт техники с 20% дисконтом от рыночных цен</li>
+								</ul>
+								<div class="hero__btns">
+									<button class="hero__button hero__button_blue rectangle_btn">Оставить заявку</button>
+									<button class="hero__button rectangle_btn">Заказать звонок</button>
+								</div>
+							</div>
+						</div>
+						<a href="#" data-goto=".directions" class="hero__goto">
+							<img src="@img/icons/mouse.svg" alt="image">
+							<span>Узнать больше</span>
+						</a>
+					</div>
+				</section>
+				<section class="directions">
+					<div class="directions__gray"></div>
+					<div class="directions__container">
+						<div class="directions__head">
+							<h2 class="directions__title">Направления деятельности</h2>
+						</div>
+						<div class="directions__body">
+							<div data-tabs class="tabs-directions">
+								<nav data-tabs-titles class="tabs-directions__navigation">
+									<button type="button" class="tabs-directions__title _tab-active"><span>01</span>Информационная безопасность</button>
+									<button type="button" class="tabs-directions__title"><span>02</span>Ремонт и обслуживание компьютерной техники</button>
+									<button type="button" class="tabs-directions__title"><span>03</span>Ремонт и обслуживание оргтехники</button>
+									<button type="button" class="tabs-directions__title"><span>04</span>Ремонт и обслуживание профоборудования</button>
+									<button type="button" class="tabs-directions__title"><span>05</span>Эксплуатация файловых NAS хранилищ общего пользования</button>
+									<button type="button" class="tabs-directions__title"><span>06</span>Управление ИТ-инфраструктурой бизнеса</button>
+									<button type="button" class="tabs-directions__title"><span>07</span>Обслуживание парка компьютеров</button>
+								</nav>
+								<div data-tabs-body class="tabs-directions__content">
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">DLP-системы	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Защита персональных данных						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Обеспечение настроек информационной безопасности для ограничения доступа в локальную сеть извне (при наличии технических средств)</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка, настройка, обновление и устранение неисправностей в работе антивирусного программного обеспечения на рабочих станциях и серверах, а также для защиты интернет-трафика и сообщений электронной почты</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами шифрования электронной почты и файлов, обеспечение работоспособности электронной цифровой подписи;						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами защиты информации, в том числе криптографическими						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка и настройка SIEM систем	</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">DLP-системы	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Защита персональных данных						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами шифрования электронной почты и файлов, обеспечение работоспособности электронной цифровой подписи;						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами защиты информации, в том числе криптографическими						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка и настройка SIEM систем	</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Обеспечение настроек информационной безопасности для ограничения доступа в локальную сеть извне (при наличии технических средств)</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка, настройка, обновление и устранение неисправностей в работе антивирусного программного обеспечения на рабочих станциях и серверах, а также для защиты интернет-трафика и сообщений электронной почты</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами шифрования электронной почты и файлов, обеспечение работоспособности электронной цифровой подписи;						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Управление средствами защиты информации, в том числе криптографическими						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка и настройка SIEM систем	</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">DLP-системы	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Защита персональных данных						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка и настройка SIEM систем	</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">DLP-системы	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности	</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Защита персональных данных						</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF	</span>
+										</div>
+									</div>
+									<div class="tabs-directions__body">
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Аудит информационной безопасности</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+										</div>
+										<div class="tabs-directions__item">
+											<div class="tabs-directions__image"><img src="@img/icons/arrow_white.svg" alt="arrow"></div>
+											<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="advantages">
+					<div class="advantages__container">
+						<div class="advantages__body">
+							<div class="advantages__numbers numbers-advantages">
+								<div class="numbers-advantages__item">
+									<div class="numbers-advantages__number">800+</div>
+									<div class="numbers-advantages__text">Проектов на Behance</div>
+								</div>
+								<div class="numbers-advantages__item">
+									<div class="numbers-advantages__number">28,000</div>
+									<div class="numbers-advantages__text">Подписчиков на Youtube</div>
+								</div>
+								<div class="numbers-advantages__item">
+									<div class="numbers-advantages__number">150</div>
+									<div class="numbers-advantages__text">Отраслевых наград</div>
+								</div>
+							</div>
+							<div class="advantages__text text-advantages">
+								<h2 class="text-advantages__title">Наши проекты отличаются высоким уровнем визуального дизайна</h2>
+								<p class="text-advantages__text">Мы предпочитаем делать простые, удобные интерфейсы, которые интуитивно понятны пользователям.</p>
+								<p class="text-advantages__text">Наши проекты отличаются высоким уровнем визуального дизайна, что отмечает международное и российское экспертное жюри.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="partners">
+					<div class="partners__container">
+						<div class="partners__head">
+							<h2 class="partners__title">Наши партнеры</h2>
+						</div>
+						<div class="partners__body">
+							<div class="partners__item"><img src="@img/home/partners_1.png" alt="img"></div>
+							<div class="partners__item"><img src="@img/home/partners_2.png" alt="img"></div>
+							<div class="partners__item"><img src="@img/home/partners_3.png" alt="img"></div>
+							<div class="partners__item"><img src="@img/home/partners_4.png" alt="img"></div>
+							<div class="partners__item"><img src="@img/home/partners_5.png" alt="img"></div>
+							<div class="partners__item"><img src="@img/home/partners_6.png" alt="img"></div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,0 +1,19 @@
+// Заголовки, общие БЄМ блоки и проче...
+[hidden] {
+  display: none !important;
+}
+
+
+.rectangle {
+
+  &_btn {
+    min-width: rem(180);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: rem(12);
+    line-height: 2;
+    padding: rem(12);
+    display: flex;
+    justify-content:center;align-items: center;
+  }
+}
