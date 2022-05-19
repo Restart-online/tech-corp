@@ -37,7 +37,7 @@ webPackConfigBeautify.optimization = {
 }
 webPackConfigBeautify.output = {
 	path: `${paths.build}`,
-	filename: 'app.js',
+	filename: 'app_after.js',
 	publicPath: '/',
 }
 

@@ -46,7 +46,7 @@ const config = {
 	},
 	output: {
 		path: `${paths.build}`,
-		filename: 'app.min.js',
+		filename: 'app_after.min.js',
 		publicPath: '/',
 	},
 	module: {
@@ -112,7 +112,7 @@ const config = {
 			filename: `../${pugPage.replace(/\.pug/, '.html')}`
 		})),
 		new MiniCssExtractPlugin({
-			filename: '../css/style.css',
+			filename: '../css/style_after.css',
 		}),
 		new CopyPlugin({
 			patterns: [

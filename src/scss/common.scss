@@ -22,6 +22,9 @@
   @media (max-width:$mobile){
     padding-top: rem(66);
   }
+  &.page__home {
+    padding-top: rem(0);
+  }
 }
 .bigimage {
   img {
