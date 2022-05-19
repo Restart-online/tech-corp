@@ -49,6 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
       menuClose();
     })
   }
+  const casesNavItems = document.querySelectorAll('[data-cases-nav]');
+  if (casesNavItems.length) {
+    hideShowCases(casesNavItems);
+    casesNavItems.forEach(e => {
+      e.addEventListener('change', () => {
+        hideShowCases(casesNavItems);
+      })
+    })
+  }
 })
 
 
@@ -72,4 +81,29 @@ function headerMenuTop(headerMenu) {
     document.querySelector('.bottom-header__closemenu').style = ``
   }
 
+}
+
+function hideShowCases(casesNavItems) {
+  const casesNavItemsChecks = document.querySelectorAll('[data-cases-nav');
+  const casesItems =document.querySelectorAll('[data-cases-item]');
+  casesNavItems.forEach(e => {
+    if (e.checked) {
+      let casesNavTheme = e.getAttribute('data-cases-nav');
+      casesItems.forEach(el => {
+        let casesItemTheme = el.getAttribute('data-cases-item');
+        if (casesNavTheme === casesItemTheme) {
+          el.hidden = false;
+        }
+      })
+    }
+    else {
+      let casesNavTheme = e.getAttribute('data-cases-nav');
+      casesItems.forEach(el => {
+        let casesItemTheme = el.getAttribute('data-cases-item');
+        if (casesNavTheme === casesItemTheme) {
+          el.hidden = true;
+        }
+      })
+    }
+  })
 }

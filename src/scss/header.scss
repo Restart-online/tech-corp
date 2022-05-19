@@ -5,26 +5,27 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: rem(15) 0;
-	transition: background-color 0.3s ease 0s;
+	@media (min-width:$mobile){
+		padding: rem(15) 0 0 0;
+	}
+	transition: all 0.3s ease 0s;
 	z-index: 8;
+	&.header_light {
+		background-color: #23252B;
+	}
 	&._header-scroll {
 		background-color: rgba(28, 28, 28, 0.8);
+		gap: rem(0);
 	}
+	display: flex;
+	flex-direction: column;
+	gap: rem(25);
+	transition: gap 0.3s ease 0s;
 	@media (max-width:$mobile){
 		background-color: rgba(28, 28, 28, 0.8);
 		padding-bottom: 0;
 	}
 
-	&__container {
-		display: flex;
-		flex-direction: column;
-		gap: rem(25);
-		transition: gap 0.3s ease 0s;
-		._header-scroll & {
-			gap: rem(0);
-		}
-	}
 
 	&__top {
 	}
@@ -36,8 +37,13 @@
 	}
 }
 .top-header {
-	display: flex;
-	justify-content: space-between;
+	.header_light & {
+		background-color: #23252B;
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
 
 	&__left {
 		display: flex;
@@ -154,12 +160,13 @@
 	&__body {
 		display: flex;
 		flex-direction: column;
-		background-color: #1c1c1c;
 		@media (min-width:$mobile){
+			background-color: #1c1c1c;
 			width: max-content;
 			position: absolute;
 			left: 0;
 			max-width: rem(280);
+			z-index: 3;
 		}
 		@media (max-width:$mobile){
 			text-transform: uppercase;
@@ -219,11 +226,19 @@
 	}
 }
 .bottom-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	.header_light & {
+		@media (min-width:$mobile){
+			background-color: #EBEBEB;
+			color: #23252B;
+		}
+	}
 	@media (max-width:$mobile){
 		display: none;
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	&__menu {
@@ -252,6 +267,9 @@
 	@media (max-width:$mobile){
 		position: fixed;
 		background-color: rgba(28, 28, 28, 0.5);
+		.header_light & {
+			background-color: rgba(28, 28, 28, 1);
+		}
 		display: block;
 		left: 0;
 		height: 100vh;
@@ -367,6 +385,9 @@
 				position: absolute;
 				top: 50%;
 				transition: background-color 0.3s ease 0s;
+				.header_light & {
+					background-color: #23252B;
+				}
 			}
 			&::before{
 				right: rem(3);
@@ -382,6 +403,12 @@
 						opacity: 1;
 						pointer-events: all;
 					}
+				}
+			}
+			@media (max-width:$mobile){
+				&::before, 
+				&::after{
+					background-color: #fff !important;
 				}
 			}
 		}
@@ -415,6 +442,9 @@
 			padding: rem(7);
 			border: rem(1) solid #fff;
 			background-color: rgba(28, 28, 28, 0.8);
+			.header_light & {
+				background-color: #EBEBEB;
+			}
 		}
 	}
 
@@ -460,6 +490,14 @@
 		cursor: pointer;
 		svg path {
 			transition: all 0.3s ease 0s;
+		}
+		.header_light & {
+			@media (min-width:$mobile){
+				svg path {
+					stroke: #23252B;
+				}
+			}
+
 		}
 		&._active {
 			svg path {
