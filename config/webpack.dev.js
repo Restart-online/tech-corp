@@ -20,7 +20,7 @@ if (!pugPages.length) {
 			'indent_size': 3
 		},
 		replace: [
-			{ regex: '<link rel="stylesheet" href="css/style.min.css">', to: '' },
+			{ regex: '<link rel="stylesheet" href="css/style_after.min.css">', to: '' },
 			{ regex: '../img', to: 'img' },
 			{ regex: '@img', to: 'img' },
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
@@ -43,7 +43,7 @@ const config = {
 	],
 	output: {
 		path: `${paths.build}`,
-		filename: 'js/app.min.js',
+		filename: 'js/app_after.min.js',
 		publicPath: '/'
 	},
 	devServer: {
@@ -57,11 +57,9 @@ const config = {
 
 		// Расскоментировать на слабом ПК
 		// (в режиме разработчика, папка с результаттом будет создаваться на диске)
-		/*
-		devMiddleware: {
-			writeToDisk: true,
-		},
-		*/
+		// devMiddleware: {
+		// 	writeToDisk: true,
+		// },
 
 		watchFiles: [
 			`${paths.src}/**/*.html`,

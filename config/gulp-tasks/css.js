@@ -5,7 +5,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 export const css = () => {
-	return app.gulp.src(`${app.path.build.css}style.css`, {})
+	return app.gulp.src(`${app.path.build.css}style_after.css`, {})
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "CSS",

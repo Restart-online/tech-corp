@@ -257,6 +257,10 @@ body::after {
   padding-top: 9.0625rem;
 }
 
+.page.page_home {
+  padding-top: 0rem;
+}
+
 .bigimage img {
   width: 100%;
 }
