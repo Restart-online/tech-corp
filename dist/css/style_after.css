@@ -257,7 +257,7 @@ body::after {
   padding-top: 9.0625rem;
 }
 
-.page.page_home {
+.page.page__home {
   padding-top: 0rem;
 }
 
@@ -1971,6 +1971,9 @@ body::after {
 .item-itemsCases__name {
   font-weight: 700;
   color: #1047C8;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .item-itemsCases__text {
@@ -3445,6 +3448,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .tabs-directions__title:hover {
     color: #000;
     font-weight: 700;
+  }
+
+  .item-itemsCases__name:hover {
+    color: #000;
   }
 }
 
