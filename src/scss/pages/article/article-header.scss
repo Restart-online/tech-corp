@@ -1,0 +1,38 @@
+@use "sass:math";
+
+.article-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include adaptiveValue("min-height", 700, 300);
+  background-image: url("../img/article/article-header.jpg");
+  background-size: cover;
+  padding: rem(24) 0;
+  color: $white;
+}
+
+.article-header__wrapper {
+  width: 100%;
+  max-width: rem($maxWidthContainer);
+  padding-left: rem(186);
+
+  @media (max-width: $pc) {
+    padding: 0 rem(math.div($containerPadding, 2));
+  }
+}
+
+.article-header__caption {
+  width: 100%;
+  max-width: rem(970);
+  @include h1();
+}
+
+.article-header__description {
+  @include titles15();
+}
+
+.article-header__caption + .article-header__description {
+  width: 100%;
+  max-width: rem(730);
+  margin-top: rem(40);
+}

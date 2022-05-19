@@ -1,0 +1,32 @@
+.article-consultation {
+
+}
+
+.article-consultation__container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 65% 30%;
+  grid-gap: 5%;
+  align-items: center;
+}
+
+.article-consultation__info {
+
+}
+
+.article-consultation__caption {
+  @include h2();
+}
+
+.article-consultation__button {
+  @include adaptiveValue("margin-top", 60, 20);
+}
+
+.article-consultation__picture {
+
+}
+
+.article-consultation__image {
+  max-width: 100%;
+  object-fit: cover;
+}

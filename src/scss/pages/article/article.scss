@@ -1,0 +1,19 @@
+.article {
+
+}
+
+.article__header {
+  margin-left: calc((100% - #{$maxWidthContainer}px) / 2);
+
+  @media (max-width: $pc) {
+    margin-left: 0;
+  }
+}
+
+.article__consultation {
+  @include adaptiveValue("margin-top", 210, 60);
+}
+
+.article__slider {
+  @include adaptiveValue("margin-bottom", 210, 60);
+}

@@ -1,0 +1,78 @@
+@use "sass:math";
+
+@mixin articleBody() {
+  padding-top: rem(140);
+  padding-bottom: rem(218);
+
+  @media (max-width: $pc) {
+    padding-top: rem(60);
+    padding-bottom: rem(80);
+  }
+}
+
+.article-body {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $pc) {
+    flex-direction: column;
+  }
+}
+
+.article-body__content {
+  @include articleBody();
+  padding-left: calc((100% - #{$maxWidthContainer}px) / 2);
+
+  @media (max-width: $pc) {
+    padding-left: rem(math.div($containerPadding, 2));
+    padding-right: rem(math.div($containerPadding, 2));
+  }
+}
+
+.article-body__content > * {
+  max-width: rem(630);
+
+  @media (max-width: $pc) {
+    max-width: unset;
+  }
+}
+
+.article-body__content h3 {
+  @include h3();
+  color: $grayDark;
+
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 30, 14);
+  }
+}
+
+.article-body__content p {
+  @include text();
+  color: $gray;
+
+  & + p {
+    @include adaptiveValue("margin-top", 24, 8);
+  }
+}
+
+.article-body__content p + h2,
+.article-body__content p + h3,
+.article-body__content p + h4,
+.article-body__content p + h5,
+.article-body__content p + h6 {
+  @include adaptiveValue("margin-top", 60, 28);
+}
+
+.article-body__sidebar {
+  width: min-content;
+  background-color: $grayLight;
+  @include articleBody();
+  padding-left: rem(60);
+  padding-right: calc((100% - #{$maxWidthContainer}px) / 2);
+
+  @media (max-width: $pc) {
+    width: unset;
+    padding-left: rem(math.div($containerPadding, 2));
+    padding-right: rem(math.div($containerPadding, 2));
+  }
+}
