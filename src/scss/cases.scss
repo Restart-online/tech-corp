@@ -1,0 +1,218 @@
+.hero-cases {
+
+  &__container {
+    @include adaptiveValue("padding-top", 117, 50);
+    padding-bottom: rem(50);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    @include adaptiveValue("gap", 117, 20, 1920, 992, 1);
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+  }
+
+  &__head {
+    flex: 0 1 50%;
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 48, 28);
+    @media (min-width:$tablet){
+      transform: translateY(-15%);
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 30, 20);
+  }
+
+  &__text {
+    color: #636363;
+    font-weight: 500;
+  }
+}
+
+//========================================================================================================================================================
+
+.items-cases {
+
+  &__container {
+    @include adaptiveValue("padding-top", 200, 50);
+  }
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(40);}
+  }
+
+  &__title {
+  }
+
+  &__label {
+  }
+
+  &__navigation {
+    display: flex;
+    gap: rem(5);
+    flex-wrap: wrap;
+  }
+
+  &__body {
+    @include adaptiveValue("gap", 60, 20);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(280), rem(360)));
+    justify-content: center;
+  }
+
+  &__item {
+  }
+}
+.navigation-itemsCases {
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 80, 25);
+  }
+
+  &__item {
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    &:checked+label {
+      color: #1047C8;
+      background-color: rgba(16, 71, 200, 0.1);
+    }
+  }
+
+  &__label {
+    color: #636363;
+    font-size: rem(14);
+    padding: rem(8) rem(20);
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+}
+.item-itemsCases {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 20, 12);
+
+  &__image {
+    position: relative;
+    padding-bottom: 78%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__company {
+    color: #fff;
+    padding: rem(10);
+    background-color: rgba(235, 235, 235, 0.5);
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-weight: 700;
+    color: #1047C8;
+  }
+
+  &__text {
+    color: #636363;
+    font-weight: 500;
+  }
+}
+
+//========================================================================================================================================================
+
+.sertificats-cases {
+
+  &__container {
+    @include adaptiveValue("padding-top", 200, 50);
+  }
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(40);}
+  }
+
+  &__title {
+  }
+
+  &__label {
+  }
+
+  &__body {
+    display: grid;
+    @include adaptiveValue("column-gap", 60, 20);
+    @include adaptiveValue("row-gap", 25, 20);
+    justify-content: center;
+    @media (min-width:$mobile){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$mobile){
+      // grid-template-columns: repeat(auto-fit, minmax(rem(280), rem(360)));
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    img {
+      max-width: 100%
+    }
+  }
+}
+
+//========================================================================================================================================================
+.callback {
+
+  &__container {
+    @include adaptiveValue("padding-top", 200, 50);
+    @include adaptiveValue("padding-bottom", 200, 50);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(40);
+    @media (min-width:$tablet){
+      align-items: end;
+    }
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    max-width: rem(450);
+    @media (min-width:$tablet){
+      flex: 0 1 rem(450);
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {margin-bottom: rem(30);}
+  }
+
+  &__label {
+  }
+
+  &__form {
+    padding: 0;
+    @media (min-width:$tablet){
+      max-width: rem(450);
+    }
+  }
+}

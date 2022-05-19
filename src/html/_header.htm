@@ -1,6 +1,6 @@
-<header data-scroll="100" class="header">
-	<div class="header__container">
-		<div class="header__top top-header">
+<header data-scroll="100" class="header @@light">
+	<div class="header__top top-header">
+		<div class="top-header__container">
 			<div class="top-header__left">
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<a href="#" class="top-header__logo">
@@ -44,13 +44,15 @@
 						<div class="phone-header__label">(тех. поддержка)</div>
 					</div>
 				</a>
-				<button data-da=".menu__item_callback, 767" class="top-header__callback" type="button" data-popup="#callbackPopup">Заказать звонок</button>
+				<button data-da=".menu__item_callback, 767" class="top-header__callback" type="button" data-goto=".footer">Заказать звонок</button>
 			</div>
 		</div>
-		<div class="header__bottom bottom-header">
-			<div data-da=".header, 767" class="bottom-header__menu">
-				<div class="bottom-header__closemenu"></div>
-				<div class="header__menu menu">
+	</div>
+	<div class="header__bottom bottom-header">
+		<div class="bottom-header__container">
+			<div class="bottom-header__menu">
+				<div data-da=".header, 767" class="bottom-header__closemenu"></div>
+				<div data-da=".header, 767" class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
