@@ -1,0 +1,167 @@
+.sertificats {
+
+  &__container {
+    display: grid;
+    @include adaptiveValue("gap", 60, 20);
+    @include adaptiveValue("padding-top", 125, 30);
+    @include adaptiveValue("padding-bottom", 140, 30);
+    @media (min-width:$tablet){
+      grid-template-columns: rem(360) auto;
+    }
+  }
+
+  &__sidebar {
+  }
+
+  &__body {
+  }
+}
+.sidebar {
+
+  &__menu {
+    &:not(:last-child) {margin-bottom: rem(100);}
+  }
+
+  &__interesting {
+  }
+
+  &__bottom {
+    display: grid;
+    @include adaptiveValue("gap", 100, 30);
+  }
+}
+.menu-sidebar {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+  }
+
+  &__title {
+    display: block;
+    padding: rem(18.5);
+    @include adaptiveValue("padding-left", 31, 18.5);
+    border: rem(1) solid #EBEBEB;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    text-align-last: left;
+    font-weight: 600;
+    &._spoller-active {
+      color: #fff;
+      background-color: $mainColor;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: rem(18.5);
+    @include adaptiveValue("padding-left", 31, 18.5);
+    border: rem(1) solid #EBEBEB;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        color: #fff;
+        background-color: $blue;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
+    &_active {
+      color: #fff;
+      background-color: $blue;
+      font-weight: 500;
+    }
+  }
+}
+.interesting {
+
+  &__title {
+
+    &_blue {
+      color: $blue;
+    }
+  }
+}
+
+.body-sertificats {
+  min-width: 0;
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 25);
+    }
+  }
+
+  &__title {
+  }
+
+  &__label {
+  }
+
+  &__items {
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 25);
+    }
+  }
+
+  &__slide {
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: rem(50);
+  }
+
+  &__pagination {
+    display: flex;
+  }
+}
+.slide-sertificats {
+
+  &__body {
+    display: grid;
+    @include adaptiveValue("column-gap", 60, 15);
+    @include adaptiveValue("row-gap", 50, 15);
+    grid-template-columns: repeat(auto-fit, minmax(rem(280), rem(360)));
+    justify-content: center;
+    @media (min-width:$tablet){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(10);
+    border: rem(1) solid #EBEBEB;
+    @include adaptiveValue("padding", 22, 10);
+    @include adaptiveValue("padding-top", 40, 10);
+    img {
+      max-width: rem(240);
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 10, 0);
+      }
+    }
+  }
+
+  &__name {
+    color: $grayDark;
+  }
+
+  &__size {
+    color: #C4C4C4;
+  }
+}

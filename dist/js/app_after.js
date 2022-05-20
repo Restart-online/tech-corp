@@ -11450,6 +11450,40 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".body-sertificats__slider")) new core(".body-sertificats__slider", {
+                modules: [ Navigation, Pagination, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                pagination: {
+                    el: ".body-sertificats__pagination",
+                    type: "fraction"
+                },
+                navigation: {
+                    prevEl: ".body-sertificats__navigation .swiper-button-prev",
+                    nextEl: ".body-sertificats__navigation .swiper-button-next"
+                },
+                on: {}
+            });
+            if (document.querySelector(".videocases__slider")) new core(".videocases__slider", {
+                modules: [ Navigation, Pagination, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 60,
+                speed: 800,
+                pagination: {
+                    el: ".videocases__pagination",
+                    type: "fraction"
+                },
+                navigation: {
+                    prevEl: ".videocases__arrows .swiper-button-prev",
+                    nextEl: ".videocases__arrows .swiper-button-next"
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -14443,8 +14477,19 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                 }));
             }
+            const videoCasesEls = document.querySelectorAll(".videocases__slide");
+            if (videoCasesEls.length) videoCasesEls.forEach((e => {
+                const videoCase = e.querySelector("video");
+                const controlVideoCase = e.querySelector(".slide-videocases__control");
+                controlVideoCase.addEventListener("click", (() => {
+                    videoCase.play();
+                    videoCase.controls = true;
+                    controlVideoCase.remove();
+                }));
+            }));
             document.addEventListener("click", (e => {
                 if (!e.target.classList.contains("menu__link_sub") && !e.target.closest(".menu__submenu")) {
+                    bodyUnlock();
                     setTimeout((() => {
                         document.documentElement.classList.remove("submenu-open");
                     }), 500);

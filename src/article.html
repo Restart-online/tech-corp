@@ -4,9 +4,11 @@
 "title":"Главная"
 })
 <body>
-<div class="wrapper">
-  @@include('html/_header.htm',{})
-  <main class="article">
+<div class="wrapper wrapper_lightheader">
+  @@include('html/_header.htm',{
+    "light": "header_light"
+  })
+  <main class="article page">
     <section class="article__header article-header">
       <div class="article-header__wrapper">
         <h1 class="article-header__caption">

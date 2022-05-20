@@ -182,3 +182,27 @@
   }
 }
 //========================================================================================================================================================
+
+.swiper-button-prev,
+.swiper-button-next {
+  cursor: pointer;
+}
+
+.swiper-button-disabled {
+  cursor: default;
+  svg path {
+    fill: #C4C4C4;
+  }
+}
+
+
+.seall {
+  text-decoration: underline !important;
+  text-transform: uppercase;
+  font-size: rem(12);
+  @media (any-hover: hover){
+    &:hover{
+      text-decoration: none !important;
+    }
+  }
+}

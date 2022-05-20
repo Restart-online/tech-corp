@@ -4,6 +4,7 @@ import { _slideDown } from "./functions.js";
 import { _slideUp } from "./functions.js";
 import { _slideToggle } from "./functions.js";
 import { bodyLockToggle } from "./functions.js";
+import { bodyUnlock } from "./functions.js";
 import { menuClose } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
@@ -43,9 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const videoCasesEls = document.querySelectorAll('.videocases__slide');
+  if (videoCasesEls.length) {
+    videoCasesEls.forEach(e => {
+      const videoCase = e.querySelector('video');
+      const controlVideoCase = e.querySelector('.slide-videocases__control');
+      controlVideoCase.addEventListener('click', () => {
+        videoCase.play();
+        videoCase.controls = true;
+        controlVideoCase.remove();
+      })
+    })
+  }
   
   document.addEventListener('click', (e) => {
     if (!e.target.classList.contains('menu__link_sub') && !e.target.closest('.menu__submenu')) {
+      bodyUnlock();
       setTimeout(() => {
         document.documentElement.classList.remove('submenu-open');
       }, 500);
