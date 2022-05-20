@@ -13,7 +13,7 @@
     font-size: rem(12);
     line-height: 2;
     padding: rem(12);
-    display: flex;
+    display: inline-flex;
     justify-content:center;align-items: center;
   }
 }
@@ -57,7 +57,6 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
     background-image: url(../img/icons/gallery_icon.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -74,3 +73,112 @@
     }
   }
 }
+
+
+._form-error {
+  input {
+    transition: all 0.3s ease 0s;
+    border-color: red !important;
+    color: red !important;
+    &::placeholder {
+      color: red !important;
+    }
+  }
+  label {
+    transition: all 0.3s ease 0s;
+    color: red !important;
+    &::before,
+    &::after{
+      border-color: red !important;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.blueButtonPopup {
+
+  &_hidden {
+  }
+
+  &__wrapper {
+  }
+
+  &__content {
+    border-radius: 0;
+    background-color: #fff;
+  }
+
+  &__close {
+    display: block;
+    margin-left: auto;
+    &:not(:last-child) {margin-bottom: rem(25);}
+  }
+
+  &__text {
+  }
+  
+  .footer {
+
+    &__title {
+    }
+  }
+  .callback-footer {
+
+    &__title {
+    }
+
+    &__body {
+    }
+
+    &__row {
+    }
+
+    &__input {
+      border-color: #C4C4C4;
+      color: $mainColor;
+    }
+
+    &__textarea {
+      width: 100%;
+      min-height: rem(100);
+      border: rem(1) solid #C4C4C4;
+      color: $mainColor;
+      padding: rem(13);
+      resize: vertical;
+      &::placeholder {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: rem(11);
+      }
+    }
+
+    &__label {
+    }
+
+    &__checkbox {
+    }
+
+    &__agree {
+      &::before,
+      &::after{
+        border-color: $mainColor;
+      }
+    }
+
+    &__link {
+    }
+
+    &__submit {
+      border-color: $mainColor;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover){
+        &:hover{
+          background-color: $mainColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+//========================================================================================================================================================

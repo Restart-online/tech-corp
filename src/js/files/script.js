@@ -2,6 +2,8 @@
 import { isMobile } from "./functions.js";
 import { _slideDown } from "./functions.js";
 import { _slideUp } from "./functions.js";
+import { _slideToggle } from "./functions.js";
+import { bodyLockToggle } from "./functions.js";
 import { menuClose } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
@@ -19,25 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const menuSublinks = document.querySelectorAll('.menu__link_sub');
   if (menuSublinks.length) {
-    menuSublinks.forEach(menuSublink => {
-      const menuSubmenu = menuSublink.parentElement.querySelector('.menu__submenu');
-      submenuHidden(menuSubmenu);
-      window.addEventListener('resize', () => {
-        submenuHidden(menuSubmenu);
-      })
-      menuSublink.addEventListener('click', (e) => {
-        if (isMobile.any()) {
-          e.preventDefault();
-          menuSubmenu.classList.toggle('_active');
-          document.documentElement.classList.toggle('submenu-open');
-          if (menuSubmenu.classList.contains('_active')) {
-            _slideDown(menuSubmenu);
-          } else {
-            _slideUp(menuSubmenu);
-          }
-        }
-      })
-    })
+    headerSubMenuActions(menuSublinks);
   }
   const headerMenu = document.querySelector('.header__menu');
   if (headerMenu) {
@@ -58,11 +42,61 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+
+  
+  document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('menu__link_sub') && !e.target.closest('.menu__submenu')) {
+      setTimeout(() => {
+        document.documentElement.classList.remove('submenu-open');
+      }, 500);
+      document.querySelectorAll('.menu__submenu').forEach(e => {
+        _slideUp(e);
+        setTimeout(() => {
+          e.classList.remove('_active')
+        }, 500);
+      })
+    }
+  })
 })
+
+function headerSubMenuActions(menuSublinks) {
+  menuSublinks.forEach(menuSublink => {
+    const menuSubmenu = menuSublink.parentElement.querySelector('.menu__submenu');
+    submenuHidden(menuSubmenu);
+    window.addEventListener('resize', () => {
+      submenuHidden(menuSubmenu);
+    })
+    menuSublink.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.innerWidth > 767) {
+        bodyLockToggle();
+      }
+      if (menuSubmenu.classList.contains('_active')) {
+        setTimeout(() => {
+          menuSubmenu.classList.remove('_active');
+          document.documentElement.classList.remove('submenu-open');
+        }, 300);
+        _slideToggle(menuSubmenu);
+      } else {
+        document.documentElement.classList.add('submenu-open');
+        menuSubmenu.classList.add('_active');
+        _slideToggle(menuSubmenu);
+      }
+    })
+  });
+  const subSubMenuBacks = document.querySelectorAll('.sub-submenu__item_back');
+  subSubMenuBacks.forEach(el => {
+    el.addEventListener('click', (ev) => {
+      _slideToggle(el.parentElement);
+      el.parentElement.previousElementSibling.classList.remove('_spoller-active');
+      console.log(el.parentElement.previousElementSibling)
+    })
+  })
+}
 
 
 function submenuHidden(menuSubmenu) {
-  if (isMobile.any()) {
+  if (!menuSubmenu.classList.contains('_active')) {
     menuSubmenu.hidden = true;
   } else {
     menuSubmenu.hidden = false;
@@ -107,3 +141,34 @@ function hideShowCases(casesNavItems) {
     }
   })
 }
+
+
+document.addEventListener("afterPopupOpen", function (e) {
+	// Попап
+  const currentPopup = e.detail.popup;
+  if (currentPopup.targetOpen.element.classList.contains('blueButtonPopup')) {
+    let popupTitle = currentPopup.targetOpen.element.querySelector('.footer__title');
+    let popupInput = currentPopup.targetOpen.element.querySelector('.blueButtonPopup_hidden');
+    if (currentPopup.lastFocusEl) {
+      if (currentPopup.lastFocusEl.getAttribute('data-popup-info')) {
+        let popupInfo = currentPopup.lastFocusEl.getAttribute('data-popup-info');
+        popupTitle.innerHTML = popupInfo;
+        popupInput.value = popupInfo;
+      } else {
+        setTimeout(() => {
+          currentPopup.targetOpen.element.querySelector('[data-close]').click();
+        }, 500);
+        setTimeout(() => {
+          alert('На кнопке должен быть атрибут data-popup-info, обратитесь в поддержку')
+        }, 600);
+      }
+    } else {
+      setTimeout(() => {
+        currentPopup.targetOpen.element.querySelector('[data-close]').click();
+      }, 500);
+      setTimeout(() => {
+        alert('Только по клику на синюю кнопку!')
+      }, 600);
+    }
+  }
+});
