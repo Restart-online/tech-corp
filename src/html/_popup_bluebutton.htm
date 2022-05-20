@@ -1,0 +1,39 @@
+<div id="blueButtonPopup" aria-hidden="true" class="popup blueButtonPopup">
+	<div class="popup__wrapper blueButtonPopup__wrapper">
+		<div class="popup__content blueButtonPopup__content">
+			<button data-close type="button" class="popup__close blueButtonPopup__close">
+				<img src="@img/icons/close.svg" alt="image">
+			</button>
+			<div class="popup__text blueButtonPopup__text">
+				<div class="footer__title callback-footer__title">МодалОчка от синей кнопки</div>
+				<form action="#" data-ajax method="post" class="callback-footer__body">
+					<div class="callback-footer__row">
+						<input type="text" name="" id="" data-required class="callback-footer__input">
+						<label for="" class="callback-footer__label">имя</label>
+					</div>
+					<div class="callback-footer__row">
+						<input type="text" name="" id="" data-required data-inputmask="'mask':'+7 (999) 999 99 99'" class="callback-footer__input">
+						<label for="" class="callback-footer__label">номер телефона</label>
+					</div>
+					<div class="callback-footer__row">
+						<input type="text" name="" id="" data-required="email" data-inputmask="'alias': 'email'" class="callback-footer__input">
+						<label for="" class="callback-footer__label">e-mail</label>
+					</div>
+					<div class="callback-footer__row">
+						<textarea type="text" name="" id="" placeholder="Сообщение" class="callback-footer__textarea"></textarea>
+						<!-- <label for="" class="callback-footer__label">Сообщение</label> -->
+					</div>
+					<div class="callback-footer__row">
+						<input type="checkbox" name="" data-required id="callback-footer__checkbox" checked="checked" class="callback-footer__checkbox">
+						<label for="callback-footer__checkbox" class="callback-footer__agree"><span>Я согласен(а) на</span><a href="#" class="callback-footer__link">обработку персональных данных</a>
+						</label>
+					</div>
+					<input type="hidden" name="" id="" data-required class="blueButtonPopup_hidden">
+					<div class="callback-footer__row">
+						<button type="submit" class="rectangle_btn callback-footer__submit">Отправить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

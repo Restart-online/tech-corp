@@ -416,6 +416,12 @@ export function menuInit() {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
+				if (document.querySelectorAll('.menu__sublink._spoller-active').length) {
+					document.querySelectorAll('.menu__sublink._spoller-active').forEach(e => {
+						_slideToggle(e.nextElementSibling);
+						e.classList.remove('_spoller-active');
+					})
+				}
 			}
 		});
 	};
@@ -427,6 +433,12 @@ export function menuOpen() {
 export function menuClose() {
 	bodyUnlock();
 	document.documentElement.classList.remove("menu-open");
+	if (document.querySelectorAll('.menu__sublink._spoller-active').length) {
+		document.querySelectorAll('.menu__sublink._spoller-active').forEach(e => {
+			_slideToggle(e.nextElementSibling);
+			e.classList.remove('_spoller-active');
+		})
+	}
 }
 // Модуль "показать еще" =======================================================================================================================================================================================================================
 /*

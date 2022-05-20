@@ -19,6 +19,9 @@
   &__title {
     font-weight: 700;
     @include adaptiveValue("font-size", 48, 28);
+    &_small {
+      @include adaptiveValue("font-size", 32, 28);
+    }
     @media (min-width:$tablet){
       transform: translateY(-15%);
     }
@@ -34,6 +37,24 @@
   &__text {
     color: #636363;
     font-weight: 500;
+  }
+
+  &__link {
+    background-color: $blue;
+    color: #fff;
+    align-self: start;
+    border: rem(1) solid $blue;
+    transition: all 0.3s ease 0s;
+    min-width: 100%;
+    @media (any-hover: hover){
+      &:hover{
+        color: $blue;
+        background-color: transparent;
+      }
+    }
+    @media (min-width:$mobileSmall){
+      min-width: rem(330);
+    }
   }
 }
 

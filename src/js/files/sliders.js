@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,17 +27,16 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.about-docs__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.about-docs__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
+			slidesPerView: 3,
+			spaceBetween: 60,
 			speed: 800,
 
 			//touchRatio: 0,
@@ -49,19 +48,17 @@ function initSliders() {
 			/*
 			// Эффекты
 			effect: 'fade',
+			*/
 			autoplay: {
 				delay: 3000,
-				disableOnInteraction: false,
+				disableOnInteraction: true,
 			},
-			*/
 
 			// Пагинация
-			/*
 			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
+				el: '.about-docs__pagination',
+				type: 'fraction',
 			},
-			*/
 
 			// Скроллбар
 			/*
@@ -73,12 +70,11 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.about-docs__navigation .swiper-button-prev',
+				nextEl: '.about-docs__navigation .swiper-button-next',
 			},
 
 			// Брейкпоинты
-			/*
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
@@ -94,11 +90,9 @@ function initSliders() {
 					spaceBetween: 20,
 				},
 				1268: {
-					slidesPerView: 4,
 					spaceBetween: 30,
 				},
 			},
-			*/
 			// События
 			on: {
 
