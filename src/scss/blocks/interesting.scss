@@ -1,26 +1,4 @@
-.interesting__title {
-  @include h3();
-  @include adaptiveValue("margin-bottom", 60, 28);
-}
-
-.interesting__list {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  @include adaptiveValue("gap", 60, 20);
-  width: rem($col2);
-
-  @media (max-width: $pc) {
-    grid-template-columns: repeat(auto-fill, minmax(rem($col2), 1fr));
-    width: 100%;
-  }
-
-  @media (max-width: $mobileSmall) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.interesting__item {
+.interesting {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

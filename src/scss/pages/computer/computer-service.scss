@@ -1,0 +1,39 @@
+.computer-service {
+
+}
+
+.computer-service__caption {
+  margin-bottom: rem(70);
+  @include h2();
+}
+
+.computer-service__list {
+  column-count: 2;
+  column-gap: rem($colGap);
+  margin: rem(-15) 0;
+
+  @media(max-width: $tablet) {
+    column-count: 1;
+  }
+}
+
+.computer-service__item {
+  display: inline-flex;
+  width: 100%;
+  padding: rem(15) 0;
+  @include text();
+  color: $grayDark;
+
+  &::before {
+    content: '';
+    min-width: rem(46);
+    width: rem(46);
+    height: rem(46);
+    background-color: $blueMain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12' fill='none'%3E%3Cpath d='M0 5H14.17L10.59 1.41L12 0L18 6L12 12L10.59 10.59L14.17 7H0V5Z' fill='white'/%3E%3C/svg%3E");
+    background-size: rem(18) rem(12);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: rem(20);
+  }
+}
