@@ -1,0 +1,30 @@
+.article-comments {
+
+}
+
+.article-comments__title {
+  @include h2();
+}
+
+.article-comments__description {
+  margin-top: rem(11);
+  font-weight: 500;
+  font-size: rem(13);
+  line-height: 1.5;
+  color: $gray;
+}
+
+.article-comments__list {
+  width: 100%;
+  max-width: rem($col4);
+  margin-top: rem(35);
+}
+
+.article-comments__empty {
+  @include text();
+  color: $black;
+}
+
+.article-comments__item + .article-comments__item {
+  margin-top: rem(14);
+}

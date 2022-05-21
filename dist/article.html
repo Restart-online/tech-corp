@@ -2,11 +2,11 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Карточка статьи</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style_after.min.css?_v=20220520200852">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220521185010">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -280,7 +280,7 @@
 				</div>
 			</div>
 		</header>
-		<main class="article page">
+		<main class="page article">
 			<section class="article__header article-header">
 				<div class="article-header__wrapper">
 					<h1 class="article-header__caption">
@@ -293,146 +293,285 @@
 				</div>
 			</section>
 			<section class="article__body article-body">
-				<article class="article-body__content">
-					<h3>Угрозы безопасности</h3>
-					<p>
-						Когда говорят об угрозах безопасности данных, подразумевают реальные или потенциальные риски, способные
-						пробить брешь в ИБ и привести к утечке важных сведений. Действия пользователей, атакующих систему
-						информационной безопасности, могут быть случайными либо умышленными.
-					</p>
-					<h3>Угрозы доступности</h3>
-					<p>
-						Когда говорят об угрозах безопасности данных, подразумевают реальные или потенциальные риски, способные
-						пробить брешь в ИБ и привести к утечке важных сведений. Действия пользователей, атакующих систему
-						информационной безопасности, могут быть случайными либо умышленными.
-					</p>
-					<p>
-						Ключевое правило — доступ к важным данным только определенному кругу лиц.
-					</p>
-					<p>
-						Часто доступности информации случайными действиями угрожают сотрудники организации, выступая потенциальными
-						злоумышленниками. Они вводят неверные сведения, допускают системные ошибки. Таким образом они намечают брешь в
-						ИБ, создавая хакерам благоприятные условия. Способами защиты выступают введение административного контроля и
-						автоматизация процессов. Но вместе с этим необходимо ликвидировать слабые места:
-					</p>
-					<p>
-						Обучить сотрудников правилам обращения с информсистемой и корректному ведению рабочих процессов.
-					</p>
-					<p>
-						Организовать качественную техподдержку.
-					</p>
-					<p>
-						Ввести контроль за соблюдением правил работы в организации и ответственность за порчу оборудования.
-					</p>
-					<p>
-						Создать грамотный ИТ-отдел или обратиться к аутсорсинговой компании.
-					</p>
-					<h3>Угрозы целостности</h3>
-					<p>
-						Ключевое правило — невозможность порчи сведений.
-					</p>
-					<p>
-						Главным образом целостности информации угрожают подлог и кража. Обычно этим занимаются сами недобросовестные
-						сотрудники компании. Они вводят некорректные данные и изменяют их, дублируют, дополняют, не выполняют
-						необходимые действия и т. д.
-					</p>
-					<h3>Угрозы конфиденциальности</h3>
-					<p>
-						Ключевое правило — защита данных от несанкционированного доступа.
-					</p>
-					<p>
-						Злоумышленники разными способами узнают пароли и проникают в хранилища информации в момент, когда пользователь
-						уверен, что сведения надежно защищены. Что может быть источником угрозы:
-					</p>
-					<p>
-						-Хранение многоразовых паролей в источниках, к которым могут подобраться злоумышленники.
-					</p>
-					<p>
-						-Применение идентичных паролей в разных системах.
-					</p>
-					<p>
-						-Использование хакерами технических инструментов — прослушек и особого софта.
-					</p>
-					<p>
-						-Презентации оборудования с секретными данными.
-					</p>
-					<p>
-						-Размещение информации в резервных хранилищах.
-					</p>
-					<p>
-						-Распространение сведений по большому количеству каналов, что облегчает перехват.
-					</p>
-					<p>
-						Оставление оборудования без присмотра (злоумышленник может подсмотреть пароль или похитить физическое
-						хранилище информации).
-					</p>
-					<p>
-						Злоупотребление сотрудниками своими полномочиями.
-					</p>
-				</article>
-				<div class="article-body__sidebar interesting">
-					<div class="interesting__title">Это интересно</div>
-					<div class="interesting__list">
-						<div class="interesting__item">
-							<span class="interesting__picture">
-								<picture><source srcset="img/article/interesting-1.webp" type="image/webp"><img src="img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
-								<span class="interesting__date">15.09.2021</span>
-							</span>
-							<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-							<span class="interesting__description">
-								Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-							</span>
-							<a href="#" class="interesting__link">
-								Читать
-							</a>
+				<div class="article-body__container">
+					<article class="article-body__content">
+						<h3>Угрозы безопасности</h3>
+						<p>
+							Когда говорят об угрозах безопасности данных, подразумевают реальные или потенциальные риски, способные
+							пробить брешь в ИБ и привести к утечке важных сведений. Действия пользователей, атакующих систему
+							информационной безопасности, могут быть случайными либо умышленными.
+						</p>
+						<h3>Угрозы доступности</h3>
+						<p>
+							Когда говорят об угрозах безопасности данных, подразумевают реальные или потенциальные риски, способные
+							пробить брешь в ИБ и привести к утечке важных сведений. Действия пользователей, атакующих систему
+							информационной безопасности, могут быть случайными либо умышленными.
+						</p>
+						<p>
+							Ключевое правило — доступ к важным данным только определенному кругу лиц.
+						</p>
+						<p>
+							Часто доступности информации случайными действиями угрожают сотрудники организации, выступая потенциальными
+							злоумышленниками. Они вводят неверные сведения, допускают системные ошибки. Таким образом они намечают брешь в
+							ИБ, создавая хакерам благоприятные условия. Способами защиты выступают введение административного контроля и
+							автоматизация процессов. Но вместе с этим необходимо ликвидировать слабые места:
+						</p>
+						<p>
+							Обучить сотрудников правилам обращения с информсистемой и корректному ведению рабочих процессов.
+						</p>
+						<p>
+							Организовать качественную техподдержку.
+						</p>
+						<p>
+							Ввести контроль за соблюдением правил работы в организации и ответственность за порчу оборудования.
+						</p>
+						<p>
+							Создать грамотный ИТ-отдел или обратиться к аутсорсинговой компании.
+						</p>
+						<h3>Угрозы целостности</h3>
+						<p>
+							Ключевое правило — невозможность порчи сведений.
+						</p>
+						<p>
+							Главным образом целостности информации угрожают подлог и кража. Обычно этим занимаются сами недобросовестные
+							сотрудники компании. Они вводят некорректные данные и изменяют их, дублируют, дополняют, не выполняют
+							необходимые действия и т. д.
+						</p>
+						<h3>Угрозы конфиденциальности</h3>
+						<p>
+							Ключевое правило — защита данных от несанкционированного доступа.
+						</p>
+						<p>
+							Злоумышленники разными способами узнают пароли и проникают в хранилища информации в момент, когда пользователь
+							уверен, что сведения надежно защищены. Что может быть источником угрозы:
+						</p>
+						<p>
+							-Хранение многоразовых паролей в источниках, к которым могут подобраться злоумышленники.
+						</p>
+						<p>
+							-Применение идентичных паролей в разных системах.
+						</p>
+						<p>
+							-Использование хакерами технических инструментов — прослушек и особого софта.
+						</p>
+						<p>
+							-Презентации оборудования с секретными данными.
+						</p>
+						<p>
+							-Размещение информации в резервных хранилищах.
+						</p>
+						<p>
+							-Распространение сведений по большому количеству каналов, что облегчает перехват.
+						</p>
+						<p>
+							Оставление оборудования без присмотра (злоумышленник может подсмотреть пароль или похитить физическое
+							хранилище информации).
+						</p>
+						<p>
+							Злоупотребление сотрудниками своими полномочиями.
+						</p>
+					</article>
+					<aside class="article-body__sidebar interesting">
+						<div class="interesting__title">Это интересно</div>
+						<div class="interesting__list">
+							<div class="interesting__item">
+								<span class="interesting__picture">
+									<picture><source srcset="img/article/interesting-1.webp" type="image/webp"><img src="img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
+									<span class="interesting__date">15.09.2021</span>
+								</span>
+								<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
+								<span class="interesting__description">
+									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
+								</span>
+								<a href="#" class="interesting__link">
+									Читать
+								</a>
+							</div>
+							<div class="interesting__item">
+								<span class="interesting__picture">
+									<picture><source srcset="img/article/interesting-2.webp" type="image/webp"><img src="img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
+									<span class="interesting__date">15.09.2021</span>
+								</span>
+								<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
+								<span class="interesting__description">
+									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
+								</span>
+								<a href="#" class="interesting__link">
+									Читать
+								</a>
+							</div>
+							<div class="interesting__item">
+								<span class="interesting__picture">
+									<picture><source srcset="img/article/interesting-3.webp" type="image/webp"><img src="img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
+									<span class="interesting__date">15.09.2021</span>
+								</span>
+								<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
+								<span class="interesting__description">
+									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
+								</span>
+								<a href="#" class="interesting__link">
+									Читать
+								</a>
+							</div>
 						</div>
-						<div class="interesting__item">
-							<span class="interesting__picture">
-								<picture><source srcset="img/article/interesting-2.webp" type="image/webp"><img src="img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
-								<span class="interesting__date">15.09.2021</span>
-							</span>
-							<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-							<span class="interesting__description">
-								Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-							</span>
-							<a href="#" class="interesting__link">
-								Читать
-							</a>
+					</aside>
+				</div>
+			</section>
+			<section class="article__comments article-comments">
+				<div class="__container">
+					<div class="article-comments__title">Комментарии</div>
+					<div class="article-comments__description">Здесь отображаются ваши комментарии и комментарии других пользователей</div>
+					<div class="article-comments__list">
+						<div class="article-comments__empty">Комментариев пока нет.</div>
+					</div>
+					<div class="article-comments__list">
+						<div class="article-comments__item comment">
+							<div class="comment__date">15.05.2022 18:35</div>
+							<div class="comment__name">Иван Николаев</div>
+							<div class="comment__text">
+								<p>
+									Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий
+									день инженеры окружили меня и требовали разрешения начать работу.
+								</p>
+								<p>
+									В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение
+									следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились,
+									что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с
+									«Олл Корп» и буду сотрудничать с ними в будущем.
+								</p>
+							</div>
 						</div>
-						<div class="interesting__item">
-							<span class="interesting__picture">
-								<picture><source srcset="img/article/interesting-3.webp" type="image/webp"><img src="img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
-								<span class="interesting__date">15.09.2021</span>
-							</span>
-							<span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-							<span class="interesting__description">
-								Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-							</span>
-							<a href="#" class="interesting__link">
-								Читать
-							</a>
+						<div class="article-comments__item comment">
+							<div class="comment__date">15.05.2022 18:35</div>
+							<div class="comment__name">Леонова Анна</div>
+							<div class="comment__text">
+								<p>
+									Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я
+									очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="article__faq">
-
-			</section>
 			<section class="article__liked article-liked">
-				<div class="article-liked__container">
-					<div class="article-liked__left">
-						<div class="article-liked__title">Понравилась статья?</div>
-						<div class="article-liked__actions">
-							<div class="article-liked__block">
-								<div class="article-liked__subtitle">Оцените статью:</div>
+				<div class="__container">
+					<div class="article-liked__title">Понравилась статья?</div>
+					<div class="article-liked__actions">
+						<div class="article-liked__block">
+							<div class="article-liked__subtitle">Оцените статью:</div>
+							<div class="article-liked__rates">
+								<label class="article-liked__label">
+									<input class="article-liked__input" type="radio" name="grade" value="-1" hidden>
+									<svg class="article-liked__rate article-liked__rate--like">
+										<use xlink:href="img/icons/sprite.svg#like"></use>
+									</svg>
+								</label>
+								<label class="article-liked__label">
+									<input class="article-liked__input" type="radio" name="grade" value="1" hidden>
+									<svg class="article-liked__rate article-liked__rate--dislike">
+										<use xlink:href="img/icons/sprite.svg#like"></use>
+									</svg>
+								</label>
 							</div>
-							<div class="article-liked__block">
-								<div class="article-liked__subtitle">Поделиться статьей:</div>
+						</div>
+						<div class="article-liked__block">
+							<div class="article-liked__subtitle">Поделиться статьей:</div>
+							<div class="article-liked__share">
+								<a href="#" class="article-liked__social">
+									<svg class="article-liked__icon">
+										<use xlink:href="img/icons/sprite.svg#social-telegram"></use>
+									</svg>
+								</a>
+								<a href="#" class="article-liked__social">
+									<svg class="article-liked__icon">
+										<use xlink:href="img/icons/sprite.svg#social-vk"></use>
+									</svg>
+								</a>
 							</div>
 						</div>
 					</div>
-					<div class="article-liked__form article-form">
-						Форма
+					<div class="article-liked__add">
+						<div class="article-liked__caption">Оставьте свой комментарий:</div>
+						<form action="#" method="post" data-ajax class="article-liked__form article-form">
+							<label class="article-form__item field">
+								<input type="text" class="field__input" placeholder=" ">
+								<span class="field__label field__label--inside">Имя</span>
+							</label>
+							<label class="article-form__item field">
+								<textarea class="field__textarea" placeholder=" "></textarea>
+								<span class="field__label field__label--outside">Ваше сообщение</span>
+							</label>
+							<label class="article-form__checkbox custom-checkbox">
+								<input class="custom-checkbox__input" type="checkbox" checked>
+								<span class="custom-checkbox__label">
+									Я согласен(а) на <a href="#">обработку персональных данных</a>
+								</span>
+							</label>
+							<div class="article-form__button">
+								<button type="submit" class="button button--blue">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="article__faq article-faq">
+				<div class="__container">
+					<div class="article-faq__caption">Часто задаваемые вопросы</div>
+					<div class="evil-accordion article-faq__accordion">
+						<div class="evil-accordion__item">
+							<div class="evil-accordion__title">Существует ли ФИНАНСОВАЯ ответственность Вашей компании за нарушение условий предоставления услуг? Прописана ли она в договоре?</div>
+							<div class="evil-accordion__body">
+								<div class="evil-accordion__content">
+									<p>
+										Крайне важная часть договора, которая определяет ответственность Исполнителя за нарушение условий и сроков предоставления услуг.
+									</p>
+									<p>
+										Помните, при возникновении спорных ситуаций, имеет значение лишь то, что прописано в договоре! Не дайте себя убедить в обратном!
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="evil-accordion__item">
+							<div class="evil-accordion__title">Мы нашли предложение дешевле. Дадите скидку?</div>
+							<div class="evil-accordion__body">
+								<div class="evil-accordion__content">
+									<p>
+										Крайне важная часть договора, которая определяет ответственность Исполнителя за нарушение условий и сроков предоставления услуг.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="evil-accordion__item">
+							<div class="evil-accordion__title">Если мы не обращается за технической поддержкой, то нужно ли за неё платить?</div>
+							<div class="evil-accordion__body">
+								<div class="evil-accordion__content">
+									<p>
+										Крайне важная часть договора, которая определяет ответственность Исполнителя за нарушение условий и сроков предоставления услуг.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="evil-accordion__item">
+							<div class="evil-accordion__title">Что будет если сломается принтер и срочно надо будет распечатать важный договор для клиента?</div>
+							<div class="evil-accordion__body">
+								<div class="evil-accordion__content">
+									<p>
+										Крайне важная часть договора, которая определяет ответственность Исполнителя за нарушение условий и сроков предоставления услуг.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="evil-accordion__item">
+							<div class="evil-accordion__title">При открытии нового офиса как будет происходить ИТ-аутсорсинг?</div>
+							<div class="evil-accordion__body">
+								<div class="evil-accordion__content">
+									<p>
+										Крайне важная часть договора, которая определяет ответственность Исполнителя за нарушение условий и сроков предоставления услуг.
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -444,23 +583,121 @@
 							экспертами по ИТ-аутсорсингу и получите поддержку по любым техническим вопросам и задачам
 						</div>
 						<div class="article-consultation__button">
-							<button class="button button--blue">Оставить заявку</button>
+							<button class="button button--blue" data-feedback>Оставить заявку</button>
 						</div>
 					</div>
-					<div class="article-consultation__picture">
-						<picture><source srcset="img/article/article-consultation.webp" type="image/webp"><img src="img/article/article-consultation.jpg" alt="Проконсультируйтесь с экспертами по ИТ-аутсорсингу" class="article-consultation__image"></picture>
+					<div class="article-consultation__right">
+						<div class="article-consultation__picture">
+							<picture><source srcset="img/article/article-consultation.webp" type="image/webp"><img src="img/article/article-consultation.jpg" alt="Проконсультируйтесь с экспертами по ИТ-аутсорсингу" class="article-consultation__image"></picture>
+							<div class="article-consultation__profile">
+								<div class="article-consultation__name">Алексей Кудрявцев</div>
+								<div class="article-consultation__position">Специалист технической поддержки</div>
+								<ul class="article-consultation__list">
+									<li class="article-consultation__skill">Опыт работы 10 лет</li>
+									<li class="article-consultation__skill">Образование?</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
-			<section class="article__cases">
-
+			<section class="article__cases article-cases items-cases">
+				<div class="items-cases__container">
+					<div class="article-cases__caption">
+						<div class="article-cases__title">Наши кейсы по IT аутсорсингу</div>
+						<a href="#" class="article-cases__link">Смотреть все кейсы</a>
+					</div>
+					<div class="items-cases__body">
+						<div class="items-cases__item item-itemsCases">
+							<a href="#" class="item-itemsCases__image">
+								<picture><source srcset="img/cases/ourcases.webp" type="image/webp"><img src="img/cases/ourcases.png" alt="image"></picture>
+								<div class="item-itemsCases__company">ООО «Компани продакшн»</div>
+							</a>
+							<a href="#" class="item-itemsCases__name">Инвентаризация оборудования рабочих станций</a>
+							<div class="item-itemsCases__text">
+								На этом этапе мы собираем данные о технических характеристиках рабочих станций. Проверяем состояние
+								дисковой системы рабочих станций и соответствие характеристик назначению оборудования.
+							</div>
+						</div>
+						<div class="items-cases__item item-itemsCases">
+							<a href="#" class="item-itemsCases__image">
+								<picture><source srcset="img/cases/ourcases.webp" type="image/webp"><img src="img/cases/ourcases.png" alt="image"></picture>
+								<div class="item-itemsCases__company">ООО «Компани продакшн»</div>
+							</a>
+							<a href="#" class="item-itemsCases__name">Ремонт телевизоров и мониторов</a>
+							<div class="item-itemsCases__text">
+								На этом этапе мы собираем данные о технических характеристиках рабочих станций. Проверяем состояние
+								дисковой системы рабочих станций и соответствие характеристик назначению оборудования.
+							</div>
+						</div>
+						<div class="items-cases__item item-itemsCases">
+							<a href="#" class="item-itemsCases__image">
+								<picture><source srcset="img/cases/ourcases.webp" type="image/webp"><img src="img/cases/ourcases.png" alt="image"></picture>
+								<div class="item-itemsCases__company">ООО «Компани продакшн»</div>
+							</a>
+							<a href="#" class="item-itemsCases__name">Настройка IP телефонии и ATC</a>
+							<div class="item-itemsCases__text">
+								На этом этапе мы собираем данные о технических характеристиках рабочих станций. Проверяем состояние
+								дисковой системы рабочих станций и соответствие характеристик назначению оборудования.
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section class="article__slider article-slider">
-				<div class="article-slider__left">
-
-				</div>
-				<div class="article-slider__right">
-
+				<div class="article-slider__container">
+					<div class="article-slider__left">
+						<div class="article-slider__carousel">
+							<div class="swiper js-article-slider__left">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="article-slider__caption">Факт дня</div>
+										<div class="article-slider__description">
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="article-slider__caption">Факт дня 2</div>
+										<div class="article-slider__description">
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="article-slider__caption">Факт дня 3</div>
+										<div class="article-slider__description">
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+											В России действует около сотни ГИС (государственных информационных систем) федерального и регионального значения.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="article-slider__control">
+								<svg class="article-slider__arrow article-slider__arrow--prev">
+									<use xlink:href="img/article/sprite.svg#article-slider-arrow"></use>
+								</svg>
+								<div class="article-slider__pagination"></div>
+								<svg class="article-slider__arrow article-slider__arrow--next">
+									<use xlink:href="img/icons/sprite.svg#article-slider-arrow"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="article-slider__right">
+						<div class="article-slider__gallery">
+							<div class="swiper js-article-slider__right">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide article-slider__image" style="background-image: url('img/article/slider.jpg')"></div>
+									<div class="swiper-slide article-slider__image" style="background-image: url('img/article/interesting-1.jpg')"></div>
+									<div class="swiper-slide article-slider__image" style="background-image: url('img/article/interesting-2.jpg')"></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -525,6 +762,8 @@
 			</div>
 		</footer>
 	</div>
+	<div></div>
+
 	<!-- <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
@@ -535,7 +774,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app_after.min.js?_v=20220520200852"></script>
+	<script src="js/app_after.min.js?_v=20220521185010"></script>
 </body>
 
 </html>

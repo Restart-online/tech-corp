@@ -1,0 +1,52 @@
+.field {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  @include field();
+  color: $gray;
+}
+
+.field__input,
+.field__textarea {
+  width: 100%;
+  @include field();
+  text-transform: none;
+  outline: none;
+}
+
+.field__input {
+  padding: 15px 0 12px;
+  border-bottom: rem(1) solid rgba($gray, .5);
+}
+
+.field__textarea {
+  height: rem(274);
+  padding: 12px;
+  border: rem(1) solid rgba($gray, .5);
+  resize: none;
+}
+
+.field__label {
+
+}
+
+.field__label--inside {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: top .3s;
+}
+
+.field__input:focus,
+.field__input:not(:placeholder-shown),
+.field__input:-webkit-autofill {
+  & ~ .field__label--inside {
+    top: 0;
+  }
+}
+
+.field__label--outside {
+  padding: 15px 0 12px;
+}

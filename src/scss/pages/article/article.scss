@@ -1,13 +1,21 @@
-.article {
-
-}
-
 .article__header {
-  margin-left: calc((100% - #{$maxWidthContainer}px) / 2);
+  margin-left: calc((100% - rem($maxWidthContainer)) / 2);
 
   @media (max-width: $pc) {
     margin-left: 0;
   }
+}
+
+.article__comments {
+  @include adaptiveValue("margin-top", 96, 60);
+}
+
+.article__liked {
+  @include adaptiveValue("margin-top", 94, 60);
+}
+
+.article__faq {
+  @include adaptiveValue("margin-top", 230, 60);
 }
 
 .article__consultation {
@@ -15,5 +23,6 @@
 }
 
 .article__slider {
+  @include adaptiveValue("margin-top", 210, 60);
   @include adaptiveValue("margin-bottom", 210, 60);
 }

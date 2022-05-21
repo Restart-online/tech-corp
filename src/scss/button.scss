@@ -17,6 +17,10 @@
   background-color: transparent;
   border: rem(1) solid transparent;
   transition: background-color .3s, border .3s;
+
+  @media (max-width: $mobileSmall) {
+    width: 100%;
+  }
 }
 
 .button--blue {

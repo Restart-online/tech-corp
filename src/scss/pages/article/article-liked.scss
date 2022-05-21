@@ -1,0 +1,74 @@
+.article-liked {
+
+}
+
+.article-liked__title {
+  @include h2();
+}
+
+.article-liked__actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: rem($col2);
+  margin-top: rem(40);
+}
+
+.article-liked__subtitle {
+  @include text();
+  margin-bottom: rem(20);
+}
+
+.article-liked__rates {
+  display: flex;
+}
+
+.article-liked__label {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-right: rem(26);
+  }
+}
+
+.article-liked__rate {
+  width: rem(40);
+  height: rem(40);
+  color: #878787;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.article-liked__rate:hover,
+.article-liked__input:checked ~ .article-liked__rate {
+  color: $blueMain;
+}
+
+.article-liked__rate--dislike {
+  transform: rotate(180deg);
+}
+
+.article-liked__icon {
+  width: rem(42);
+  height: rem(42);
+  color: $blueMain;
+  transition: color .3s;
+
+  &:hover {
+    color: darken($blueMain, 10%);
+  }
+}
+
+.article-liked__add {
+  margin-top: rem(45);
+}
+
+.article-liked__caption {
+  @include titles15();
+}
+
+.article-liked__form {
+  width: 100%;
+  max-width: rem($col3);
+  margin-top: rem(30);
+}

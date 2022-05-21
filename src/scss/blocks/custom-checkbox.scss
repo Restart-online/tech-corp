@@ -1,0 +1,38 @@
+.custom-checkbox {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.custom-checkbox__input {
+  min-width: rem(20);
+  width: rem(20);
+  height: rem(20);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: rem(1) solid $grayDark;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14 0.702843L4.7828 10L0 5.17571L0.696799 4.47287L4.7828 8.59431L13.3032 0L14 0.702843Z' fill='%2323252B'/%3E%3C/svg%3E");
+    background-size: 14px 10px;
+  }
+}
+
+.custom-checkbox__label {
+  margin-left: rem(10);
+  @include checkbox();
+  color: $grayDark;
+}
+
+.custom-checkbox__label a {
+  font-weight: 500;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
