@@ -28,6 +28,7 @@
 }
 
 .interesting__caption {
+  display: inline-flex;
   @include titles15();
   color: $blueMain;
 
@@ -50,7 +51,7 @@
   padding-bottom: rem(2);
   @include link();
   color: $blueMain;
-  border-bottom: 1px solid currentColor;
+  border-bottom: rem(1) solid currentColor;
   transition: border-bottom-color .3s;
 
   &:hover {

@@ -1,0 +1,62 @@
+.tariff {
+  background-color: #F8F8F9;
+  border: rem(1) solid transparent;
+  transition: border-color .3s;
+}
+
+.tariff:hover,
+.tariff--selected {
+  background-color: transparent;
+  border-color: $blueMain;
+}
+
+.tariff__content {
+  padding: rem(25) rem(25) rem(45);
+}
+
+.tariff__header {
+  display: flex;
+  justify-content: space-between;
+  @include titles15();
+  color: $blueMain;
+}
+
+.tariff__name {
+  text-transform: uppercase;
+}
+
+.tariff__description {
+  margin-top: rem(30);
+}
+
+.tariff__option {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: rem(12);
+  line-height: 1.5;
+}
+
+.tariff__option + .tariff__option {
+  margin-top: 10px;
+}
+
+.tariff__label {
+  color: $grayDark;
+}
+
+.tariff__value {
+  color: $blueMain;
+}
+
+.tariff__button {
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.tariff:hover .tariff__button,
+.tariff--selected .tariff__button {
+  opacity: 1;
+  visibility: visible;
+}

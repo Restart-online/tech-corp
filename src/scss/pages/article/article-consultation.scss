@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: rem(24);
+  grid-gap: rem(24);
 
   @media (max-width: $mobile) {
     flex-direction: column-reverse;
@@ -65,15 +65,15 @@
 .article-consultation__skill::before {
   content: '';
   display: inline-block;
-  min-width: 4px;
-  width: 4px;
-  height: 4px;
+  min-width: rem(4);
+  width: rem(4);
+  height: rem(4);
   background-color: currentColor;
-  margin-right: 8px;
+  margin-right: rem(8);
   border-radius: 50%;
   vertical-align: middle;
 }
 
 .article-consultation__skill + .article-consultation__skill {
-  margin-top: 4px;
+  margin-top: rem(4);
 }

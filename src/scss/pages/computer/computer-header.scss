@@ -1,0 +1,77 @@
+$bgDarkGray: #111;
+
+.computer-header {
+  display: flex;
+  min-height: 100vh;
+  background-color: $bgDarkGray;
+  color: $white;
+
+  &::after {
+    content: '';
+    display: block;
+    width: calc((100% - rem($maxWidthContainer)));
+    background-image: url(../img/computer/computer-header.jpg);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.computer-header__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col4) + rem($colGap));
+  background-color: $bgDarkGray;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  padding-left: calc((100% - rem($maxWidthContainer)) / 2);
+}
+
+.computer-header__caption {
+  margin-bottom: rem(38);
+  @include h1();
+}
+
+.computer-header__list {
+  margin-bottom: rem(38);
+  @include text();
+  line-height: 1.87;
+}
+
+.computer-header__item {
+  display: block;
+
+  &:not(:first-child) {
+    margin-top: rem(1);
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    min-width: 6px;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    margin-right: rem(13);
+    vertical-align: middle;
+  }
+}
+
+.computer-header__bottom {
+  display: flex;
+}
+
+.computer-header__consultation {
+  width: 100%;
+  max-width: 172px;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: rem(12);
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.computer-header__button {
+  padding: rem(15) rem(27);
+}

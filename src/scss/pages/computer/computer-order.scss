@@ -1,0 +1,41 @@
+.computer-order__container {
+  display: grid;
+  grid-template-columns: rem($col2) rem($col4);
+  grid-gap: rem($colGap);
+}
+
+.computer-order__sidebar {
+  width: 100%;
+}
+
+.computer-order__caption {
+  @include h2();
+}
+
+.computer-order__description {
+  font-weight: 500;
+  font-size: rem(12);
+  line-height: 1.5;
+  color: #878787;
+
+  &:not(:empty) {
+    margin-top: rem(40);
+  }
+}
+
+.computer-order__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: rem($colGap);
+}
+
+.computer-order__title {
+  @include h3();
+  color: $blueMain;
+}
+
+
+.computer-order__text {
+  margin-top: rem(20);
+  @include text();
+}

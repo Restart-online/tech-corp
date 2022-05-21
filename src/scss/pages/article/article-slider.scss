@@ -42,7 +42,7 @@
 
 .article-slider__right {
   display: flex;
-  width: calc((100% - rem($maxWidthContainer)) / 2 + 570);
+  width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col3));
 
   @media (max-width: $tablet) {
     display: none;

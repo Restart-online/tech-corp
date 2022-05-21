@@ -1,0 +1,100 @@
+.computer-tariff__caption {
+  @include adaptiveValue("margin-bottom", 86, 40);
+  @include h2();
+}
+
+.computer-tariff__block {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8F8F9;
+  padding: rem(80) rem(70) rem(96);
+}
+
+.computer-tariff__slider {
+  width: 45.12%;
+}
+
+.computer-tariff__subtitle {
+  margin-bottom: rem(110);
+  @include h3();
+}
+
+/* -- Range -- */
+.computer-tariff__range {
+  .noUi-connects {
+    border-radius: unset;
+  }
+
+  .noUi-connect {
+    background: $blueMain;
+  }
+
+  &.noUi-horizontal {
+    height: rem(2);
+
+    .noUi-handle {
+      right: 0;
+      top: 1px;
+      width: 24px;
+      height: 24px;
+      background: $blueMain;
+      border: unset;
+      border-radius: 50%;
+      box-shadow: 0 4px 7px rgba($blueMain, .34);
+      transform: translate(50%, -50%);
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    .noUi-tooltip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: $white;
+      @include text();
+      color: $blueMain;
+      border: unset;
+      border-radius: unset;
+      box-shadow: 0 4px 6px rgb(81 81 81 / 12%);
+    }
+  }
+
+  &.noUi-target {
+    background: #EFEFEF;
+    border-radius: unset;
+    border: unset;
+    box-shadow: unset;
+  }
+
+  .noUi-pips-horizontal {
+    padding: 10px 0 0;
+    height: 30px;
+  }
+
+  .noUi-marker-horizontal.noUi-marker {
+    display: none;
+  }
+
+  .noUi-value-horizontal {
+    @include text();
+    color: $blueMain;
+    transform: translateX(0);
+  }
+
+  .noUi-value-horizontal:last-child {
+    transform: translateX(-100%);
+  }
+}
+
+.computer-tariff__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: rem($colGap);
+  margin-top: rem(60);
+}

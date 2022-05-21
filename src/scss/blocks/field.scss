@@ -7,28 +7,43 @@
   color: $gray;
 }
 
+.field--white {
+  color: $white;
+}
+
 .field__input,
 .field__textarea {
   width: 100%;
+  background: transparent;
   @include field();
+  color: $gray;
   text-transform: none;
   outline: none;
 }
 
+.field--white .field__input,
+.field--white .field__textarea {
+  color: $white;
+}
+
 .field__input {
-  padding: 15px 0 12px;
+  padding: rem(15) 0 rem(12);
   border-bottom: rem(1) solid rgba($gray, .5);
+}
+
+.field--white .field__input {
+  border-bottom-color: $white;
 }
 
 .field__textarea {
   height: rem(274);
-  padding: 12px;
+  padding: rem(12);
   border: rem(1) solid rgba($gray, .5);
   resize: none;
 }
 
-.field__label {
-
+.field--white .field__textarea {
+  border-color: $white;
 }
 
 .field__label--inside {
@@ -48,5 +63,5 @@
 }
 
 .field__label--outside {
-  padding: 15px 0 12px;
+  padding: rem(15) 0 rem(12);
 }

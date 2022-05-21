@@ -1,0 +1,69 @@
+.computer-includes {
+  position: relative;
+  @include adaptiveValue("padding-top", 96, 60);
+  @include adaptiveValue("padding-bottom", 80, 60);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc((100% - 1200px) / 2 + 360px + 60px + 48px);
+    height: 100%;
+    background-color: $grayLight;
+    z-index: -1;
+  }
+}
+
+.computer-includes__container {
+  display: grid;
+  grid-template-columns: rem($col2) rem($col4);
+  grid-gap: rem($colGap);
+}
+
+.computer-includes__sidebar {
+  @include h3();
+}
+
+.computer-includes__content {
+
+}
+
+.computer-includes__caption {
+  margin-bottom: rem(44);
+  @include h2();
+}
+
+.computer-includes__list {
+  @include text();
+}
+
+.computer-includes__item {
+  counter-increment: includes;
+  display: flex;
+  color: rgba($grayDark, .8);
+  padding: rem(30) rem(16) rem(30) 0;
+  border-bottom: rem(1) solid #EBEBEB;
+
+  &:first-child {
+    border-top: rem(1) solid #EBEBEB;
+  }
+
+  &::before {
+    content: counter(includes);
+    min-width: rem(48);
+    width: rem(48);
+    margin-right: rem(20);
+    @include titles15();
+    color: $blueMain;
+
+    @media (max-width: $mobile) {
+      min-width: rem(24);
+      width: rem(24);
+    }
+  }
+
+  &:nth-child(-n+9)::before {
+    content: '0' counter(includes);
+  }
+}

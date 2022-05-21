@@ -4,13 +4,235 @@
 "title":"Абонентское обслуживание компьютеров"
 })
 <body>
-<div class="wrapper wrapper_lightheader">
-  @@include('html/_header.htm',{
-  "light": "header_light"
-  })
-  <main class="page computer">
+<div class="wrapper">
+  @@include('html/_header.htm')
+  <main class="computer">
     <section class="computer__header computer-header">
-
+      <div class="computer-header__wrapper">
+        <div class="computer-header__caption">
+          Абонентское обслуживание&nbsp;компьютеров
+        </div>
+        <ul class="computer-header__list">
+          <li class="computer-header__item">Бесплатный выезд и доставка оборудования</li>
+          <li class="computer-header__item">Более 45 услуг, которые помогут качественно решить любую проблему</li>
+          <li class="computer-header__item">Ремонт техники с 20% дисконтом от рыночных цен</li>
+        </ul>
+        <div class="computer-header__bottom">
+          <div class="computer-header__consultation">Получите бесплатную консультацию</div>
+          <div class="button button--blue computer-header__button">Оставить заявку</div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__includes computer-includes">
+      <div class="computer-includes__container">
+        <div class="computer-includes__sidebar">
+          Что включает в себя абонентское обслуживание компьютерной техники
+        </div>
+        <div class="computer-includes__content">
+          <div class="computer-includes__caption">
+            В рамках комплексного подхода, который предлагаем мы, будут решаться следующие задачи:
+          </div>
+          <div class="computer-includes__list">
+            <div class="computer-includes__item">
+              Аудит действующей архитектуры вашей сети, серверного и компьютерного оборудования.
+            </div>
+            <div class="computer-includes__item">
+              Подготовка предложений по оптимизации отдельных компонентов, а также ИТ-инфраструктуры в целом.
+            </div>
+            <div class="computer-includes__item">
+              Реализация предложенных и согласованных с клиентом мер по повышению отказоустойчивости и быстродействия сети и ключевых узлов.
+            </div>
+            <div class="computer-includes__item">
+              Быстрое решение возникающих проблем – начиная от простой поломки ПК и заканчивая сложными настройками серверов или межсетевых экранов.
+            </div>
+            <div class="computer-includes__item">
+              Помощь во внедрении современных и эффективных ИТ-сервисов, в том числе с обучением персонала заказчика.
+            </div>
+            <div class="computer-includes__item">
+              Ремонт (гарантийный и постгарантийный) всех видов оборудования.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__tariff computer-tariff">
+      <div class="computer-tariff__container">
+        <div class="computer-tariff__caption">Тарифы на обслуживание ПК в Москве</div>
+        <div class="computer-tariff__block">
+          <div class="computer-tariff__slider">
+            <div class="computer-tariff__subtitle">Количество компьютеров</div>
+            <input type="hidden" class="computer-tariff__input computer-tariff__input--computer">
+            <div class="computer-tariff__range computer-tariff__range--computer"></div>
+          </div>
+          <div class="computer-tariff__slider">
+            <div class="computer-tariff__subtitle">Количество серверов</div>
+            <input type="hidden" class="computer-tariff__input computer-tariff__input--server">
+            <div class="computer-tariff__range computer-tariff__range--server"></div>
+          </div>
+        </div>
+        <div class="computer-tariff__list">
+          <div class="tariff tariff--selected">
+            <div class="tariff__content">
+              <div class="tariff__header">
+                <div class="tariff__name">Полный пакет</div>
+                <div class="tariff__price">17 000 &#8381; / мес.</div>
+              </div>
+              <div class="tariff__description">
+                <div class="tariff__option">
+                  <span class="tariff__label">Профилактических выездов</span>
+                  <span class="tariff__value">2</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Экстренных выездов</span>
+                  <span class="tariff__value">неограниченно</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Время приезда (часов)</span>
+                  <span class="tariff__value">1</span>
+                </div>
+              </div>
+            </div>
+            <div class="tariff__button">
+              <div class="button button--blue button--block">Забронировать</div>
+            </div>
+          </div>
+          <div class="tariff">
+            <div class="tariff__content">
+              <div class="tariff__header">
+                <div class="tariff__name">Пакет 1</div>
+                <div class="tariff__price">14 000 &#8381; / мес.</div>
+              </div>
+              <div class="tariff__description">
+                <div class="tariff__option">
+                  <span class="tariff__label">Профилактических выездов</span>
+                  <span class="tariff__value">3</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Экстренных выездов</span>
+                  <span class="tariff__value">1</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Время приезда (часов)</span>
+                  <span class="tariff__value">3</span>
+                </div>
+              </div>
+            </div>
+            <div class="tariff__button">
+              <div class="button button--blue button--block">Забронировать</div>
+            </div>
+          </div>
+          <div class="tariff">
+            <div class="tariff__content">
+              <div class="tariff__header">
+                <div class="tariff__name">Пакет 1</div>
+                <div class="tariff__price">14 000 &#8381; / мес.</div>
+              </div>
+              <div class="tariff__description">
+                <div class="tariff__option">
+                  <span class="tariff__label">Профилактических выездов</span>
+                  <span class="tariff__value">6</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Экстренных выездов</span>
+                  <span class="tariff__value">2</span>
+                </div>
+                <div class="tariff__option">
+                  <span class="tariff__label">Время приезда (часов)</span>
+                  <span class="tariff__value">3</span>
+                </div>
+              </div>
+            </div>
+            <div class="tariff__button">
+              <div class="button button--blue button--block">Забронировать</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__order computer-order">
+      <div class="computer-order__container">
+        <div class="computer-order__sidebar">
+          <div class="computer-order__caption">Порядок оказания услуги</div>
+          <div class="computer-order__description">
+            Мы используем индивидуальный подход к каждому продукту. Это позволяет нам добиваться высоких результатов и качества.
+          </div>
+        </div>
+        <div class="computer-order__content">
+          <div class="computer-order__item">
+            <div class="computer-order__title">1. Сбор и анализ данных</div>
+            <div class="computer-order__text">
+              Данный документ описывает основные этапы типового проекта по модернизации ИТ инфраструктуры. Мы прекрасно
+              понимаем, что любой бизнес сам по себе уникален и данный проект, как правило, берется за основу и
+              дорабатывается под каждого клиента индивидуально.
+            </div>
+          </div>
+          <div class="computer-order__item">
+            <div class="computer-order__title">2. Инвентаризация серверного оборудования</div>
+            <div class="computer-order__text">
+              На этом этапе мы собираем данные о серверах клиента. Прежде всего это технические характеристики серверов,
+              место их расположения, обеспечения бесперебойного питания. Проверяем состояние дисковой системы серверов.
+            </div>
+          </div>
+          <div class="computer-order__item">
+            <div class="computer-order__title">3. Инвентаризация оборудования рабочих станций</div>
+            <div class="computer-order__text">
+              На этом этапе мы собираем данные о технических характеристиках рабочих станций. Проверяем состояние
+              дисковой системы рабочих станций и соответствие характеристик назначению оборудования.
+            </div>
+          </div>
+          <div class="computer-order__item">
+            <div class="computer-order__title">4. Инвентаризация оргтехники</div>
+            <div class="computer-order__text">
+              На этом этапе мы фиксируем модель оргтехники и способ ее подключения. Отдельным пунктом идет офисная АТС.
+              Помимо модели АТС также фиксируется количество и тип внутренних абонентов и внешних линий.
+            </div>
+          </div>
+          <div class="computer-order__item">
+            <div class="computer-order__title">5. Инвентаризация программного обеспечения</div>
+            <div class="computer-order__text">
+              Как правило, этот этап мы совмещаем с инвентаризацией серверного оборудования и рабочих станций. Мы
+              фиксируем наименование операционной системы, установленной на оборудовании, а также список программного
+              обеспечения, как на серверах, так и на рабочих станциях.
+            </div>
+          </div>
+          <div class="computer-order__item">
+            <div class="computer-order__title">6. Описание ресурсов инфраструктуры</div>
+            <div class="computer-order__text">
+              Под ресурсами ИТ инфраструктуры мы подразумеваем все то, что пользователям необходимо для повседневной
+              работы. Например: почта, базы данных, общие файловые ресурсы, интернет, и т.д. Мы на этом этапе фиксируем
+              тип ресурса, его расположение, т.е. серверs которые предоставляют данный ресурс.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__questions computer-questions">
+      <div class="computer-questions__left">
+        <div class="computer-questions__caption">Остались вопросы?</div>
+        <div class="computer-questions__description">Закажите звонок специалиста</div>
+      </div>
+      <div class="computer-questions__right">
+        <div class="computer-questions__title">Оставьте свои данные и мы вам перезвоним</div>
+        <form action="#" method="post" data-ajax class="computer-questions__form computer-form">
+          <label class="computer-form__item field field--white">
+            <input type="text" class="field__input" placeholder=" ">
+            <span class="field__label field__label--inside">Имя</span>
+          </label>
+          <label class="computer-form__item field field--white">
+            <input type="tel" class="field__input" placeholder=" ">
+            <span class="field__label field__label--inside">Телефон</span>
+          </label>
+          <label class="computer-form__checkbox custom-checkbox">
+            <input class="custom-checkbox__input custom-checkbox__input--white" type="checkbox" checked>
+            <span class="custom-checkbox__label">
+                Я согласен(а) на <a href="#">обработку персональных данных</a>
+              </span>
+          </label>
+          <div class="computer-form__button">
+            <button type="submit" class="button button--white">Оставить заявку</button>
+          </div>
+        </form>
+      </div>
     </section>
     <section class="computer__service computer-service">
       <div class="computer-service__container">
@@ -61,50 +283,34 @@
         </div>
       </div>
     </section>
-    <section>
-
-      <div class="interesting__list">
-        <div class="interesting__item">
-            <span class="interesting__picture">
-              <img src="@img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?"
-                   class="interesting__image">
-              <span class="interesting__date">15.09.2021</span>
-            </span>
-          <span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-          <span class="interesting__description">
-              Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-            </span>
-          <a href="#" class="interesting__link">
-            Читать
-          </a>
+    <section class="computer__useful computer-useful">
+      <div class="computer-useful__container">
+        <div class="computer-useful__caption">
+          <div class="computer-useful__title">Вам может быть полезно</div>
+          <a href="#" class="computer-useful__link">читать все статьи</a>
         </div>
-        <div class="interesting__item">
-            <span class="interesting__picture">
-              <img src="@img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?"
-                   class="interesting__image">
-              <span class="interesting__date">15.09.2021</span>
-            </span>
-          <span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-          <span class="interesting__description">
-              Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-            </span>
-          <a href="#" class="interesting__link">
-            Читать
-          </a>
-        </div>
-        <div class="interesting__item">
-            <span class="interesting__picture">
-              <img src="@img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?"
-                   class="interesting__image">
-              <span class="interesting__date">15.09.2021</span>
-            </span>
-          <span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
-          <span class="interesting__description">
-              Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-            </span>
-          <a href="#" class="interesting__link">
-            Читать
-          </a>
+        <div class="computer-useful__list">
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">IT Аудит безопасности</a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">
+              Подбор и разработка ИТ-решений для оптимизации и цифровизации бизнес-процессов
+            </a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+            <span class="interesting__date">15.09.2021</span>
+          </span>
+            <a href="#" class="interesting__caption">Настройка IP телефонии и АТС</a>
+          </div>
         </div>
       </div>
     </section>

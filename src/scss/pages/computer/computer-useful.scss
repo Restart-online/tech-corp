@@ -1,0 +1,34 @@
+.computer-useful__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-gap: rem(16);
+  @include adaptiveValue("margin-bottom", 65, 30);
+}
+
+.computer-useful__title {
+  @include h2();
+}
+
+.computer-useful__link {
+  @include link();
+  font-weight: 600;
+  color: $blueMain;
+  border-bottom: rem(1) solid currentColor;
+  transition: border-bottom-color .3s;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}
+
+.computer-useful__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem($col2), 1fr));
+  @include adaptiveValue("grid-gap", $colGap, 20);
+
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: 1fr;
+  }
+}
