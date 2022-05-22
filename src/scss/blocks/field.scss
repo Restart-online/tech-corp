@@ -11,6 +11,10 @@
   color: $white;
 }
 
+.field--dark {
+  color: $grayDark;
+}
+
 .field__input,
 .field__textarea {
   width: 100%;
@@ -26,13 +30,14 @@
   color: $white;
 }
 
+.field--dark .field__input,
+.field--dark .field__textarea {
+  color: $grayDark;
+}
+
 .field__input {
   padding: rem(15) 0 rem(12);
   border-bottom: rem(1) solid rgba($gray, .5);
-}
-
-.field--white .field__input {
-  border-bottom-color: $white;
 }
 
 .field__textarea {
@@ -42,8 +47,14 @@
   resize: none;
 }
 
+.field--white .field__input,
 .field--white .field__textarea {
   border-color: $white;
+}
+
+.field--dark .field__input,
+.field--dark .field__textarea {
+  border-color: rgba($grayDark, .5);
 }
 
 .field__label--inside {

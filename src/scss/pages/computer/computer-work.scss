@@ -1,0 +1,87 @@
+.computer-work {
+  position: relative;
+  background-color: #EBEBEB;
+  overflow: hidden;
+}
+
+.computer-work__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.computer-work__logo {
+  position: absolute;
+  left: rem(70);
+  bottom: rem(-237);
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.computer-work__content {
+  position: relative;
+  margin-left: rem($col2);
+  padding-left: rem($col1);
+  padding-top: rem(210);
+  padding-bottom: rem(210);
+  color: $white;
+
+  @media (max-width: $macBook) {
+    padding-top: rem(160);
+    padding-bottom: rem(160);
+  }
+
+  @media (max-width: $pc) {
+    width: calc(100% - (100% - rem($maxWidthContainer)) / 2 - rem($col2));
+    @include adaptiveValue("padding-top", 160, 60);
+    @include adaptiveValue("padding-bottom", 160, 60);
+    padding-left: rem($colGap);
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    margin-left: unset;
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: calc((rem($maxWidthContainer) - 100vw) / 2);
+    bottom: 0;
+    background: $blueMain;
+    z-index: 0;
+
+    @media (max-width: $pc) {
+      right: calc(rem($containerPadding) / -2);
+    }
+
+    @media (max-width: $tablet) {
+      left: calc(rem($containerPadding) / -2);
+    }
+  }
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.computer-work__caption {
+  @include adaptiveValue("margin-bottom", 50, 20);
+  @include h2();
+}
+
+.computer-work__list {
+  column-count: 1;
+}
+
+.computer-work__item {
+  & + & {
+    margin-top: rem(30);
+  }
+}
