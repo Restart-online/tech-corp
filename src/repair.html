@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Ремонт и обслуживание компьютерной техники"
+})
+<body>
+<div class="wrapper">
+  @@include('html/_header.htm')
+  <main class="computer">
+    <section class="computer__header computer-header">
+      <div class="computer-header__wrapper">
+        <div class="computer-header__caption">
+          Ремонт и обслуживание компьютерной техники
+        </div>
+        <ul class="computer-header__list">
+          <li class="computer-header__item">Бесплатный выезд и доставка оборудования</li>
+          <li class="computer-header__item">Более 45 услуг, которые помогут качественно решить любую проблему</li>
+          <li class="computer-header__item">Ремонт техники с 20% дисконтом от рыночных цен</li>
+        </ul>
+        <div class="computer-header__bottom">
+          <div class="computer-header__consultation">Получите бесплатную консультацию</div>
+          <div class="button button--blue computer-header__button">Оставить заявку</div>
+        </div>
+      </div>
+      <div class="computer-header__background">
+        <img src="@img/repair/repair-header.jpg" alt="Ремонт и обслуживание компьютерной техники" class="computer-header__picture">
+      </div>
+    </section>
+    <section class="computer__activity computer-activity">
+      <div class="computer-activity__container">
+        <div class="computer-activity__picture">
+          <img src="@img/repair/computer-activity.jpg" alt="Cоздание оптимальных условий для функционирования компьютеров и локальных сетей" class="computer-activity__image">
+        </div>
+        <div class="computer-activity__content">
+          <div class="computer-activity__caption">
+            В основе нашей деятельности лежит создание оптимальных условий для функционирования компьютеров и локальных сетей
+          </div>
+          <div class="computer-activity__description">
+            <p>
+              Профессиональное обслуживание компьютеров от компании «ЛанСерв» – это комплексный IT-аутсорсинг,
+              направленный на решение и предупреждение проблем с техникой и программным обеспечением.
+            </p>
+            <p>
+              Обратившись к нашим услугам, вы получаете в распоряжение опытных специалистов, готовых поддерживать и
+              развивать информационную инфраструктуру вашего предприятия с гарантией его безопасной и стабильной
+              работы.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__work computer-work">
+      <div class="computer-work__container">
+        <div class="computer-work__logo">
+          <img src="@img/repair/computer-logo.png" alt="Логотип" class="computer-work__image">
+        </div>
+        <div class="computer-work__content computer-service">
+          <div class="computer-work__caption">Какие услуги входят в&nbsp;обслуживание</div>
+          <div class="computer-work__list computer-service__list">
+            <div class="computer-service__item computer-service__item--light">Проверка лицензирования ПО</div>
+            <div class="computer-service__item computer-service__item--light">Резервное копирование и восстановление данных</div>
+            <div class="computer-service__item computer-service__item--light">Устранение неполадок, замена комплектующих, модернизация компьютеров, компонентный ремонт</div>
+            <div class="computer-service__item computer-service__item--light">Абонентское обслуживание компьютеров</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="computer__feedback computer-feedback">
+      <div class="computer-feedback__container">
+        <div class="computer-feedback__left">
+          <div class="computer-feedback__caption">Не нашли нужные услуги?</div>
+          <div class="computer-feedback__description">
+            Тарифы на остальные услуги вы можете узнать, позвонив по номеру телефона 8 800 8000 00 или оставив заявку
+          </div>
+        </div>
+        <div class="computer-feedback__form">
+          <div class="computer-feedback__title">Оставьте свои данные и мы вам перезвоним</div>
+          <form action="#" method="post" data-ajax="" class="computer-feedback__form computer-form">
+            <label class="computer-form__item field field--dark">
+              <input type="text" class="field__input" data-required="" inputmode="text" placeholder=" " data-placeholder=" ">
+              <span class="field__label field__label--inside">Имя</span>
+            </label>
+            <label class="computer-form__item field field--dark">
+              <input type="tel" class="field__input" data-required="" data-inputmask-clearincomplete="true" data-inputmask="'mask':'+7 (999) 999 99 99'" inputmode="text" placeholder=" " data-placeholder=" ">
+              <span class="field__label field__label--inside">Телефон</span>
+            </label>
+            <label class="computer-form__checkbox custom-checkbox">
+              <input class="custom-checkbox__input" type="checkbox" data-required="" checked="">
+              <span class="custom-checkbox__label">
+								Я согласен(а) на <a href="#">обработку персональных данных</a>
+							</span>
+            </label>
+            <div class="computer-form__button">
+              <button type="submit" class="button button--blue">Оставить заявку</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="computer__useful computer-useful">
+      <div class="computer-useful__container">
+        <div class="computer-useful__caption">
+          <div class="computer-useful__title">Вам может быть полезно</div>
+          <a href="#" class="computer-useful__link">читать все статьи</a>
+        </div>
+        <div class="computer-useful__list">
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">IT Аудит безопасности</a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">
+              Подбор и разработка ИТ-решений для оптимизации и цифровизации бизнес-процессов
+            </a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+            <span class="interesting__date">15.09.2021</span>
+          </span>
+            <a href="#" class="interesting__caption">Настройка IP телефонии и АТС</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  @@include('html/_footer.htm',{})
+</div>
+@@include('html/_modal.htm',{})
+@@include('html/_popup.htm',{})
+@@include('html/_js.htm',{})
+</body>
+</html>

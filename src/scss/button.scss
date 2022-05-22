@@ -16,7 +16,15 @@
   user-select: none;
   background-color: transparent;
   border: rem(1) solid transparent;
-  transition: background-color .3s, border .3s;
+  transition: background-color .3s, border .3s, color .3s;
+
+  @media (max-width: $mobileSmall) {
+    width: 100%;
+  }
+}
+
+.button--block {
+  width: 100%;
 }
 
 .button--blue {
@@ -26,5 +34,16 @@
   &:focus {
     background-color: darken($blueMain, 10%);
     border-color: darken($blueMain, 10%);
+  }
+}
+
+.button--white {
+  border-color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $white;
+    color: $black;
   }
 }

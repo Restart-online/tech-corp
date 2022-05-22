@@ -1,0 +1,43 @@
+.computer-feedback__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(30);
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.computer-feedback__left {
+  color: $grayDark;
+}
+
+.computer-feedback__left,
+.computer-feedback__form {
+  width: 100%;
+  max-width: rem($col2 + $colGap);
+
+  @media (max-width: $mobile) {
+    max-width: unset;
+  }
+}
+
+.computer-feedback__caption {
+  @include h2();
+}
+
+.computer-feedback__description {
+  @include text();
+
+  &:not(:empty) {
+    margin-top: rem(30);
+  }
+}
+
+.computer-feedback__title {
+  width: 100%;
+  max-width: rem(260);
+  margin-bottom: rem(28);
+  @include h3();
+}

@@ -1,0 +1,88 @@
+@use "sass:math";
+
+.computer-questions {
+  position: relative;
+  display: flex;
+  min-height: rem(700);
+  background-color: $black;
+  color: $white;
+
+  @media (max-width: $pc) {
+    min-height: rem(500);
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    min-height: unset;
+    padding: rem($colGap) rem(math.div($containerPadding, 2));
+  }
+}
+
+.computer-questions__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(50% - (rem($colGap) / 2));
+  background-image: url("../img/computer/computer-questions.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: calc((100% - rem($maxWidthContainer)) / 2);
+
+  @media (max-width: $pc) {
+    padding: rem(30);
+  }
+
+  @media (max-width: $tablet) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+  }
+}
+
+.computer-questions__caption {
+  @include h2();
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.computer-questions__description {
+  &:not(:empty) {
+    margin-top: rem(30);
+    @include text();
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.computer-questions__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: rem($col3 + $colGap);
+  padding: rem($colGap) 0 rem($colGap) rem($col1 + $colGap);
+
+  @media (max-width: $pc) {
+    padding: rem($colGap);
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+}
+
+.computer-questions__title {
+  width: 100%;
+  max-width: rem(260);
+  margin-bottom: rem(28);
+  @include h3();
+}

@@ -1,0 +1,24 @@
+.article-cases__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-gap: rem(16);
+  @include adaptiveValue("margin-bottom", 86, 30);
+}
+
+.article-cases__title {
+  @include h2();
+}
+
+.article-cases__link {
+  @include link();
+  font-weight: 600;
+  color: $blueMain;
+  border-bottom: rem(1) solid currentColor;
+  transition: border-bottom-color .3s;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}

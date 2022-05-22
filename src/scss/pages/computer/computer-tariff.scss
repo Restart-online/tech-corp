@@ -1,0 +1,131 @@
+@use "sass:math";
+
+.computer-tariff__caption {
+  @include adaptiveValue("margin-bottom", 86, 40);
+  @include h2();
+}
+
+.computer-tariff__block {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8F8F9;
+  padding: rem(80) rem(70) rem(96);
+
+  @media (max-width: $pc) {
+    padding: rem(60) rem(50) rem(80);
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    padding: rem(40) rem(30) rem(60);
+  }
+}
+
+.computer-tariff__slider {
+  width: 45.12%;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+
+    & + & {
+      margin-top: rem($colGap);
+    }
+  }
+}
+
+.computer-tariff__subtitle {
+  margin-bottom: rem(110);
+  @include h3();
+
+  @media (max-width: $tablet) {
+    margin-bottom: rem(90);
+  }
+}
+
+/* -- Range -- */
+.computer-tariff__range {
+  .noUi-connects {
+    border-radius: unset;
+  }
+
+  .noUi-connect {
+    background: $blueMain;
+  }
+
+  &.noUi-horizontal {
+    height: rem(2);
+
+    .noUi-handle {
+      right: 0;
+      top: 1px;
+      width: 24px;
+      height: 24px;
+      background: $blueMain;
+      border: unset;
+      border-radius: 50%;
+      box-shadow: 0 4px 7px rgba($blueMain, .34);
+      transform: translate(50%, -50%);
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    .noUi-tooltip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: $white;
+      @include text();
+      color: $blueMain;
+      border: unset;
+      border-radius: unset;
+      box-shadow: 0 4px 6px rgb(81 81 81 / 12%);
+    }
+  }
+
+  &.noUi-target {
+    background: #EFEFEF;
+    border-radius: unset;
+    border: unset;
+    box-shadow: unset;
+  }
+
+  .noUi-pips-horizontal {
+    padding: 10px 0 0;
+    height: 30px;
+  }
+
+  .noUi-marker-horizontal.noUi-marker {
+    display: none;
+  }
+
+  .noUi-value-horizontal {
+    @include text();
+    color: $blueMain;
+    transform: translateX(0);
+  }
+
+  .noUi-value-horizontal:last-child {
+    transform: translateX(-100%);
+  }
+}
+
+.computer-tariff__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem($col2), 1fr));
+  grid-gap: rem($colGap);
+  margin-top: rem(60);
+
+  @media (max-width: $pc) {
+    @include adaptiveValue("grid-gap", $colGap, math.div($colGap, 2));
+  }
+
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: 1fr;
+  }
+}

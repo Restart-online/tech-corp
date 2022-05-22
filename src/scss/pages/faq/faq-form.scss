@@ -1,0 +1,14 @@
+.faq-form__caption {
+  margin-bottom: rem(20);
+  @include h3();
+}
+
+.faq-form__description {
+  margin-bottom: rem(20);
+  @include text();
+}
+
+.faq-from__checkbox,
+.faq-from__button {
+  margin-top: rem(30);
+}

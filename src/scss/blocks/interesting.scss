@@ -1,0 +1,60 @@
+.interesting {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.interesting__picture {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: rem(350);
+
+  @media (max-width: $mobileSmall) {
+    height: rem(280);
+  }
+}
+
+.interesting__date {
+  position: absolute;
+  bottom: rem(20);
+  right: rem(38);
+  color: $white;
+}
+
+.interesting__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.interesting__caption {
+  display: inline-flex;
+  @include titles15();
+  color: $blueMain;
+
+  &:not(:first-child) {
+    margin-top: rem(25);
+  }
+}
+
+.interesting__description {
+  @include text();
+  color: $grayDark;
+
+  &:not(:empty) {
+    margin-top: rem(15);
+  }
+}
+
+.interesting__link {
+  margin-top: rem(25);
+  padding-bottom: rem(2);
+  @include link();
+  color: $blueMain;
+  border-bottom: rem(1) solid currentColor;
+  transition: border-bottom-color .3s;
+
+  &:hover {
+    border-color: transparent;
+  }
+}

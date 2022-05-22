@@ -1,0 +1,15 @@
+.computer__order,
+.computer__questions,
+.computer__service,
+.computer__feedback,
+.computer__useful {
+  @include adaptiveValue("margin-top", 210, 60);
+}
+
+.computer__tariff {
+  @include adaptiveValue("margin-top", 130, 60);
+}
+
+.computer__useful {
+  @include adaptiveValue("margin-bottom", 210, 60);
+}

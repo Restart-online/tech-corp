@@ -1,0 +1,35 @@
+.comment {
+  background-color: $grayLight;
+  padding: rem(40) rem(25);
+  color: $grayDark;
+
+  @media (max-width: $tablet) {
+    padding: rem(20) rem(10);
+  }
+}
+
+.comment__date {
+  @include text();
+  color: $grayMain;
+
+  &:not(:empty) {
+    margin-bottom: rem(2);
+  }
+}
+
+.comment__name {
+  @include titles15();
+
+  &:not(:empty) {
+    margin-bottom: rem(15);
+  }
+}
+
+.comment__text {
+  @include text();
+  font-weight: 400;
+}
+
+.comment__text * + * {
+  margin-top: rem(20);
+}

@@ -1,0 +1,65 @@
+.computer-activity {
+  position: relative;
+}
+
+.computer-activity__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.computer-activity__picture {
+  width: rem($col2);
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.computer-activity__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col2));
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+
+  @media (max-width: $pc) {
+    width: calc(rem($containerPadding) / 2 + rem($col2));
+  }
+}
+
+.computer-activity__content {
+  width: rem($col3 + 8);
+  padding: rem(238) 0 rem(250);
+
+  @media (max-width: $pc) {
+    width: calc(100% - (100% - rem($maxWidthContainer)) / 2 - rem($col2) - rem($colGap));
+    @include adaptiveValue("padding-top", 160, 60);
+    @include adaptiveValue("padding-bottom", 160, 60);
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
+}
+
+.computer-activity__caption {
+  @include adaptiveValue("margin-bottom", 40, 20);
+  @include h2();
+}
+
+.computer-activity__description {
+  width: 100%;
+  max-width: rem($col3);
+  @include text();
+  color: #636363;
+
+  @media (max-width: $tablet) {
+    max-width: unset;
+  }
+
+  p + p {
+    @include adaptiveValue("margin-top", 20, 10);
+  }
+}

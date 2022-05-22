@@ -1,0 +1,76 @@
+.evil-accordion__item {
+  counter-increment: accordion;
+  padding: rem(20) 0;
+  border-bottom: rem(1) solid $grayish;
+
+  @media (max-width: $mobile) {
+    padding: rem(10) 0;
+  }
+}
+
+.evil-accordion__title {
+  display: flex;
+  padding: rem(20) 0;
+  transition: .5s;
+  cursor: pointer;
+  @include titles15();
+
+  @media (max-width: $mobile) {
+    padding: rem(10) 0;
+  }
+
+  &::before {
+    content: counter(accordion);
+    min-width: rem(43);
+    width: rem(43);
+
+    @media (max-width: $mobile) {
+      min-width: rem(24);
+      width: rem(24);
+    }
+  }
+
+  &:nth-child(-n+9)::before {
+    content: '0' counter(accordion);
+  }
+
+  &::after {
+    content: '';
+    min-width: rem(40);
+    width: rem(40);
+    height: rem(12);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'%3E%3Cpath d='M18.1304 0.33L19.9004 2.1L10.0004 12L0.100392 2.1L1.87039 0.33L10.0004 8.46L18.1304 0.33Z' fill='%231047C8'/%3E%3C/svg%3E");
+    background-position: right center;
+    background-repeat: no-repeat;
+    margin: rem(8) 0 0 auto;
+
+    @media (max-width: $mobile) {
+      min-width: rem(24);
+      width: rem(24);
+    }
+  }
+}
+
+.evil-accordion__title:hover,
+.evil-accordion__item--open .evil-accordion__title {
+  color: $blueMain;
+}
+
+.evil-accordion__body {
+  @include text();
+  max-height: 0;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.evil-accordion__content {
+  padding: rem(10) 0 rem(20) rem(43);
+
+  @media (max-width: $mobile) {
+    padding: rem(5) 0 rem(10) rem(24);
+  }
+}
+
+.evil-accordion__content p + p {
+  margin-top: rem(23);
+}
