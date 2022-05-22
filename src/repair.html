@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Ремонт и обслуживание компьютерной техники"
+})
+<body>
+<div class="wrapper">
+  @@include('html/_header.htm')
+  <main class="computer">
+    <section class="computer__header computer-header">
+      <div class="computer-header__wrapper">
+        <div class="computer-header__caption">
+          Ремонт и обслуживание компьютерной техники
+        </div>
+        <ul class="computer-header__list">
+          <li class="computer-header__item">Бесплатный выезд и доставка оборудования</li>
+          <li class="computer-header__item">Более 45 услуг, которые помогут качественно решить любую проблему</li>
+          <li class="computer-header__item">Ремонт техники с 20% дисконтом от рыночных цен</li>
+        </ul>
+        <div class="computer-header__bottom">
+          <div class="computer-header__consultation">Получите бесплатную консультацию</div>
+          <div class="button button--blue computer-header__button">Оставить заявку</div>
+        </div>
+      </div>
+      <div class="computer-header__background">
+        <img src="@img/repair/repair-header.jpg" alt="Ремонт и обслуживание компьютерной техники" class="computer-header__picture">
+      </div>
+    </section>
+    <section class="computer__useful computer-useful">
+      <div class="computer-useful__container">
+        <div class="computer-useful__caption">
+          <div class="computer-useful__title">Вам может быть полезно</div>
+          <a href="#" class="computer-useful__link">читать все статьи</a>
+        </div>
+        <div class="computer-useful__list">
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">IT Аудит безопасности</a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-2.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+          </span>
+            <a href="#" class="interesting__caption">
+              Подбор и разработка ИТ-решений для оптимизации и цифровизации бизнес-процессов
+            </a>
+          </div>
+          <div class="interesting">
+          <span class="interesting__picture">
+            <img src="@img/article/interesting-3.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image">
+            <span class="interesting__date">15.09.2021</span>
+          </span>
+            <a href="#" class="interesting__caption">Настройка IP телефонии и АТС</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  @@include('html/_footer.htm',{})
+</div>
+@@include('html/_modal.htm',{})
+@@include('html/_popup.htm',{})
+@@include('html/_js.htm',{})
+</body>
+</html>

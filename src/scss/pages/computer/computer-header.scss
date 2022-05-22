@@ -12,20 +12,6 @@ $bgDarkGray: #111;
   @media (max-width: $tablet) {
     min-height: unset;
   }
-
-  &::after {
-    content: '';
-    display: block;
-    width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col2));
-    background-image: url(../img/computer/computer-header.jpg);
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @media (max-width: $pc) {
-      display: none;
-    }
-  }
 }
 
 .computer-header__wrapper {
@@ -47,6 +33,22 @@ $bgDarkGray: #111;
   @media (max-width: $mobile) {
     padding: rem(90) rem(math.div($containerPadding, 2)) rem(60);
   }
+}
+
+.computer-header__background {
+  display: block;
+  width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col2));
+
+  @media (max-width: $pc) {
+    display: none;
+  }
+}
+
+.computer-header__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
 }
 
 .computer-header__caption {
