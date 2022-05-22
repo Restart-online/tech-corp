@@ -1,0 +1,36 @@
+.badge {
+
+}
+
+.badge__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: rem(-2);
+}
+
+.badge__item {
+  margin: rem(2);
+  color: #636363;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+.badge__input {
+  display: none;
+}
+
+.badge__label {
+  background-color: $grayLight;
+  padding: rem(8.5) rem(20);
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: 1.3;
+  transition: background-color .3s;
+}
+
+.badge__label:hover,
+.badge__label--active,
+.badge__input:checked ~ .badge__label {
+  background-color: rgba(16, 71, 200, 0.1);
+  color: $blueMain;
+}
