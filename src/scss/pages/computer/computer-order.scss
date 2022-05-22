@@ -1,7 +1,17 @@
+@use "sass:math";
+
 .computer-order__container {
   display: grid;
   grid-template-columns: rem($col2) rem($col4);
   grid-gap: rem($colGap);
+
+  @media (max-width: $pc) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $tablet) {
+    grid-gap: rem(math.div($colGap, 2));
+  }
 }
 
 .computer-order__sidebar {
@@ -20,6 +30,10 @@
 
   &:not(:empty) {
     margin-top: rem(40);
+
+    @media (max-width: $tablet) {
+      margin-top: rem(20);
+    }
   }
 }
 
@@ -27,6 +41,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: rem($colGap);
+
+  @media (max-width: $pc) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $tablet) {
+    grid-gap: rem(math.div($colGap, 2));
+  }
 }
 
 .computer-order__title {
@@ -38,4 +60,8 @@
 .computer-order__text {
   margin-top: rem(20);
   @include text();
+
+  @media (max-width: $tablet) {
+    margin-top: rem(14);
+  }
 }

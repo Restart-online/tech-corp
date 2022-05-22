@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style_after.min.css?_v=20220522033658">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220522131316">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,7 +284,7 @@
 			<section class="computer__header computer-header">
 				<div class="computer-header__wrapper">
 					<div class="computer-header__caption">
-						Абонентское обслуживание&nbsp;компьютеров
+						Абонентское<br>обслуживание компьютеров
 					</div>
 					<ul class="computer-header__list">
 						<li class="computer-header__item">Бесплатный выезд и доставка оборудования</li>
@@ -296,6 +296,7 @@
 						<div class="button button--blue computer-header__button">Оставить заявку</div>
 					</div>
 				</div>
+				<div class="computer-header__background"></div>
 			</section>
 			<section class="computer__includes computer-includes">
 				<div class="computer-includes__container">
@@ -489,15 +490,15 @@
 					<div class="computer-questions__title">Оставьте свои данные и мы вам перезвоним</div>
 					<form action="#" method="post" data-ajax class="computer-questions__form computer-form">
 						<label class="computer-form__item field field--white">
-							<input type="text" class="field__input" placeholder=" ">
+							<input type="text" class="field__input" data-required inputmode="text" placeholder=" ">
 							<span class="field__label field__label--inside">Имя</span>
 						</label>
 						<label class="computer-form__item field field--white">
-							<input type="tel" class="field__input" placeholder=" ">
+							<input type="tel" class="field__input" data-required data-inputmask-clearincomplete="true" data-inputmask="'mask':'+7 (999) 999 99 99'" inputmode="text" placeholder=" ">
 							<span class="field__label field__label--inside">Телефон</span>
 						</label>
 						<label class="computer-form__checkbox custom-checkbox">
-							<input class="custom-checkbox__input custom-checkbox__input--white" type="checkbox" checked>
+							<input class="custom-checkbox__input custom-checkbox__input--white" type="checkbox" data-required checked>
 							<span class="custom-checkbox__label">
 								Я согласен(а) на <a href="#">обработку персональных данных</a>
 							</span>
@@ -662,7 +663,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app_after.min.js?_v=20220522033658"></script>
+	<script src="js/app_after.min.js?_v=20220522131316"></script>
 </body>
 
 </html>

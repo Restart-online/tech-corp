@@ -1,19 +1,30 @@
+@use "sass:math";
+
 $bgDarkGray: #111;
 
 .computer-header {
   display: flex;
+  justify-content: space-between;
   min-height: 100vh;
   background-color: $bgDarkGray;
   color: $white;
 
+  @media (max-width: $tablet) {
+    min-height: unset;
+  }
+
   &::after {
     content: '';
     display: block;
-    width: calc((100% - rem($maxWidthContainer)));
+    width: calc((100% - rem($maxWidthContainer)) / 2 + rem($col2));
     background-image: url(../img/computer/computer-header.jpg);
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (max-width: $pc) {
+      display: none;
+    }
   }
 }
 
@@ -26,9 +37,21 @@ $bgDarkGray: #111;
   padding-top: 160px;
   padding-bottom: 160px;
   padding-left: calc((100% - rem($maxWidthContainer)) / 2);
+  padding-right: rem(math.div($containerPadding, 2));
+
+  @media (max-width: $pc) {
+    width: 100%;
+    padding-left: rem(math.div($containerPadding, 2));
+  }
+
+  @media (max-width: $mobile) {
+    padding: rem(90) rem(math.div($containerPadding, 2)) rem(60);
+  }
 }
 
 .computer-header__caption {
+  width: 100%;
+  max-width: rem($col4 + $colGap);
   margin-bottom: rem(38);
   @include h1();
 }
@@ -60,16 +83,25 @@ $bgDarkGray: #111;
 
 .computer-header__bottom {
   display: flex;
+
+  @media (max-width: $mobileSmall) {
+    flex-direction: column;
+  }
 }
 
 .computer-header__consultation {
   width: 100%;
-  max-width: 172px;
-  margin-right: 20px;
+  max-width: rem(172);
+  margin-right: rem(20);
   font-weight: 500;
   font-size: rem(12);
   line-height: 2;
   text-transform: uppercase;
+
+  @media (max-width: $mobileSmall) {
+    max-width: unset;
+    margin: 0 0 rem(20);
+  }
 }
 
 .computer-header__button {

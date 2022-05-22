@@ -4096,6 +4096,9 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   min-height: 100vh;
   background-color: #111;
   color: #fff;
@@ -4107,7 +4110,7 @@ body::after {
 .computer-header::after {
   content: "";
   display: block;
-  width: calc(100% - 75rem);
+  width: calc((100% - 75rem) / 2 + 22.5rem);
   background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4129,9 +4132,12 @@ body::after {
   padding-top: 160px;
   padding-bottom: 160px;
   padding-left: calc((100% - 75rem) / 2);
+  padding-right: 0.9375rem;
 }
 
 .computer-header__caption {
+  width: 100%;
+  max-width: 52.5rem;
   margin-bottom: 2.375rem;
   font-weight: 900;
   line-height: 1.3;
@@ -4195,8 +4201,8 @@ body::after {
 
 .computer-header__consultation {
   width: 100%;
-  max-width: 172px;
-  margin-right: 20px;
+  max-width: 10.75rem;
+  margin-right: 1.25rem;
   font-weight: 500;
   font-size: 0.75rem;
   line-height: 2;
@@ -4240,7 +4246,7 @@ body::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc((100% - 1200px) / 2 + 360px + 60px + 48px);
+  width: calc((100% - 75rem) / 2 + 22.5rem + 3.75rem + 3rem);
   height: 100%;
   background-color: #F9F9F9;
   z-index: -1;
@@ -4249,9 +4255,9 @@ body::after {
 .computer-includes__container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 22.5rem 48.75rem;
-  grid-template-columns: 22.5rem 48.75rem;
-  grid-gap: 3.75rem;
+  -ms-grid-columns: 30% 65%;
+  grid-template-columns: 30% 65%;
+  grid-gap: 5%;
 }
 
 .computer-includes__sidebar {
@@ -4431,6 +4437,7 @@ body::after {
 }
 
 .computer-questions {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4439,8 +4446,10 @@ body::after {
   color: #fff;
 }
 
-.computer-questions__left,
-.computer-questions__right {
+.no-webp .computer-questions__left{
+  background-image: url("../img/computer/computer-questions.jpg"); }
+
+.computer-questions__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4451,13 +4460,8 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.no-webp .computer-questions__left{
-  background-image: url("../img/computer/computer-questions.jpg"); }
-
-.computer-questions__left {
   width: calc(50% - 3.75rem / 2);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: calc((100% - 75rem) / 2);
@@ -4499,8 +4503,18 @@ body::after {
 }
 
 .computer-questions__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 39.375rem;
-  padding-left: 13.125rem;
+  padding: 3.75rem 0 3.75rem 13.125rem;
 }
 
 .computer-questions__title {
@@ -4765,8 +4779,7 @@ body::after {
 .computer-tariff__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
   grid-gap: 3.75rem;
   margin-top: 3.75rem;
 }
@@ -7722,6 +7735,57 @@ button.swiper-pagination-bullet {
     grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
     width: 100%;
   }
+
+  .computer-header::after {
+    display: none;
+  }
+
+  .computer-header__wrapper {
+    width: 100%;
+    padding-left: 0.9375rem;
+  }
+
+  .computer-includes::before {
+    width: calc(1.875rem / 2 + 35% + 3rem);
+  }
+
+  .computer-order__container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .computer-order__content {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .computer-questions {
+    min-height: 31.25rem;
+  }
+
+  .computer-questions__left {
+    padding: 1.875rem;
+  }
+
+  .computer-questions__right {
+    padding: 3.75rem;
+  }
+
+  .computer-tariff__block {
+    padding: 3.75rem 3.125rem 5rem;
+  }
+
+@supports (grid-gap: clamp( 1.875rem , 1.2156593407rem  +  3.2967032967vw , 3.75rem )) {
+    .computer-tariff__list {
+      grid-gap: clamp( 1.875rem , 1.2156593407rem  +  3.2967032967vw , 3.75rem );
+    }
+}
+
+@supports not (grid-gap: clamp( 1.875rem , 1.2156593407rem  +  3.2967032967vw , 3.75rem )) {
+    .computer-tariff__list {
+      grid-gap: calc(1.875rem + 1.875 * (100vw - 20rem) / 56.875);
+    }
+}
 }
 
 @media (max-width: 61.99875em) {
@@ -7773,10 +7837,83 @@ button.swiper-pagination-bullet {
     padding-right: unset;
   }
 
+  .computer-header {
+    min-height: unset;
+  }
+
+  .computer-includes::before {
+    width: 3rem;
+  }
+
+  .computer-includes__container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .computer-includes__item {
+    padding: 1.25rem 0;
+  }
+
+  .computer-includes__item::before {
+    margin-right: 0.75rem;
+  }
+
+  .computer-order__container {
+    grid-gap: 1.875rem;
+  }
+
+  .computer-order__description:not(:empty) {
+    margin-top: 1.25rem;
+  }
+
+  .computer-order__content {
+    grid-gap: 1.875rem;
+  }
+
+  .computer-order__text {
+    margin-top: 0.875rem;
+  }
+
+  .computer-questions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: unset;
+    padding: 3.75rem 0.9375rem;
+  }
+
+  .computer-questions__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+  }
+
+  .computer-questions__caption {
+    display: none;
+  }
+
+  .computer-questions__description {
+    display: none;
+  }
+
+  .computer-questions__right {
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+
   .computer-service__list {
     -webkit-column-count: 1;
        -moz-column-count: 1;
             column-count: 1;
+  }
+
+  .computer-tariff__subtitle {
+    margin-bottom: 5.625rem;
   }
 }
 
@@ -8016,9 +8153,29 @@ button.swiper-pagination-bullet {
             align-items: flex-start;
   }
 
+  .computer-header__wrapper {
+    padding: 5.625rem 0.9375rem 3.75rem;
+  }
+
   .computer-includes__item::before {
     min-width: 1.5rem;
     width: 1.5rem;
+  }
+
+  .computer-tariff__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2.5rem 1.875rem 3.75rem;
+  }
+
+  .computer-tariff__slider {
+    width: 100%;
+  }
+
+  .computer-tariff__slider + .computer-tariff__slider {
+    margin-top: 3.75rem;
   }
 }
 
@@ -8061,6 +8218,23 @@ button.swiper-pagination-bullet {
 
   .interesting__picture {
     height: 17.5rem;
+  }
+
+  .computer-header__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .computer-header__consultation {
+    max-width: unset;
+    margin: 0 0 1.25rem;
+  }
+
+  .computer-tariff__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .computer-useful__list {
