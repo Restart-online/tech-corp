@@ -156,6 +156,8 @@ body {
 @import "blocks/custom-checkbox";
 @import "blocks/evil-accordion";
 @import "blocks/tariff";
+@import "blocks/sidebar-page";
+@import "blocks/feedback";
 
 // Подключение стилей отдельных страниц
 @import "home";
@@ -163,5 +165,6 @@ body {
 @import "pages/article";
 @import "pages/computer";
 @import "pages/faq";
+@import "pages/news";
 @import "about";
 @import "sertificats";

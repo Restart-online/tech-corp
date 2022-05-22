@@ -1,0 +1,22 @@
+.feedback__caption {
+  @include h3();
+}
+
+.feedback__description {
+  margin-top: rem(20);
+  @include text();
+}
+
+.feedback__form {
+  margin-top: rem(30);
+}
+
+.feedback-form__item {
+  & + & {
+    margin-top: rem(20);
+  }
+}
+
+.feedback-form__checkbox {
+  margin: rem(30) 0;
+}

@@ -1,0 +1,17 @@
+.sidebar-page {
+  padding: rem(100) 0;
+}
+
+.sidebar-page__container {
+  display: grid;
+  grid-template-columns: 30% 65%;
+  grid-gap: 5%;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar-page__caption {
+  @include h2();
+}

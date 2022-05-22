@@ -1,34 +1,7 @@
-.faq-page {
-  @include adaptiveValue("padding-top", 100, 60);
-  @include adaptiveValue("padding-bottom", 100, 60);
-}
-
-.faq-page__container {
-  display: grid;
-  grid-template-columns: 30% 65%;
-  grid-gap: 5%;
-
-  @media (max-width: $tablet) {
-    display: flex;
-    flex-direction: column;
-    gap: rem(30);
-  }
-}
-
-.faq-page__sidebar {
-  order: 1;
-}
-
 .faq-page__form {
-  order: 3;
-}
-
-.faq-page__content {
-  grid-row: span 2;
-  order: 2;
+  margin-top: rem(60);
 }
 
 .faq-page__caption {
   margin-bottom: rem(20);
-  @include h2();
 }
