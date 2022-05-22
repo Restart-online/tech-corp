@@ -11,7 +11,9 @@ const gallerySelector = '.js-article-slider__right';
 
 document.addEventListener('DOMContentLoaded', () => {
   const accordions = document.querySelectorAll('.evil-accordion');
-  accordions.forEach((accordion) => new EvilAccordion(accordion));
+  accordions.forEach((accordion) => new EvilAccordion(accordion, {
+    opened: [0],
+  }));
 
   const gallery = new Swiper(gallerySelector, {
     modules: [EffectFade],
