@@ -1,0 +1,26 @@
+.info-page__form {
+  margin-top: rem(60);
+}
+
+.info-page__badge {
+  margin-top: rem(60);
+}
+
+.info-page__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  @include adaptiveValue("gap", 60, 20);
+  margin-top: rem(30);
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-page__pagination {
+  width: 100%;
+  max-width: rem($col2);
+  margin-top: rem(60);
+  margin-left: auto;
+}

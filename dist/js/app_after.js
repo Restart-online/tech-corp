@@ -10668,7 +10668,7 @@
                 if (isVirtual) return swiper.slides.filter((el => parseInt(el.getAttribute("data-swiper-slide-index"), 10) === index))[0];
                 return swiper.slides.eq(index)[0];
             };
-            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) (swiper.visibleSlides || dom([])).each((slide => {
+            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) swiper.visibleSlides.each((slide => {
                 activeSlides.push(slide);
             })); else for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
                 const index = swiper.activeIndex + i;
@@ -11314,7 +11314,6 @@
                 if (!el || el === ssr_window_esm_getDocument() || el === ssr_window_esm_getWindow()) return null;
                 if (el.assignedSlot) el = el.assignedSlot;
                 const found = el.closest(selector);
-                if (!found && !el.getRootNode) return null;
                 return found || __closestFrom(el.getRootNode().host);
             }
             return __closestFrom(base);
@@ -11340,7 +11339,7 @@
             if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) $targetEl = dom(event.path[0]);
             const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
             const isTargetShadow = !!(e.target && e.target.shadowRoot);
-            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, $targetEl[0]) : $targetEl.closest(noSwipingSelector)[0])) {
+            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, e.target) : $targetEl.closest(noSwipingSelector)[0])) {
                 swiper.allowClick = true;
                 return;
             }
@@ -12249,7 +12248,6 @@
                         res.children = options => $el.children(options);
                         return res;
                     }
-                    if (!$el.children) return dom($el).children(getWrapperSelector());
                     return $el.children(getWrapperSelector());
                 };
                 let $wrapperEl = getWrapper();
@@ -13148,6 +13146,7 @@
                 slidesPerView: 3,
                 spaceBetween: 60,
                 speed: 800,
+                autoHeight: false,
                 autoplay: {
                     delay: 3e3,
                     disableOnInteraction: true
@@ -13163,8 +13162,7 @@
                 breakpoints: {
                     320: {
                         slidesPerView: 1,
-                        spaceBetween: 0,
-                        autoHeight: true
+                        spaceBetween: 0
                     },
                     768: {
                         slidesPerView: 2,

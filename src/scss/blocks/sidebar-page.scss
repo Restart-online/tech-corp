@@ -8,7 +8,9 @@
   grid-gap: 5%;
 
   @media (max-width: $tablet) {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
   }
 }
 

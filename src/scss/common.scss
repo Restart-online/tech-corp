@@ -22,7 +22,8 @@
   @media (max-width:$mobile){
     padding-top: rem(66);
   }
-  &.page__home {
+  &.page__home,
+  &.computer {
     padding-top: rem(0);
   }
 }
