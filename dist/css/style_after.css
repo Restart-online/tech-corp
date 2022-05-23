@@ -569,6 +569,11 @@ body::after {
   border: 0.125rem solid red;
 }
 
+.blueButtonPopup__head:not(:last-child),
+.reviewsPopup__head:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
 .blueButtonPopup__content,
 .reviewsPopup__content {
   border-radius: 0;
@@ -6506,10 +6511,26 @@ body::after {
           flex: 0 1 40%;
 }
 
+.reviewsPopup .rating-review {
+  max-width: 21.875rem;
+}
+
 .rating-review__head {
   font-size: 0.75rem;
   font-weight: 500;
   color: #282828;
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6840659341rem  +  0.3296703297vw , 0.9375rem )) {
+  .reviewsPopup .rating-review__head {
+    font-size: clamp( 0.75rem , 0.6840659341rem  +  0.3296703297vw , 0.9375rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6840659341rem  +  0.3296703297vw , 0.9375rem )) {
+  .reviewsPopup .rating-review__head {
+    font-size: calc(0.75rem + 0.1875 * (100vw - 20rem) / 56.875);
+  }
 }
 
 .rating-review__body {
@@ -6518,6 +6539,18 @@ body::after {
 
 .rating-review__body::before {
   color: #EBEBEB;
+}
+
+@supports (font-size: clamp( 1.25rem , 1.0302197802rem  +  1.0989010989vw , 1.875rem )) {
+  .reviewsPopup .rating-review__body {
+    font-size: clamp( 1.25rem , 1.0302197802rem  +  1.0989010989vw , 1.875rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.0302197802rem  +  1.0989010989vw , 1.875rem )) {
+  .reviewsPopup .rating-review__body {
+    font-size: calc(1.25rem + 0.625 * (100vw - 20rem) / 56.875);
+  }
 }
 
 .rating-review__active::before {

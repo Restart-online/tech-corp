@@ -13247,7 +13247,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                spaceBetween: 0,
+                spaceBetween: 20,
                 speed: 800,
                 simulateTouch: false,
                 pagination: {

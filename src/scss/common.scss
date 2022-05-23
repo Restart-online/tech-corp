@@ -107,6 +107,10 @@
 .blueButtonPopup,
 .reviewsPopup {
 
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(30);}
+  }
+
   &_hidden {
   }
 

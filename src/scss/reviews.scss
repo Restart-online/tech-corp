@@ -128,17 +128,26 @@
   justify-content: space-between;
   gap: rem(10);
   flex: 0 1 40%;
+  .reviewsPopup & {
+    max-width: rem(350);
+  }
 
   &__head {
     font-size: rem(12);
     font-weight: 500;
     color: $mainColor;
+    .reviewsPopup & {
+      @include adaptiveValue("font-size", 15, 12);
+    }
   }
 
   &__body {
     font-size: rem(20);
     &::before{
       color: #EBEBEB;
+    }
+    .reviewsPopup & {
+      @include adaptiveValue("font-size", 30, 20);
     }
   }
 
