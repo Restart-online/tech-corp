@@ -1,0 +1,13 @@
+.history__slider.history-slider.swiper {
+  margin-top: rem(90);
+}
+
+.history__text {
+  margin-top: rem(100);
+  @include text();
+  color: #636363;
+
+  p + p {
+    margin-top: rem(20);
+  }
+}

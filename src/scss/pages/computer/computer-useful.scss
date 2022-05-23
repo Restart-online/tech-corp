@@ -26,9 +26,22 @@
 .computer-useful__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(rem($col2), 1fr));
-  @include adaptiveValue("grid-gap", $colGap, 20);
+  grid-gap: rem($colGap);
+
+  @media (max-width: $pc) {
+    grid-gap: rem(50);
+  }
+
+  @media (max-width: $tablet) {
+    grid-gap: rem(40);
+  }
+
+  @media (max-width: $mobile) {
+    grid-gap: rem(30);
+  }
 
   @media (max-width: $mobileSmall) {
     grid-template-columns: 1fr;
+    grid-gap: rem(20);
   }
 }

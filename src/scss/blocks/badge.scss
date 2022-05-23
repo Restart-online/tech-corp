@@ -20,6 +20,7 @@
 }
 
 .badge__label {
+  display: inline-block;
   background-color: $grayLight;
   padding: rem(8.5) rem(20);
   font-weight: 400;

@@ -10732,7 +10732,7 @@
                 if (isVirtual) return swiper.slides.filter((el => parseInt(el.getAttribute("data-swiper-slide-index"), 10) === index))[0];
                 return swiper.slides.eq(index)[0];
             };
-            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) swiper.visibleSlides.each((slide => {
+            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) (swiper.visibleSlides || dom([])).each((slide => {
                 activeSlides.push(slide);
             })); else for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
                 const index = swiper.activeIndex + i;
@@ -11378,6 +11378,7 @@
                 if (!el || el === ssr_window_esm_getDocument() || el === ssr_window_esm_getWindow()) return null;
                 if (el.assignedSlot) el = el.assignedSlot;
                 const found = el.closest(selector);
+                if (!found && !el.getRootNode) return null;
                 return found || __closestFrom(el.getRootNode().host);
             }
             return __closestFrom(base);
@@ -11403,7 +11404,7 @@
             if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) $targetEl = dom(event.path[0]);
             const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
             const isTargetShadow = !!(e.target && e.target.shadowRoot);
-            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, e.target) : $targetEl.closest(noSwipingSelector)[0])) {
+            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, $targetEl[0]) : $targetEl.closest(noSwipingSelector)[0])) {
                 swiper.allowClick = true;
                 return;
             }
@@ -12312,6 +12313,7 @@
                         res.children = options => $el.children(options);
                         return res;
                     }
+                    if (!$el.children) return dom($el).children(getWrapperSelector());
                     return $el.children(getWrapperSelector());
                 };
                 let $wrapperEl = getWrapper();
@@ -16523,6 +16525,30 @@ PERFORMANCE OF THIS SOFTWARE.
             });
             tariffSlider1 && connectInput1 && tariffSlider1.on("update", (value => connectInput1.value = value));
             tariffSlider2 && connectInput2 && tariffSlider2.on("update", (value => connectInput2.value = value));
+        }));
+        const historySelector = ".js-history__slider";
+        const historyTextSelector = ".js-history-slider__text";
+        document.addEventListener("DOMContentLoaded", (() => {
+            const slidesText = document.querySelectorAll(historyTextSelector);
+            slidesText.forEach((item => item.dataset.text = item.textContent.trim()));
+            new core(historySelector, {
+                loop: true,
+                loopedSlides: 20,
+                slidesPerView: 5,
+                watchSlidesProgress: true,
+                slideActiveClass: "history-slider__slide--active",
+                slideVisibleClass: "history-slider__slide--visible",
+                wrapperClass: "history-slider__wrapper",
+                watchSlidesVisibility: true,
+                on: {
+                    init: swiper => {
+                        swiper.slides.forEach(((slide, index) => {
+                            const year = slide.querySelector(".history-slider__year");
+                            year.addEventListener("click", (() => swiper.slideToLoop(index)));
+                        }));
+                    }
+                }
+            });
         }));
         window["FLS"] = true;
         isWebp();
