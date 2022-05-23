@@ -380,7 +380,8 @@ body::after {
   padding-top: 9.0625rem;
 }
 
-.page.page__home {
+.page.page__home,
+.page.computer {
   padding-top: 0rem;
 }
 
@@ -5807,6 +5808,9 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .about-docs__slide img {
@@ -5833,11 +5837,32 @@ body::after {
   transition: fill 0.3s ease 0s;
 }
 
+.about-docs__navigation .swiper-button-prev,
+.about-docs__navigation .swiper-button-next {
+  position: static;
+  width: auto;
+  height: auto;
+  top: auto;
+  left: auto;
+  right: auto;
+  display: block;
+  margin-top: 0;
+}
+
+.about-docs__navigation .swiper-button-prev::after,
+.about-docs__navigation .swiper-button-prev::before,
+.about-docs__navigation .swiper-button-next::after,
+.about-docs__navigation .swiper-button-next::before {
+  content: "";
+  display: none;
+}
+
 .about-docs__pagination {
   font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: auto !important;
 }
 
 .sertificats__container {
@@ -6018,10 +6043,31 @@ body::after {
   gap: 3.125rem;
 }
 
+.body-sertificats__navigation .swiper-button-prev,
+.body-sertificats__navigation .swiper-button-next {
+  position: static;
+  width: auto;
+  height: auto;
+  top: auto;
+  left: auto;
+  right: auto;
+  display: block;
+  margin-top: 0;
+}
+
+.body-sertificats__navigation .swiper-button-prev::after,
+.body-sertificats__navigation .swiper-button-prev::before,
+.body-sertificats__navigation .swiper-button-next::after,
+.body-sertificats__navigation .swiper-button-next::before {
+  content: "";
+  display: none;
+}
+
 .body-sertificats__pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: auto !important;
 }
 
 .slide-sertificats__body {
@@ -7241,7 +7287,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 /**
- * Swiper 8.1.5
+ * Swiper 8.1.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7249,7 +7295,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
  *
  * Released under the MIT License
  *
- * Released on: May 16, 2022
+ * Released on: April 24, 2022
  */
 
 @font-face {
@@ -7510,6 +7556,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   font-size: var(--swiper-navigation-size);
   text-transform: none !important;
   letter-spacing: 0;
+  text-transform: none;
   font-variant: initial;
   line-height: 1;
 }

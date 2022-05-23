@@ -38,6 +38,7 @@ function initSliders() {
 			slidesPerView: 3,
 			spaceBetween: 60,
 			speed: 800,
+			autoHeight: false,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -79,7 +80,6 @@ function initSliders() {
 				320: {
 					slidesPerView: 1,
 					spaceBetween: 0,
-					autoHeight: true,
 				},
 				768: {
 					slidesPerView: 2,
