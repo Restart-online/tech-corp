@@ -23,7 +23,8 @@
     padding-top: rem(66);
   }
   &.page__home,
-  &.computer {
+  &.computer
+  &.page__computer {
     padding-top: rem(0);
   }
 }
@@ -95,9 +96,16 @@
   }
 }
 
+.form__error {
+  color: red;
+  padding: rem(5);
+  border: rem(2) solid red;
+}
+
 //========================================================================================================================================================
 
-.blueButtonPopup {
+.blueButtonPopup,
+.reviewsPopup {
 
   &_hidden {
   }
@@ -204,6 +212,72 @@
   @media (any-hover: hover){
     &:hover{
       text-decoration: none !important;
+    }
+  }
+}
+
+
+.sidebar {
+
+  &__menu {
+    &:not(:last-child) {margin-bottom: rem(100);}
+  }
+
+  &__interesting {
+  }
+
+  &__bottom {
+    display: grid;
+    @include adaptiveValue("gap", 100, 30);
+  }
+}
+.menu-sidebar {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+  }
+
+  &__title {
+    @media (min-width:$tablet){
+      display: none;
+    }
+    display: block;
+    padding: rem(18.5);
+    @include adaptiveValue("padding-left", 31, 18.5);
+    border: rem(1) solid #EBEBEB;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    text-align-last: left;
+    font-weight: 600;
+    &._spoller-active {
+      color: #fff;
+      background-color: $mainColor;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: rem(18.5);
+    @include adaptiveValue("padding-left", 31, 18.5);
+    border: rem(1) solid #EBEBEB;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        color: #fff;
+        background-color: $blue;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
+    &_active {
+      color: #fff;
+      background-color: $blue;
+      font-weight: 500;
     }
   }
 }

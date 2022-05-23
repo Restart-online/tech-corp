@@ -1,0 +1,188 @@
+.reviews {
+
+  &__container {
+  }
+
+  &__sidebar {
+  }
+
+  &__body {
+  }
+
+  &__button {
+  }
+}
+.button-reviews {
+  font-weight: 500;
+  gap: rem(10);
+  min-width: rem(270);
+  color: $blue;
+  border: rem(1) solid $blue;
+  transition: all 0.3s ease 0s;
+  @media (max-width:$mobileSmall){
+    width: 100%;
+  }
+  @media (any-hover: hover){
+    &:hover{
+      background-color: $blue;
+      color: #fff;
+      svg path {
+        fill:  #fff;
+      }
+    }
+  }
+
+  &__icon {
+    max-height: rem(24);
+    svg {
+      height: 100%;
+      path {
+        transition: fill 0.3s ease 0s;
+        fill: $blue;
+      }
+    }
+  }
+
+  &__text {
+  }
+}
+.slide-reviews {
+
+  &__items {
+    display: grid;
+    gap: rem(15);
+  }
+
+  &__item {
+    @include adaptiveValue("padding-top", 30, 10);
+    @include adaptiveValue("padding-bottom", 30, 10);
+    @include adaptiveValue("padding-left", 40, 10);
+    @include adaptiveValue("padding-right", 40, 10);
+    border: rem(1) solid #EBEBEB;
+  }
+}
+.item-reviews {
+
+
+  &__head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    @include adaptiveValue("gap", 52, 15);
+    flex-wrap: wrap;
+    &:not(:last-child) {margin-bottom: rem(15);}
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(9);
+    flex: 0 1 rem(380);
+  }
+
+  &__date {
+  }
+
+  &__gray {
+    color: #BCBEC0;
+    font-weight: 500;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__post {
+  }
+
+  &__ratings {
+    display: flex;
+    flex-direction: column;
+    gap: rem(7);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 20, 15);
+    &:not(:last-child) {margin-bottom: rem(15);}
+  }
+
+  &__text {
+    line-height: 1.4;
+  }
+
+  &__foot {
+  }
+
+  &__file {
+  }
+}
+.slide-review {
+
+  &__rating {
+  }
+}
+.rating-review {
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(10);
+  flex: 0 1 40%;
+
+  &__head {
+    font-size: rem(12);
+    font-weight: 500;
+    color: $mainColor;
+  }
+
+  &__body {
+    font-size: rem(20);
+    &::before{
+      color: #EBEBEB;
+    }
+  }
+
+  &__active {
+    &::before{
+      color: $blue;
+    }
+  }
+
+  &__items {
+  }
+
+  &__item {
+  }
+
+  &__value {
+    display: none;
+  }
+}
+.file-reviews {
+  display: flex;
+  align-items: start;
+  gap: rem(12);
+  color: #878787;
+  line-height: 1.5;
+  @media (any-hover: hover){
+    &:hover{
+      color: $mainColor;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 rem(32);
+    img,
+    picture {
+      width: 100%;
+    }
+  }
+
+  &__body {
+  }
+
+  &__gray {
+    transition: color 0.3s ease 0s;
+    font-size: rem(13);
+  }
+}

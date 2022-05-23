@@ -20,6 +20,11 @@
   @media (max-width: $mobile) {
     height: rem(270);
   }
+  picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .info-item__image {
