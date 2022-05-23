@@ -110,6 +110,7 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 800,
+			simulateTouch: false,
 
 			//touchRatio: 0,
 			//simulateTouch: false,

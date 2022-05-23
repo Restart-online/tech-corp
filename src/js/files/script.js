@@ -6,6 +6,7 @@ import { _slideToggle } from "./functions.js";
 import { bodyLockToggle } from "./functions.js";
 import { bodyUnlock } from "./functions.js";
 import { menuClose } from "./functions.js";
+import { formValidate } from "./forms/forms.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
@@ -54,6 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
         videoCase.controls = true;
         controlVideoCase.remove();
       })
+    })
+  }
+
+  const reviewFileInput = document.querySelector('.callback-footer__fileinput');
+  if (reviewFileInput) {
+    const reviewFilePreview = document.querySelector('.callback-footer__preview');
+    reviewFileInput.addEventListener('change', () => {
+      reviewPreviewRender(reviewFileInput, reviewFilePreview);
     })
   }
   
@@ -156,6 +165,38 @@ function hideShowCases(casesNavItems) {
   })
 }
 
+function reviewPreviewRender(reviewFileInput, reviewFilePreview) {
+  let maxsize = reviewFileInput.dataset.maxsize * 1048576;
+  let accept = reviewFileInput.getAttribute("accept")
+  let file = reviewFileInput.files[0];
+  let formaterror = reviewFileInput.dataset.formaterror;
+  let sizeerror = reviewFileInput.dataset.sizeerror;
+  reviewFileInput.parentElement.nextElementSibling.focus();
+  if (file.size <= maxsize && file.type === accept) {
+    reviewFilePreview.insertAdjacentHTML('beforeend', `
+    <div class="item-reviews__file file-reviews">
+      <div class="file-reviews__icon">
+        <img src="@img/sertificates/file_icon.svg" alt="image">
+      </div>
+      <div class="file-reviews__body">
+        <div class="file-reviews__gray">${file.name}</div>
+      </div>
+    </div>
+    `);
+  } else {
+    if (formaterror && file.type !== accept && file.size <= maxsize) {
+      reviewFileInput.parentElement.classList.add('_form-error');
+      reviewFileInput.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${formaterror}</div>`);
+    } else if (sizeerror && file.type === accept && file.size > maxsize) {
+      reviewFileInput.parentElement.classList.add('_form-error');
+      reviewFileInput.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${sizeerror}</div>`);
+    } else if (sizeerror && formaterror) {
+      reviewFileInput.parentElement.classList.add('_form-error');
+      reviewFileInput.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${sizeerror}</div>`);
+      reviewFileInput.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${formaterror}</div>`);
+    }
+  }
+}
 
 document.addEventListener("afterPopupOpen", function (e) {
 	// Попап

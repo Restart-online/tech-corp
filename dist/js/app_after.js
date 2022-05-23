@@ -8975,7 +8975,9 @@
             removeError(formRequiredItem) {
                 formRequiredItem.classList.remove("_form-error");
                 formRequiredItem.parentElement.classList.remove("_form-error");
-                if (formRequiredItem.parentElement.querySelector(".form__error")) formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector(".form__error"));
+                if (formRequiredItem.parentElement.querySelector(".form__error")) formRequiredItem.parentElement.querySelectorAll(".form__error").forEach((e => {
+                    e.remove();
+                }));
             },
             formClean(form) {
                 form.reset();
@@ -9068,6 +9070,68 @@
             }
             function formLogging(message) {
                 FLS(`[Формы]: ${message}`);
+            }
+        }
+        function formRating() {
+            const ratings = document.querySelectorAll(".rating");
+            if (ratings.length > 0) initRatings();
+            function initRatings() {
+                let ratingActive, ratingValue;
+                for (let index = 0; index < ratings.length; index++) {
+                    const rating = ratings[index];
+                    initRating(rating);
+                }
+                function initRating(rating) {
+                    initRatingVars(rating);
+                    setRatingActiveWidth();
+                    if (rating.classList.contains("rating_set")) setRating(rating);
+                }
+                function initRatingVars(rating) {
+                    ratingActive = rating.querySelector(".rating__active");
+                    ratingValue = rating.querySelector(".rating__value");
+                }
+                function setRatingActiveWidth(index = ratingValue.innerHTML) {
+                    const ratingActiveWidth = index / .05;
+                    ratingActive.style.width = `${ratingActiveWidth}%`;
+                }
+                function setRating(rating) {
+                    const ratingItems = rating.querySelectorAll(".rating__item");
+                    for (let index = 0; index < ratingItems.length; index++) {
+                        const ratingItem = ratingItems[index];
+                        ratingItem.addEventListener("mouseenter", (function(e) {
+                            initRatingVars(rating);
+                            setRatingActiveWidth(ratingItem.value);
+                        }));
+                        ratingItem.addEventListener("mouseleave", (function(e) {
+                            setRatingActiveWidth();
+                        }));
+                        ratingItem.addEventListener("click", (function(e) {
+                            initRatingVars(rating);
+                            if (rating.dataset.ajax) setRatingValue(ratingItem.value, rating); else {
+                                ratingValue.innerHTML = index + 1;
+                                setRatingActiveWidth();
+                            }
+                        }));
+                    }
+                }
+                async function setRatingValue(value, rating) {
+                    if (!rating.classList.contains("rating_sending")) {
+                        rating.classList.add("rating_sending");
+                        let response = await fetch("rating.json", {
+                            method: "GET"
+                        });
+                        if (response.ok) {
+                            const result = await response.json();
+                            const newRating = result.newRating;
+                            ratingValue.innerHTML = newRating;
+                            setRatingActiveWidth();
+                            rating.classList.remove("rating_sending");
+                        } else {
+                            alert("Ошибка");
+                            rating.classList.remove("rating_sending");
+                        }
+                    }
+                }
             }
         }
         class SelectConstructor {
@@ -13185,6 +13249,7 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 speed: 800,
+                simulateTouch: false,
                 pagination: {
                     el: ".body-sertificats__pagination",
                     type: "fraction"
@@ -16215,6 +16280,13 @@ PERFORMANCE OF THIS SOFTWARE.
                     controlVideoCase.remove();
                 }));
             }));
+            const reviewFileInput = document.querySelector(".callback-footer__fileinput");
+            if (reviewFileInput) {
+                const reviewFilePreview = document.querySelector(".callback-footer__preview");
+                reviewFileInput.addEventListener("change", (() => {
+                    reviewPreviewRender(reviewFileInput, reviewFilePreview);
+                }));
+            }
             document.addEventListener("click", (e => {
                 if (!e.target.classList.contains("menu__link_sub") && !e.target.closest(".menu__submenu")) {
                     bodyUnlock();
@@ -16295,6 +16367,25 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                 }
             }));
+        }
+        function reviewPreviewRender(reviewFileInput, reviewFilePreview) {
+            let maxsize = 1048576 * reviewFileInput.dataset.maxsize;
+            let accept = reviewFileInput.getAttribute("accept");
+            let file = reviewFileInput.files[0];
+            let formaterror = reviewFileInput.dataset.formaterror;
+            let sizeerror = reviewFileInput.dataset.sizeerror;
+            reviewFileInput.parentElement.nextElementSibling.focus();
+            if (file.size <= maxsize && file.type === accept) reviewFilePreview.insertAdjacentHTML("beforeend", `\n    <div class="item-reviews__file file-reviews">\n      <div class="file-reviews__icon">\n        <img src="@img/sertificates/file_icon.svg" alt="image">\n      </div>\n      <div class="file-reviews__body">\n        <div class="file-reviews__gray">${file.name}</div>\n      </div>\n    </div>\n    `); else if (formaterror && file.type !== accept && file.size <= maxsize) {
+                reviewFileInput.parentElement.classList.add("_form-error");
+                reviewFileInput.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formaterror}</div>`);
+            } else if (sizeerror && file.type === accept && file.size > maxsize) {
+                reviewFileInput.parentElement.classList.add("_form-error");
+                reviewFileInput.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${sizeerror}</div>`);
+            } else if (sizeerror && formaterror) {
+                reviewFileInput.parentElement.classList.add("_form-error");
+                reviewFileInput.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${sizeerror}</div>`);
+                reviewFileInput.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formaterror}</div>`);
+            }
         }
         document.addEventListener("afterPopupOpen", (function(e) {
             const currentPopup = e.detail.popup;
@@ -16442,6 +16533,7 @@ PERFORMANCE OF THIS SOFTWARE.
             viewPass: false
         });
         formSubmit();
+        formRating();
         pageNavigation();
         headerScroll();
     })();

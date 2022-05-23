@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Отзывы"
+	})
+	<body>
+		<div class="wrapper wrapper_lightheader">
+			@@include('html/_header.htm',{
+				"light": "header_light"
+			})
+			<main class="page page__reviews">
+        <section class="reviews">
+          <div class="reviews__container sertificats__container">
+            <div class="reviews__sidebar sidebar">
+              <div data-spollers="992" class="sidebar__menu menu-sidebar">
+                <div class="menu-sidebar__spoller">
+                  <button type="button" data-spoller class="menu-sidebar__title">Навигация</button>
+                  <ul class="menu-sidebar__list">
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">О компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">История компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Наша команда</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link menu-sidebar__link_active">Сертификаты</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Отзывы</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Карьера</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Вопрос-ответ</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Партнеры</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Новости</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div data-da=".sertificats__container, 992" class="sidebar__bottom">
+                <div class="sidebar__interesting interesting">
+                  <div class="article-sidebar__title interesting__title_blue">Акции</div>
+                  <a href="#" class="interesting">
+                    <span class="interesting__picture">
+                      <img src="@img/sertificates/sidebar.png" alt="Обслуживание ПК от 520 руб. за 1 рабочее место" class="interesting__image">
+                    </span>
+                    <span class="interesting__description">
+                      Обслуживание ПК от 520 руб. за 1 рабочее место
+                    </span>
+                  </a>
+                </div>  
+                <div class="sidebar__interesting">
+                  <div class="article-sidebar__title interesting__title_blue">Новости</div>
+                  <div class="interesting__list">
+                    <div class="interesting">
+                      <span class="interesting__picture">
+                        <img src="@img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?"
+                             class="interesting__image">
+                        <span class="interesting__date">15.09.2021</span>
+                      </span>
+                      <span class="interesting__caption">Что нового в ИТ-аутсорсинге в России?</span>
+                      <span class="interesting__description">
+                        Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
+                      </span>
+                      <a href="#" class="interesting__link">
+                        Читать
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reviews__body body-sertificats">
+              <div class="body-sertificats__head">
+                <a href="#" data-popup="#reviewsPopup" class="reviews__button rectangle_btn button-reviews">
+                  <div class="button-reviews__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 20.586L6.586 17H18C18.5304 17 19.0391 16.7893 19.4142 16.4142C19.7893 16.0391 20 15.5304 20 15V6C20 5.46957 19.7893 4.96086 19.4142 4.58579C19.0391 4.21071 18.5304 4 18 4H5C4.46957 4 3.96086 4.21071 3.58579 4.58579C3.21071 4.96086 3 5.46957 3 6V20.586ZM3 22H2V6C2 5.20435 2.31607 4.44129 2.87868 3.87868C3.44129 3.31607 4.20435 3 5 3H18C18.7956 3 19.5587 3.31607 20.1213 3.87868C20.6839 4.44129 21 5.20435 21 6V15C21 15.7956 20.6839 16.5587 20.1213 17.1213C19.5587 17.6839 18.7956 18 18 18H7L3 22ZM6 7H17V8H6V7ZM6 10H17V11H6V10ZM6 13H14V14H6V13Z" fill="#1047C8"/>
+                    </svg>
+                  </div>
+                  <div class="button-reviews__text">оставить отзыв</div>
+                </a>
+              </div>
+              <div class="body-sertificats__items">
+                <div class="body-sertificats__slider swiper">
+                  <div class="body-sertificats__wrapper swiper-wrapper">
+                    <div class="body-sertificats__slide slide-reviews swiper-slide">
+                      <div class="slide-reviews__items">
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Иван Николаев</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ВЭЙ-Групп РФ»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Алексей Новиков</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ИнвестСтрой»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я очень довольна работой с «...» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Семенов Эдуард</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела маркетинга компании «Сильвер»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Боялся, что коммерческая организация не выполнит работу качественно, потому что проекты в бюджетных учреждениях не очень большие и не такие ценные, как на крупных предприятиях. Даже не думал, что так ответственно возьмется за работу. Всего за один день нам установили турникеты на проходную и видеонаблюдение на территории возле школы. Прошло уже 2 года, но оборудование исправно работает. И инженеры часто приходят и проверяют состояние турникета и камер. Рад, что есть такие компании.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Минаев Роман</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела развития компании «ДэнсКидс»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">В нашем танцевальном зале часто ломали оборудование и даже разбивали зеркала. Мы никак не могли найти нарушителей и были в отчаянии. Обратились в «...», чтобы установить систему видеонаблюдения. Оборудование привезли в этот же день, а установили всего за 5 часов! Мы и не подозревали, что это так быстро.</p>
+                            <p class="item-reviews__text">Нарушителей нашли уже через 4 дня. Мы просмотрели записи и благодаря качественному изображению быстро идентифицировали молодого человека. Большое спасибо за оперативность и качественное оборудование! Обязательно обратимся в «...» еще.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="body-sertificats__slide slide-reviews swiper-slide">
+                      <div class="slide-reviews__items">
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Иван Николаев</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ВЭЙ-Групп РФ»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Алексей Новиков</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ИнвестСтрой»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я очень довольна работой с «...» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Семенов Эдуард</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела маркетинга компании «Сильвер»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Боялся, что коммерческая организация не выполнит работу качественно, потому что проекты в бюджетных учреждениях не очень большие и не такие ценные, как на крупных предприятиях. Даже не думал, что так ответственно возьмется за работу. Всего за один день нам установили турникеты на проходную и видеонаблюдение на территории возле школы. Прошло уже 2 года, но оборудование исправно работает. И инженеры часто приходят и проверяют состояние турникета и камер. Рад, что есть такие компании.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Минаев Роман</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела развития компании «ДэнсКидс»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">В нашем танцевальном зале часто ломали оборудование и даже разбивали зеркала. Мы никак не могли найти нарушителей и были в отчаянии. Обратились в «...», чтобы установить систему видеонаблюдения. Оборудование привезли в этот же день, а установили всего за 5 часов! Мы и не подозревали, что это так быстро.</p>
+                            <p class="item-reviews__text">Нарушителей нашли уже через 4 дня. Мы просмотрели записи и благодаря качественному изображению быстро идентифицировали молодого человека. Большое спасибо за оперативность и качественное оборудование! Обязательно обратимся в «...» еще.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="body-sertificats__slide slide-reviews swiper-slide">
+                      <div class="slide-reviews__items">
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Иван Николаев</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ВЭЙ-Групп РФ»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Алексей Новиков</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ИнвестСтрой»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я очень довольна работой с «...» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Семенов Эдуард</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела маркетинга компании «Сильвер»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Боялся, что коммерческая организация не выполнит работу качественно, потому что проекты в бюджетных учреждениях не очень большие и не такие ценные, как на крупных предприятиях. Даже не думал, что так ответственно возьмется за работу. Всего за один день нам установили турникеты на проходную и видеонаблюдение на территории возле школы. Прошло уже 2 года, но оборудование исправно работает. И инженеры часто приходят и проверяют состояние турникета и камер. Рад, что есть такие компании.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Минаев Роман</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела развития компании «ДэнсКидс»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">В нашем танцевальном зале часто ломали оборудование и даже разбивали зеркала. Мы никак не могли найти нарушителей и были в отчаянии. Обратились в «...», чтобы установить систему видеонаблюдения. Оборудование привезли в этот же день, а установили всего за 5 часов! Мы и не подозревали, что это так быстро.</p>
+                            <p class="item-reviews__text">Нарушителей нашли уже через 4 дня. Мы просмотрели записи и благодаря качественному изображению быстро идентифицировали молодого человека. Большое спасибо за оперативность и качественное оборудование! Обязательно обратимся в «...» еще.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="body-sertificats__slide slide-reviews swiper-slide">
+                      <div class="slide-reviews__items">
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Иван Николаев</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ВЭЙ-Групп РФ»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Алексей Новиков</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ИнвестСтрой»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я очень довольна работой с «...» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Семенов Эдуард</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела маркетинга компании «Сильвер»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Боялся, что коммерческая организация не выполнит работу качественно, потому что проекты в бюджетных учреждениях не очень большие и не такие ценные, как на крупных предприятиях. Даже не думал, что так ответственно возьмется за работу. Всего за один день нам установили турникеты на проходную и видеонаблюдение на территории возле школы. Прошло уже 2 года, но оборудование исправно работает. И инженеры часто приходят и проверяют состояние турникета и камер. Рад, что есть такие компании.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Минаев Роман</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела развития компании «ДэнсКидс»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">В нашем танцевальном зале часто ломали оборудование и даже разбивали зеркала. Мы никак не могли найти нарушителей и были в отчаянии. Обратились в «...», чтобы установить систему видеонаблюдения. Оборудование привезли в этот же день, а установили всего за 5 часов! Мы и не подозревали, что это так быстро.</p>
+                            <p class="item-reviews__text">Нарушителей нашли уже через 4 дня. Мы просмотрели записи и благодаря качественному изображению быстро идентифицировали молодого человека. Большое спасибо за оперативность и качественное оборудование! Обязательно обратимся в «...» еще.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="body-sertificats__slide slide-reviews swiper-slide">
+                      <div class="slide-reviews__items">
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Иван Николаев</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ВЭЙ-Групп РФ»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Алексей Новиков</div>
+                              <div class="item-reviews__post item-reviews__gray">Директор компании «ИнвестСтрой»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                            <p class="item-reviews__text">В течение дня установили видеонаблюдение и сигнализацию. Я очень довольна работой с «...» и буду сотрудничать с ними в будущем.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Семенов Эдуард</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела маркетинга компании «Сильвер»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">Боялся, что коммерческая организация не выполнит работу качественно, потому что проекты в бюджетных учреждениях не очень большие и не такие ценные, как на крупных предприятиях. Даже не думал, что так ответственно возьмется за работу. Всего за один день нам установили турникеты на проходную и видеонаблюдение на территории возле школы. Прошло уже 2 года, но оборудование исправно работает. И инженеры часто приходят и проверяют состояние турникета и камер. Рад, что есть такие компании.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="slide-reviews__item">
+                          <div class="item-reviews__head">
+                            <div class="item-reviews__info">
+                              <div class="item-reviews__date item-reviews__gray">15.05.2022</div>
+                              <div class="item-reviews__name">Минаев Роман</div>
+                              <div class="item-reviews__post item-reviews__gray">Руководитель отдела развития компании «ДэнсКидс»</div>
+                            </div>
+                            <div class="item-reviews__ratings">
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Уровень обслуживания</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Скорость реагирования</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">4</div>
+                              </div>
+                              <div class="rating slide-review__rating rating-review">
+                                <div class="rating-review__head">Качество работ</div>
+                                <div class="rating__body rating-review__body">
+                                  <div class="rating__active rating-review__active"></div>
+                                  <div class="rating__items rating-review__items">
+                                    <input type="radio" class="rating__item rating-review__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item rating-review__item" value="5" name="rating">
+                                  </div>
+                                </div>
+                                <div class="rating__value rating-review__value">5</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-reviews__body">
+                            <p class="item-reviews__text">В нашем танцевальном зале часто ломали оборудование и даже разбивали зеркала. Мы никак не могли найти нарушителей и были в отчаянии. Обратились в «...», чтобы установить систему видеонаблюдения. Оборудование привезли в этот же день, а установили всего за 5 часов! Мы и не подозревали, что это так быстро.</p>
+                            <p class="item-reviews__text">Нарушителей нашли уже через 4 дня. Мы просмотрели записи и благодаря качественному изображению быстро идентифицировали молодого человека. Большое спасибо за оперативность и качественное оборудование! Обязательно обратимся в «...» еще.</p>
+                          </div>
+                          <div class="item-reviews__foot">
+                            <a href="#" class="item-reviews__file file-reviews">
+                              <div class="file-reviews__icon">
+                                <img src="@img/sertificates/file_icon.svg" alt="image">
+                              </div>
+                              <div class="file-reviews__body">
+                                <div class="file-reviews__gray">Благодарственное письмо</div>
+                                <div class="file-reviews__gray">15 КБ</div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="body-sertificats__navigation">
+                    <div class="swiper-button-prev">
+                      <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.67 1.86998L9.9 0.0999756L0 9.99998L9.9 19.9L11.67 18.13L3.54 9.99998L11.67 1.86998Z" fill="#1047C8"/>
+                      </svg>
+                    </div>
+                    <div class="body-sertificats__pagination"></div>
+                    <div class="swiper-button-next">
+                      <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.33 1.86998L2.1 0.0999756L12 9.99998L2.1 19.9L0.33 18.13L8.46 9.99998L0.33 1.86998Z" fill="#1047C8"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup_reviews.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

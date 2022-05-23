@@ -21,7 +21,7 @@ $fontSize: rem(15); // где 14(px) - размер шрифта по умолч
 // Основные цвета
 $black: #000;
 $mainColor: #282828; // Цвет шрифта по умолчанию
-$blue: #1A5AF0;
+$blue: #1047C8;
 $blueMain: #1047C8;
 $darkBlue: #192B56;
 $grayDark: #23252B;
@@ -170,3 +170,4 @@ body {
 @import "pages/news";
 @import "about";
 @import "sertificats";
+@import "reviews";

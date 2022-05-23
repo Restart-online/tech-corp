@@ -1,14 +1,23 @@
 .hero-cases {
 
   &__container {
-    @include adaptiveValue("padding-top", 117, 50);
-    padding-bottom: rem(50);
-    display: flex;
-    align-items: start;
-    justify-content: center;
+    &:not(.hero-cases__container_about) {
+      @include adaptiveValue("padding-top", 117, 50);
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      @media (max-width:$tablet){
+        flex-direction: column;
+      }
+    }
     @include adaptiveValue("gap", 117, 20, 1920, 992, 1);
-    @media (max-width:$tablet){
-      flex-direction: column;
+    padding-bottom: rem(50);
+    &_about {
+      @include adaptiveValue("padding-top", 117, 50, 1920, 992, 1);
+      display: grid;
+      @media (min-width:$tablet){
+        grid-template-columns: rem(360) auto;
+      }
     }
   }
 

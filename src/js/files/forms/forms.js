@@ -130,7 +130,10 @@ export let formValidate = {
 		formRequiredItem.classList.remove('_form-error');
 		formRequiredItem.parentElement.classList.remove('_form-error');
 		if (formRequiredItem.parentElement.querySelector('.form__error')) {
-			formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector('.form__error'));
+			formRequiredItem.parentElement.querySelectorAll('.form__error').forEach(e => {
+				e.remove();
+			})
+			// formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector('.form__error'));
 		}
 	},
 	formClean(form) {
