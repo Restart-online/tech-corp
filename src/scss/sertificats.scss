@@ -122,10 +122,26 @@
     align-items: center;
     justify-content: end;
     gap: rem(50);
+    .swiper-button-prev, .swiper-button-next {
+      position: static;
+      width: auto;
+      height: auto;
+      top: auto;
+      left: auto;
+      right: auto;
+      display: block;
+      margin-top: 0;
+      &::after,
+      &::before{
+        content:'';
+        display: none;
+      }
+    }
   }
 
   &__pagination {
     display: flex;
+    width: auto !important;
   }
 }
 .slide-sertificats {
