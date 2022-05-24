@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style_after.min.css?_v=20220525021153">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220525022438">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -440,7 +440,7 @@
 							У вас больше <span data-computer></span> компьютеров или <span data-server></span> серверов?
 						</div>
 						<div class="tariff-unique__button">
-							<div class="button button--blue">Заказать расчет проекта</div>
+							<div data-popup="#blueButtonPopup" data-popup-info="Заказать расчет проекта" class="button button--blue">Заказать расчет проекта</div>
 						</div>
 					</div>
 					<div class="computer-tariff__list">
@@ -466,7 +466,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000">
@@ -491,7 +491,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000" data-fix-price>
@@ -516,7 +516,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 					</div>
@@ -749,19 +749,46 @@
 			</div>
 		</footer>
 	</div>
-	<div></div>
-
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
+	<div id="blueButtonPopup" aria-hidden="true" class="popup blueButtonPopup">
+		<div class="popup__wrapper blueButtonPopup__wrapper">
+			<div class="popup__content blueButtonPopup__content">
+				<button data-close type="button" class="popup__close blueButtonPopup__close">
+					<img src="img/icons/close.svg" alt="image">
+				</button>
+				<div class="popup__text blueButtonPopup__text">
+					<div class="footer__title callback-footer__title">МодалОчка от синей кнопки</div>
+					<form action="#" data-ajax method="post" class="callback-footer__body">
+						<div class="callback-footer__row">
+							<input type="text" name="" id="" data-required class="callback-footer__input">
+							<label for="" class="callback-footer__label">имя</label>
+						</div>
+						<div class="callback-footer__row">
+							<input type="text" name="" id="" data-required data-inputmask-clearincomplete="true" data-inputmask="'mask':'+7 (999) 999 99 99'" class="callback-footer__input">
+							<label for="" class="callback-footer__label">номер телефона</label>
+						</div>
+						<div class="callback-footer__row">
+							<input type="text" name="" id="" data-required="email" data-inputmask="'alias': 'email'" class="callback-footer__input">
+							<label for="" class="callback-footer__label">e-mail</label>
+						</div>
+						<div class="callback-footer__row">
+							<textarea type="text" name="" id="" placeholder="Сообщение" class="callback-footer__textarea"></textarea>
+							<!-- <label for="" class="callback-footer__label">Сообщение</label> -->
+						</div>
+						<div class="callback-footer__row">
+							<input type="checkbox" name="" data-required id="callback-footer__checkbox" checked="checked" class="callback-footer__checkbox">
+							<label for="callback-footer__checkbox" class="callback-footer__agree"><span>Я согласен(а) на</span><a href="#" class="callback-footer__link">обработку персональных данных</a>
+							</label>
+						</div>
+						<input type="hidden" name="" id="" data-required class="blueButtonPopup_hidden">
+						<div class="callback-footer__row">
+							<button type="submit" class="rectangle_btn callback-footer__submit">Отправить</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div> -->
-	<script src="js/app_after.min.js?_v=20220525021153"></script>
+	<script src="js/app_after.min.js?_v=20220525022438"></script>
 </body>
 
 </html>
