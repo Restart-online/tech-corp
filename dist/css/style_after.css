@@ -470,15 +470,15 @@ body::after {
   color: #000;
 }
 
-@supports (font-size: clamp( 1.75rem , 1.6620879121rem  +  0.4395604396vw , 2rem )) {
+@supports (font-size: clamp( 1.4375rem , 1.2396978022rem  +  0.989010989vw , 2rem )) {
   .sectiontitle {
-    font-size: clamp( 1.75rem , 1.6620879121rem  +  0.4395604396vw , 2rem );
+    font-size: clamp( 1.4375rem , 1.2396978022rem  +  0.989010989vw , 2rem );
   }
 }
 
-@supports not (font-size: clamp( 1.75rem , 1.6620879121rem  +  0.4395604396vw , 2rem )) {
+@supports not (font-size: clamp( 1.4375rem , 1.2396978022rem  +  0.989010989vw , 2rem )) {
   .sectiontitle {
-    font-size: calc(1.75rem + 0.25 * (100vw - 20rem) / 56.875);
+    font-size: calc(1.4375rem + 0.5625 * (100vw - 20rem) / 56.875);
   }
 }
 
@@ -3418,6 +3418,125 @@ body::after {
 .news__seall {
   font-weight: 500;
   color: #1047C8;
+}
+
+@supports (padding-bottom: clamp( 1.875rem , -1.8612637363rem  +  18.6813186813vw , 12.5rem )) {
+  .home-reviews__container {
+    padding-bottom: clamp( 1.875rem , -1.8612637363rem  +  18.6813186813vw , 12.5rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.875rem , -1.8612637363rem  +  18.6813186813vw , 12.5rem )) {
+  .home-reviews__container {
+    padding-bottom: calc(1.875rem + 10.625 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
+  .home-reviews__head:not(:last-child) {
+    margin-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
+  .home-reviews__head:not(:last-child) {
+    margin-bottom: calc(1.875rem + 4.375 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.home-reviews__body {
+  position: relative;
+}
+
+@supports (margin-bottom: clamp( 1.25rem , 0.7005494505rem  +  2.7472527473vw , 2.8125rem )) {
+  .slide-homeReviews__head:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 0.7005494505rem  +  2.7472527473vw , 2.8125rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.25rem , 0.7005494505rem  +  2.7472527473vw , 2.8125rem )) {
+  .slide-homeReviews__head:not(:last-child) {
+    margin-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.slide-homeReviews__date {
+  font-weight: 500;
+  color: #BCBEC0;
+}
+
+@supports (margin-bottom: clamp( 0.9375rem , 0.6737637363rem  +  1.3186813187vw , 1.6875rem )) {
+  .slide-homeReviews__date:not(:last-child) {
+    margin-bottom: clamp( 0.9375rem , 0.6737637363rem  +  1.3186813187vw , 1.6875rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 0.9375rem , 0.6737637363rem  +  1.3186813187vw , 1.6875rem )) {
+  .slide-homeReviews__date:not(:last-child) {
+    margin-bottom: calc(0.9375rem + 0.75 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.slide-homeReviews__name {
+  font-weight: 600;
+}
+
+.slide-homeReviews__name:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+.slide-homeReviews__post {
+  color: #636363;
+}
+
+.slide-homeReviews__body img {
+  width: 100%;
+}
+
+.slide-homeReviews__body::before {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+.home-actions__cnt {
+  max-width: 98.75rem;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.home-actions__content {
+  padding: 0 0.9375rem;
+}
+
+@supports (padding-top: clamp( 0.0000000625rem , -6.6522115178rem  +  13.8768429315vw , 10rem )) {
+  .home-actions__content {
+    padding-top: clamp( 0.0000000625rem , -6.6522115178rem  +  13.8768429315vw , 10rem );
+  }
+}
+
+@supports not (padding-top: clamp( 0.0000000625rem , -6.6522115178rem  +  13.8768429315vw , 10rem )) {
+  .home-actions__content {
+    padding-top: calc(0.0000000625rem + 9.9999999375 * (100vw - 47.9375rem) / 72.0625);
+  }
+}
+
+.home-actions__link {
+  border: 0.0625rem solid #1047C8;
+  color: #fff;
+  background-color: #1047C8;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.home-actions__seall {
+  color: #1047C8;
+}
+
+.home-actions__image img {
+  width: 100%;
 }
 
 .hero-cases__container {
@@ -7027,11 +7146,31 @@ body::after {
 }
 
 .spollers-career__text ul {
-  padding-left: 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.625rem;
+  padding-left: 1.125rem;
 }
 
 .spollers-career__text ul li {
   list-style: disc;
+}
+
+.spollers-career__text ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.625rem;
+  padding-left: 1.125rem;
 }
 
 .spollers-career__popuplink {
@@ -9236,6 +9375,18 @@ button.swiper-pagination-bullet {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .home-actions__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
+  .home-actions__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
   .sertificats-cases__body {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
@@ -9679,6 +9830,11 @@ button.swiper-pagination-bullet {
     display: none;
   }
 
+  .interesting__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
   .header {
     background-color: rgba(28, 28, 28, 0.8);
     padding-bottom: 0;
@@ -9893,6 +10049,13 @@ button.swiper-pagination-bullet {
   .tabs-directions__navigation {
     padding-bottom: 0.625rem;
     overflow: auto;
+  }
+
+  .home-actions__cnt {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .sertificats-cases__body {
@@ -10192,6 +10355,11 @@ button.swiper-pagination-bullet {
 
   .tabs-directions__image_popular:hover span {
     max-width: none;
+  }
+
+  .home-actions__link:hover {
+    background-color: #fff;
+    color: #1047C8;
   }
 
   .hero-cases__link:hover {

@@ -13277,6 +13277,40 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".home-reviews__slider")) new core(".home-reviews__slider", {
+                modules: [ Navigation, Pagination, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 3,
+                spaceBetween: 60,
+                speed: 800,
+                pagination: {
+                    el: ".home-reviews__body .videocases__pagination",
+                    type: "fraction"
+                },
+                navigation: {
+                    prevEl: ".home-reviews__body .videocases_arrow_prev",
+                    nextEl: ".home-reviews__body .videocases_arrow_next"
+                },
+                breakpoints: {
+                    319: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1268: {
+                        spaceBetween: 60
+                    }
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();

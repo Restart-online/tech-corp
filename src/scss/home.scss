@@ -670,3 +670,123 @@
     color: $blueMain;
   }
 }
+
+//========================================================================================================================================================
+.home-reviews {
+
+  &__container {
+    @include adaptiveValue("padding-bottom", 200, 30);
+  }
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 100, 30);
+    }
+  }
+
+  &__title {
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+}
+.slide-homeReviews {
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 45, 20);
+    }
+  }
+
+  &__date {
+    font-weight: 500;
+    color: #BCBEC0;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 27, 15);
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    &:not(:last-child) {margin-bottom: rem(15);}
+  }
+
+  &__post {
+    color: #636363;
+  }
+  &__body {
+    img {
+      width: 100%;
+    }
+    &::before{
+      background-color: rgba(0, 0, 0, 0.09);
+    }
+  }
+
+  &__image {
+  }
+}
+
+//========================================================================================================================================================
+.home-actions {
+
+  &_title {
+  }
+
+  &__cnt {
+    max-width: rem(1580);
+    margin-left: auto;
+    display: flex;
+    gap: rem(20);
+    @media (max-width:$mobile){
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    @include adaptiveValue("padding-top", 160, 0, 1920, 767, 1);
+    padding: 0 rem(15);
+    @media (min-width:$mobile){
+      flex: 0 1 50%;
+    }
+  }
+
+  &__links {
+  }
+
+  &__link {
+    border: rem(1) solid $blue;
+    color: #fff;
+    background-color: $blue;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: #fff;
+        color: $blue;
+      }
+    }
+  }
+
+  &__seall {
+    color: $blue;
+  }
+
+  &__image {
+    @media (min-width:$mobile){
+      flex: 0 1 50%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
