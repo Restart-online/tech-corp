@@ -1,0 +1,26 @@
+.tariff-unique {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F8F8F9;
+  padding: rem(60) rem(40);
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    padding: rem(40) rem(30);
+  }
+}
+
+.tariff-unique--show {
+  display: flex;
+}
+
+.tariff-unique__caption {
+  @include h2();
+}
+
+
+.tariff-unique__button {
+  margin-top: rem(40);
+}

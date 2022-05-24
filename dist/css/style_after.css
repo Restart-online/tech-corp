@@ -2136,6 +2136,38 @@ body::after {
   color: #1047C8;
 }
 
+.tariff-unique {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #F8F8F9;
+  padding: 3.75rem 2.5rem;
+}
+
+.tariff-unique--show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tariff-unique__caption {
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 32px;
+}
+
+.tariff-unique__button {
+  margin-top: 2.5rem;
+}
+
 @supports (--tabwidth: clamp( 4.6875rem , 3.0391483516rem  +  8.2417582418vw , 9.375rem )) {
   :root {
     --tabwidth: clamp( 4.6875rem , 3.0391483516rem  +  8.2417582418vw , 9.375rem );
@@ -4800,6 +4832,10 @@ body::after {
           justify-content: space-between;
   background-color: #F8F8F9;
   padding: 5rem 4.375rem 6rem;
+}
+
+.computer-tariff__unique {
+  margin-top: 2.5rem;
 }
 
 .computer-tariff__slider {
@@ -8523,6 +8559,10 @@ button.swiper-pagination-bullet {
     font-size: 30px;
   }
 
+  .tariff-unique__caption {
+    font-size: 30px;
+  }
+
   .hero__goto {
     left: 50%;
     -webkit-animation: bounceMd1 1s linear infinite;
@@ -8797,6 +8837,10 @@ button.swiper-pagination-bullet {
 
   .feedback__caption {
     font-size: 18px;
+  }
+
+  .tariff-unique__caption {
+    font-size: 26px;
   }
 
   .videocases__arrows {
@@ -9331,6 +9375,18 @@ button.swiper-pagination-bullet {
     margin: 0 0.25rem;
   }
 
+  .tariff-unique {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2.5rem 1.875rem;
+  }
+
+  .tariff-unique__caption {
+    font-size: 22px;
+  }
+
   .tabs-directions__navigation {
     padding-bottom: 0.625rem;
     overflow: auto;
@@ -9699,6 +9755,10 @@ button.swiper-pagination-bullet {
   .pagination__item,
   .pagination__link {
     font-size: 13px;
+  }
+
+  .tariff-unique__caption {
+    font-size: 18px;
   }
 
   .article-body__content p {
