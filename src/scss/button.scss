@@ -29,11 +29,23 @@
 
 .button--blue {
   background-color: $blueMain;
+  border-color: $blueMain;
 
   &:hover,
   &:focus {
     background-color: darken($blueMain, 10%);
     border-color: darken($blueMain, 10%);
+  }
+}
+
+.button--blue-outline {
+  color: $blueMain;
+  border-color: $blueMain;
+
+  &:hover,
+  &:focus {
+    background-color: $blueMain;
+    color: $white;
   }
 }
 
