@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Новости</title>
+	<title>Услуги</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<div class="wrapper wrapper_lightheader">
+	<div class="wrapper">
 		<header data-scroll="100" class="header header_light">
 			<div class="header__top top-header">
 				<div class="top-header__container">
@@ -368,185 +368,451 @@
 				</div>
 			</div>
 		</header>
-		<main class="page">
-			<section class="sidebar-page info-page">
-				<div class="sidebar-page__container">
-					<div class="sidebar-page__sidebar">
-						<div data-spollers="992" class="menu-sidebar">
-							<div class="menu-sidebar__spoller">
-								<button type="button" data-spoller class="menu-sidebar__title">Навигация</button>
-								<ul class="menu-sidebar__list">
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">О компании</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">История компании</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Наша команда</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Сертификаты</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Отзывы</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Карьера</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Вопрос-ответ</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Партнеры</a></li>
-									<li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link menu-sidebar__link_active">Новости</a></li>
+		<main class="page page__services">
+			<section class="breadcumps">
+				<div class="breadcumps__container">
+					<ul class="breadcumps__body">
+						<li class="breadcumps__item item-breadcumps">
+							<a href="#" class="item-breadcumps__link">Главная</a>
+						</li>
+						<li class="breadcumps__item item-breadcumps">
+							<a href="#" class="item-breadcumps__link item-breadcumps__link_drop">Услуги <span></span></a>
+							<div class="item-breadcumps__dropdown">
+								<ul class="item-breadcumps__list">
+									<li class="item-breadcumps__item"><a href="#">Услуги 1</a></li>
+									<li class="item-breadcumps__item"><a href="#">Услуги 2</a></li>
+									<li class="item-breadcumps__item"><a href="#">Услуги 3</a></li>
 								</ul>
 							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="services">
+				<div class="services__container">
+					<div class="services__head">
+						<div class="services__title sectiontitle">
+							Наши услуги
 						</div>
-						<div data-da=".sidebar-page__container, 992" class="info-page__form feedback">
-							<div class="feedback__caption">Подпишитесь на рассылку новостей</div>
-							<div class="feedback__description">Будьте всегда в курсе наших событий.</div>
-							<form action="#" method="post" data-ajax="" class="feedback__form feedback-form">
-								<label class="feedback-form__item field field--dark">
-									<input type="email" class="field__input" data-required inputmode="text" data-inputmask="'alias': 'email'" placeholder=" ">
-									<span class="field__label field__label--inside">Почта</span>
-								</label>
-								<label class="feedback-form__checkbox custom-checkbox">
-									<input class="custom-checkbox__input" type="checkbox" data-required checked>
-									<span class="custom-checkbox__label">
-										Я согласен(а) на <a href="#">обработку персональных данных</a>
-									</span>
-								</label>
-								<button type="submit" class="button button--blue">Подписаться</button>
-							</form>
+						<div class="services__search search-services">
+							<div class="search-directions">
+								<input type="text" name="" placeholder="Введите название услуги" id="" class="search-directions__input">
+								<i class="search-directions__icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M15 15L21 21" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</i>
+							</div>
+							<div class="search-directions__result"></div>
 						</div>
 					</div>
-					<div class="sidebar-page__content">
-						<div class="sidebar-page__caption">Последние новости</div>
-						<div class="info-page__badge badge">
-							<div class="badge__list">
-								<label class="badge__item">
-									<input type="checkbox" name="year" class="badge__input" checked>
-									<span class="badge__label">Все</span>
-								</label>
-								<label class="badge__item">
-									<input type="checkbox" name="year" class="badge__input">
-									<span class="badge__label">2022</span>
-								</label>
-								<label class="badge__item">
-									<input type="checkbox" name="year" class="badge__input">
-									<span class="badge__label">2021</span>
-								</label>
-								<label class="badge__item">
-									<input type="checkbox" name="year" class="badge__input">
-									<span class="badge__label">2020</span>
-								</label>
+					<div class="services__body body-services">
+						<nav class="body-services__navigation">
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_1.svg" alt="image">
+								</div>
+								<div class="title-services__name">Информационная безопасность</div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_2.svg" alt="image">
+								</div>
+								<div class="title-services__name">Ремонт и обслуживание компьютерной техники</div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_3.svg" alt="image">
+								</div>
+								<div class="title-services__name">Ремонт и обслуживание оргтехники</div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_4.svg" alt="image">
+								</div>
+								<div class="title-services__name">Эксплуатация файловых NAS хранилищ общего пользования</div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_5.svg" alt="image">
+								</div>
+								<div class="title-services__name">Управление ИТ-инфраструктурой бизнеса</div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+							<div class="body-services__title title-services">
+								<div class="title-services__icon">
+									<img src="img/services/item_6.svg" alt="image">
+								</div>
+								<div class="title-services__name">Ремонтные работы и обслуживание </div>
+								<div class="title-services__arrow">
+									<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.142883 5C0.142883 4.44772 0.590599 4 1.14288 4H14.8572C15.4095 4 15.8572 4.44772 15.8572 5C15.8572 5.55228 15.4095 6 14.8572 6H1.14288C0.590599 6 0.142883 5.55228 0.142883 5Z" fill="#1047C8" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3406 0.483368C10.7311 0.0928443 11.3643 0.0928445 11.7548 0.483369L15.5643 4.29289C15.9548 4.68342 15.9548 5.31658 15.5643 5.70711L11.7548 9.51663C11.3643 9.90716 10.7311 9.90716 10.3406 9.51663C9.95004 9.12611 9.95004 8.49294 10.3406 8.10242L13.443 5L10.3406 1.89758C9.95004 1.50706 9.95004 0.873893 10.3406 0.483368Z" fill="#1047C8" />
+									</svg>
+
+								</div>
+							</div>
+						</nav>
+						<div hidden class="body-services__items">
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Информационная безопасность</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">DLP-системы </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Защита персональных данных </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Обеспечение настроек информационной безопасности для ограничения доступа в локальную сеть извне (при наличии технических средств)</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка, настройка, обновление и устранение неисправностей в работе антивирусного программного обеспечения на рабочих станциях и серверах, а также для защиты интернет-трафика и сообщений электронной почты</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Управление средствами шифрования электронной почты и файлов, обеспечение работоспособности электронной цифровой подписи; </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Управление средствами защиты информации, в том числе криптографическими </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка и настройка SIEM систем </span>
+									</a>
+								</div>
+							</div>
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Ремонт и обслуживание компьютерной техники</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">DLP-системы </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Защита персональных данных </span>
+									</a>
+								</div>
+							</div>
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Ремонт и обслуживание оргтехники</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">DLP-системы </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Защита персональных данных </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+									</a>
+								</div>
+							</div>
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Эксплуатация файловых NAS хранилищ общего пользования</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">DLP-системы </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Защита персональных данных </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Обеспечение настроек информационной безопасности для ограничения доступа в локальную сеть извне (при наличии технических средств)</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка, настройка, обновление и устранение неисправностей в работе антивирусного программного обеспечения на рабочих станциях и серверах, а также для защиты интернет-трафика и сообщений электронной почты</span>
+									</a>
+								</div>
+							</div>
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Управление ИТ-инфраструктурой бизнеса</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+								</div>
+							</div>
+							<div hidden class="body-services__item item-services">
+								<div class="item-services__head">
+									<div class="item-services__back">
+										<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M6.15032 23.6967L12.5224 30.1191L11.4357 31.2144L3.28578 23.0001L11.4357 14.7858L12.5224 15.881L6.30465 22.1478L42.7144 22.1478V23.6967L6.15032 23.6967Z" fill="#1047C8" />
+										</svg>
+
+										<span>все услуги</span>
+									</div>
+									<div class="item-services__title">Ремонтные работы и обслуживание</div>
+								</div>
+								<div class="item-services__body">
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Аудит информационной безопасности</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image tabs-directions__image_popular"><img src="img/icons/popular_star.svg" alt="arrow"> <span>Популярная услуга</span></div>
+										<span class="tabs-directions__text">Проектирование системы информационной безопасности под ключ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Системы контроля и защиты БД и файловых хранилищ</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">DLP-системы </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Установка антивирусных систем и систем безопасности </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Защита персональных данных </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Межсетевые экраны — UTM, IDS, IPS-системы, NGFW, WAF </span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Резервное копирование и восстановление данных</span>
+									</a>
+									<a href="#" class="tabs-directions__item">
+										<div class="tabs-directions__image"><img src="img/icons/arrow_white.svg" alt="arrow"></div>
+										<span class="tabs-directions__text">Создание, изменение, блокировка и удаление учётных записей пользователей для доступа к локальным ресурсам и сети Интернет</span>
+									</a>
+								</div>
 							</div>
 						</div>
-						<div class="info-page__list">
-							<div class="info-item info-item--full">
-								<span class="info-item__picture">
-									<picture><source srcset="img/article/interesting-1.webp" type="image/webp"><img src="img/article/interesting-1.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="interesting__image"></picture>
-								</span>
-								<span class="info-item__information">
-									<span class="info-item__views">
-										<svg class="info-item__eye">
-											<use xlink:href="img/icons/sprite.svg#views"></use>
-										</svg>
-										100500
-									</span>
-									<span class="info-item__date">15 Января 2021</span>
-								</span>
-								<a href="#" class="info-item__caption">Что нового в ИТ-аутсорсинге в России?</a>
-								<span class="info-item__description">
-									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-								</span>
-								<a href="#" class="info-item__link">Читать</a>
-							</div>
-							<div class="info-item">
-								<span class="info-item__picture">
-									<picture><source srcset="img/news/news-item.webp" type="image/webp"><img src="img/news/news-item.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="info-item__image"></picture>
-								</span>
-								<span class="info-item__information">
-									<span class="info-item__views">
-										<svg class="info-item__eye">
-											<use xlink:href="img/icons/sprite.svg#views"></use>
-										</svg>
-										100500
-									</span>
-									<span class="info-item__date">15 Января 2021</span>
-								</span>
-								<a href="#" class="info-item__caption">Что нового в ИТ-аутсорсинге в России?</a>
-								<span class="info-item__description">
-									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-								</span>
-								<a href="#" class="info-item__link">Читать</a>
-							</div>
-							<div class="info-item">
-								<span class="info-item__picture">
-									<picture><source srcset="img/news/news-item.webp" type="image/webp"><img src="img/news/news-item.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="info-item__image"></picture>
-								</span>
-								<span class="info-item__information">
-									<span class="info-item__views">
-										<svg class="info-item__eye">
-											<use xlink:href="img/icons/sprite.svg#views"></use>
-										</svg>
-										100500
-									</span>
-									<span class="info-item__date">15 Января 2021</span>
-								</span>
-								<a href="#" class="info-item__caption">Что нового в ИТ-аутсорсинге в России?</a>
-								<span class="info-item__description">
-									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-								</span>
-								<a href="#" class="info-item__link">Читать</a>
-							</div>
-							<div class="info-item">
-								<span class="info-item__picture">
-									<picture><source srcset="img/news/news-item.webp" type="image/webp"><img src="img/news/news-item.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="info-item__image"></picture>
-								</span>
-								<span class="info-item__information">
-									<span class="info-item__views">
-										<svg class="info-item__eye">
-											<use xlink:href="img/icons/sprite.svg#views"></use>
-										</svg>
-										100500
-									</span>
-									<span class="info-item__date">15 Января 2021</span>
-								</span>
-								<a href="#" class="info-item__caption">Что нового в ИТ-аутсорсинге в России?</a>
-								<span class="info-item__description">
-									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-								</span>
-								<a href="#" class="info-item__link">Читать</a>
-							</div>
-							<div class="info-item">
-								<span class="info-item__picture">
-									<picture><source srcset="img/news/news-item.webp" type="image/webp"><img src="img/news/news-item.jpg" alt="Что нового в ИТ-аутсорсинге в России?" class="info-item__image"></picture>
-								</span>
-								<span class="info-item__information">
-									<span class="info-item__views">
-										<svg class="info-item__eye">
-											<use xlink:href="img/icons/sprite.svg#views"></use>
-										</svg>
-										100500
-									</span>
-									<span class="info-item__date">15 Января 2021</span>
-								</span>
-								<a href="#" class="info-item__caption">Что нового в ИТ-аутсорсинге в России?</a>
-								<span class="info-item__description">
-									Гиганты бизнеса сокращают расходы — айтишники ищут способы сохранить ИТ-прогресс.
-								</span>
-								<a href="#" class="info-item__link">Читать</a>
-							</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="callback">
+				<div class="callback__container">
+					<div class="callback__body callback__body_center">
+						<div class="callback__text">
+							<div class="callback__title sectiontitle">Не нашли нужные услуги?</div>
+							<div class="callback__label sectionlabel">Тарифы на остальные услуги вы можете узнать, позвонив по номеру телефона 8 800 8000 00 или оставив заявку</div>
 						</div>
-						<div class="info-page__pagination pagination">
-							<div class="pagination__arrow pagination__arrow--disabled pagination__arrow--prev">
-								<svg class="pagination__icon">
-									<use xlink:href="img/icons/sprite.svg#pagination-arrow"></use>
-								</svg>
-							</div>
-							<div class="pagination__list">
-								<a href="#" class="pagination__link pagination__link--active">1</a>
-								<a href="#" class="pagination__link">2</a>
-								<a href="#" class="pagination__link">3</a>
-								<a href="#" class="pagination__link">4</a>
-								<a href="#" class="pagination__link">5</a>
-								<a href="#" class="pagination__link">6</a>
-								<a href="#" class="pagination__link">7</a>
-								<div class="pagination__item">...</div>
-								<a href="#" class="pagination__link">20</a>
-							</div>
-							<div class="pagination__arrow pagination__arrow--next">
-								<svg class="pagination__icon">
-									<use xlink:href="img/icons/sprite.svg#pagination-arrow"></use>
-								</svg>
-							</div>
+						<div class="callback__form footer__callback footer__callback_light callback-footer">
+							<div class="footer__title callback-footer__title">Оставьте свои данные и мы вам перезвоним</div>
+							<form action="#" data-ajax method="post" class="callback-footer__body">
+								<div class="callback-footer__row">
+									<input type="text" name="" id="" data-required class="callback-footer__input">
+									<label for="" class="callback-footer__label">имя</label>
+								</div>
+								<div class="callback-footer__row">
+									<input type="text" name="" id="" data-required data-inputmask-clearincomplete="true" data-inputmask="'mask':'+7 (999) 999 99 99'" class="callback-footer__input">
+									<label for="" class="callback-footer__label">номер телефона</label>
+								</div>
+								<div class="callback-footer__row">
+									<input type="checkbox" data-required name="" id="callback-footer__checkbox" checked="checked" class="callback-footer__checkbox">
+									<label for="callback-footer__checkbox" class="callback-footer__agree"><span>Даю согласие на обработку</span><a href="#" class="callback-footer__link">Персональных данных</a>
+									</label>
+								</div>
+								<div class="callback-footer__row">
+									<button type="submit" class="rectangle_btn callback-footer__submit">Отправить</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -613,8 +879,6 @@
 			</div>
 		</footer>
 	</div>
-	<div></div>
-
 	<!-- <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">

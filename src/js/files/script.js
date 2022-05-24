@@ -69,35 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const directionsInput = document.querySelector('.search-directions__input');
   if (directionsInput) {
-    const directionsItems = document.querySelectorAll('.tabs-directions__item');
-    directionsInput.addEventListener('input', () => {
-      const directionsResult = document.querySelector('.search-directions__result');
-      let arr = [];
-      directionsItems.forEach(directionsItem => {
-        let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
-        let directionsInputValue = directionsInput.value;
-        if (directionsInputValue !== '') {
-          if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
-            directionsItem.hidden = false;
-          } else {
-            directionsItem.hidden = true;
-          }
-        } else {
-          directionsItem.hidden = false;
-        }
-      });
-      
-      directionsItems.forEach(directionsItem => {
-        if (!directionsItem.hidden) {
-          arr.push(directionsItem)
-        }
-      })
-      if (arr.length > 0) {
-        directionsResult.innerHTML = `Найдено ${arr.length} результата`;
-      } else {
-        directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
-      }
-    })
+    directionsSearch(directionsInput);
+  }
+  const servicesTitles = document.querySelectorAll('.title-services');
+  if (servicesTitles.length) {
+    servicesActions(servicesTitles);
   }
 
   
@@ -116,6 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+
+function servicesActions(servicesTitles) {
+  const servicesNavigation = document.querySelector('.body-services__navigation')
+  const servicesItems = document.querySelectorAll('.item-services');
+  const servicesItemsParent = document.querySelector('.body-services__items');
+  for (let i = 0; i < servicesTitles.length; i++) {
+    servicesTitles[i].addEventListener('click', () => {
+      let servicesIndex = i;
+      servicesNavigation.hidden = true;
+      servicesItemsParent.hidden = false;
+      servicesItems[servicesIndex].hidden = false;
+      servicesItems[servicesIndex].querySelector('.item-services__back').addEventListener('click', () => {
+        servicesItems[servicesIndex].hidden = true;
+        servicesItemsParent.hidden = true;
+        servicesNavigation.hidden = false;
+      })
+    })
+  }
+}
 
 function headerSubMenuActions(menuSublinks) {
   menuSublinks.forEach(menuSublink => {
@@ -147,8 +143,77 @@ function headerSubMenuActions(menuSublinks) {
     el.addEventListener('click', (ev) => {
       _slideToggle(el.parentElement);
       el.parentElement.previousElementSibling.classList.remove('_spoller-active');
-      console.log(el.parentElement.previousElementSibling)
     })
+  })
+}
+
+function directionsSearch(directionsInput) {
+  const directionsItems = document.querySelectorAll('.tabs-directions__item');
+  const servicesNavigation = document.querySelector('.body-services__navigation')
+  const servicesItems = document.querySelectorAll('.item-services');
+  const servicesItemsParent = document.querySelector('.body-services__items');
+  directionsInput.addEventListener('input', () => {
+    const directionsResult = document.querySelector('.search-directions__result');
+    let arr = [];
+    directionsItems.forEach(directionsItem => {
+      let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
+      let directionsInputValue = directionsInput.value;
+      if (directionsInputValue.length > 0) {
+        if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
+          directionsItem.hidden = false;
+        } else {
+          directionsItem.hidden = true;
+        }
+        if (document.querySelector('.page__services')) {
+          servicesNavigation.hidden = true;
+          servicesItemsParent.hidden = false;
+          servicesItems.forEach(el => {
+            el.hidden = false;
+            el.querySelector('.item-services__back').hidden = true;
+          })
+        }
+        directionsItems.forEach(directionsItem => {
+          if (!directionsItem.hidden) {
+            arr.push(directionsItem)
+          }
+        })
+    
+        if (arr.length > 0) {
+          if (directionsResult) {
+            directionsResult.innerHTML = `Найдено ${arr.length} результата`;
+          }
+          if (document.querySelector('.page__services')) {
+            servicesItems.forEach(el => {
+              el.querySelector('.item-services__back').hidden = true;
+            })
+          }
+        } else {
+          if (directionsResult) {
+            directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
+          }
+          if (document.querySelector('.page__services')) {
+            servicesNavigation.hidden = true;
+            servicesItemsParent.hidden = true;
+            servicesItems.forEach(el => {
+              el.hidden = false;
+              el.querySelector('.item-services__back').hidden = false;
+            })
+          }
+        }
+      } else if (directionsInputValue.length <= 0) {
+        directionsItem.hidden = false;
+        directionsResult.innerHTML = '';
+        if (document.querySelector('.page__services')) {
+          servicesNavigation.hidden = false;
+          servicesItemsParent.hidden = true;
+          servicesItems.forEach(el => {
+            el.hidden = true;
+            el.querySelector('.item-services__back').hidden = false;
+          })
+        }
+      }
+    });
+    
   })
 }
 

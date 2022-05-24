@@ -1,0 +1,146 @@
+:root {
+  @include adaptiveValue("--srcgd", 360, 280);
+}
+
+.services {
+
+  &__container {
+    padding-top: rem(30);
+  }
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(35);}
+  }
+
+  &__title {
+  }
+
+  &__search {
+    max-width: rem(780);
+  }
+
+  &__body {
+  }
+}
+.search-directions {
+
+  &__input {
+  }
+
+  &__icon {
+  }
+}
+.body-services {
+
+  &__navigation {
+    display: grid;
+    @include adaptiveValue("gap", 60, 20);
+    @media (min-width:$mobile){
+      grid-template-columns: repeat(auto-fit, var(--srcgd));
+    }
+    @media (max-width:$mobile){
+      overflow: auto;
+      grid-auto-flow: column;
+    }
+  }
+
+  &__title {
+  }
+
+  &__items {
+  }
+
+  &__item {
+  }
+}
+.title-services {
+  border: rem(1) solid #BCBEC0;
+  @include adaptiveValue("padding-top", 80, 20);
+  @include adaptiveValue("padding-left", 35, 20);
+  @include adaptiveValue("padding-right", 35, 20);
+  @include adaptiveValue("padding-bottom", 55, 20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include adaptiveValue("gap", 43, 15);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  * {
+    transition: all 0.3s ease 0s;
+  }
+  @media (any-hover: hover){
+    &:hover{
+      .title-services__name {
+        color: #fff;
+      }
+      background-color: $blue;
+      .title-services__arrow {
+        svg path {
+          fill: #fff
+        }
+      }
+    }
+  }
+
+  &__icon {
+    background-color: $blue;
+    padding: rem(10) rem(20);
+    border-radius: rem(5);
+    &:not(:last-child) {margin-bottom: rem(11);}
+  }
+
+  &__name {
+    text-align: center;
+    @include adaptiveValue("font-size", 20, 15);
+    font-weight: 700;
+  }
+
+  &__arrow {
+    margin-top: auto;
+  }
+}
+.item-services {
+  &:not(:last-child) {margin-bottom: rem(50);}
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 20, 17);
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    color: $blue;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: rem(12);
+    &:not(:last-child) {margin-bottom: rem(23);}
+  }
+
+  &__body {
+    @include adaptiveValue("column-gap", 60, 20);
+    @include adaptiveValue("row-gap", 25, 20);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: rem(600);
+    @media (max-width:$pc){
+      max-height: rem(1200);
+    }
+    @media (max-width:$mobile){
+      max-height: none;
+    }
+    @media (min-width:$mobile){
+      .tabs-directions__item {
+        max-width: rem(360);
+      }
+    }
+  }
+}

@@ -16322,22 +16322,9 @@ PERFORMANCE OF THIS SOFTWARE.
                 }));
             }
             const directionsInput = document.querySelector(".search-directions__input");
-            if (directionsInput) {
-                const directionsItems = document.querySelectorAll(".tabs-directions__item");
-                directionsInput.addEventListener("input", (() => {
-                    const directionsResult = document.querySelector(".search-directions__result");
-                    let arr = [];
-                    directionsItems.forEach((directionsItem => {
-                        let directionsItemText = directionsItem.querySelector(".tabs-directions__text").textContent;
-                        let directionsInputValue = directionsInput.value;
-                        if ("" !== directionsInputValue) if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) directionsItem.hidden = false; else directionsItem.hidden = true; else directionsItem.hidden = false;
-                    }));
-                    directionsItems.forEach((directionsItem => {
-                        if (!directionsItem.hidden) arr.push(directionsItem);
-                    }));
-                    if (arr.length > 0) directionsResult.innerHTML = `Найдено ${arr.length} результата`; else directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
-                }));
-            }
+            if (directionsInput) directionsSearch(directionsInput);
+            const servicesTitles = document.querySelectorAll(".title-services");
+            if (servicesTitles.length) servicesActions(servicesTitles);
             document.addEventListener("click", (e => {
                 if (!e.target.classList.contains("menu__link_sub") && !e.target.closest(".menu__submenu")) {
                     bodyUnlock();
@@ -16353,6 +16340,22 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             }));
         }));
+        function servicesActions(servicesTitles) {
+            const servicesNavigation = document.querySelector(".body-services__navigation");
+            const servicesItems = document.querySelectorAll(".item-services");
+            const servicesItemsParent = document.querySelector(".body-services__items");
+            for (let i = 0; i < servicesTitles.length; i++) servicesTitles[i].addEventListener("click", (() => {
+                let servicesIndex = i;
+                servicesNavigation.hidden = true;
+                servicesItemsParent.hidden = false;
+                servicesItems[servicesIndex].hidden = false;
+                servicesItems[servicesIndex].querySelector(".item-services__back").addEventListener("click", (() => {
+                    servicesItems[servicesIndex].hidden = true;
+                    servicesItemsParent.hidden = true;
+                    servicesNavigation.hidden = false;
+                }));
+            }));
+        }
         function headerSubMenuActions(menuSublinks) {
             menuSublinks.forEach((menuSublink => {
                 const menuSubmenu = menuSublink.parentElement.querySelector(".menu__submenu");
@@ -16381,7 +16384,61 @@ PERFORMANCE OF THIS SOFTWARE.
                 el.addEventListener("click", (ev => {
                     _slideToggle(el.parentElement);
                     el.parentElement.previousElementSibling.classList.remove("_spoller-active");
-                    console.log(el.parentElement.previousElementSibling);
+                }));
+            }));
+        }
+        function directionsSearch(directionsInput) {
+            const directionsItems = document.querySelectorAll(".tabs-directions__item");
+            const servicesNavigation = document.querySelector(".body-services__navigation");
+            const servicesItems = document.querySelectorAll(".item-services");
+            const servicesItemsParent = document.querySelector(".body-services__items");
+            directionsInput.addEventListener("input", (() => {
+                const directionsResult = document.querySelector(".search-directions__result");
+                let arr = [];
+                directionsItems.forEach((directionsItem => {
+                    let directionsItemText = directionsItem.querySelector(".tabs-directions__text").textContent;
+                    let directionsInputValue = directionsInput.value;
+                    if (directionsInputValue.length > 0) {
+                        if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) directionsItem.hidden = false; else directionsItem.hidden = true;
+                        if (document.querySelector(".page__services")) {
+                            servicesNavigation.hidden = true;
+                            servicesItemsParent.hidden = false;
+                            servicesItems.forEach((el => {
+                                el.hidden = false;
+                                el.querySelector(".item-services__back").hidden = true;
+                            }));
+                        }
+                        directionsItems.forEach((directionsItem => {
+                            if (!directionsItem.hidden) arr.push(directionsItem);
+                        }));
+                        if (arr.length > 0) {
+                            if (directionsResult) directionsResult.innerHTML = `Найдено ${arr.length} результата`;
+                            if (document.querySelector(".page__services")) servicesItems.forEach((el => {
+                                el.querySelector(".item-services__back").hidden = true;
+                            }));
+                        } else {
+                            if (directionsResult) directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
+                            if (document.querySelector(".page__services")) {
+                                servicesNavigation.hidden = true;
+                                servicesItemsParent.hidden = true;
+                                servicesItems.forEach((el => {
+                                    el.hidden = false;
+                                    el.querySelector(".item-services__back").hidden = false;
+                                }));
+                            }
+                        }
+                    } else if (directionsInputValue.length <= 0) {
+                        directionsItem.hidden = false;
+                        directionsResult.innerHTML = "";
+                        if (document.querySelector(".page__services")) {
+                            servicesNavigation.hidden = false;
+                            servicesItemsParent.hidden = true;
+                            servicesItems.forEach((el => {
+                                el.hidden = true;
+                                el.querySelector(".item-services__back").hidden = false;
+                            }));
+                        }
+                    }
                 }));
             }));
         }
@@ -16536,44 +16593,46 @@ PERFORMANCE OF THIS SOFTWARE.
             const connectInput2 = document.querySelector(".computer-tariff__input--server");
             const connectSlider1 = document.querySelector(".computer-tariff__range--computer");
             const connectSlider2 = document.querySelector(".computer-tariff__range--server");
-            const tariffSlider1 = connectSlider1 && nouislider.create(connectSlider1, {
-                tooltips: true,
-                connect: [ true, false ],
-                step: 1,
-                start: 10,
-                range: {
-                    min: 0,
-                    max: 40
-                },
-                format: {
-                    to: value => value,
-                    from: value => Math.round(Number(value))
-                },
-                pips: {
-                    mode: "range",
-                    density: 400
-                }
-            });
-            const tariffSlider2 = connectSlider2 && nouislider.create(connectSlider2, {
-                tooltips: true,
-                connect: [ true, false ],
-                step: 1,
-                start: 2,
-                range: {
-                    min: 0,
-                    max: 5
-                },
-                format: {
-                    to: value => value,
-                    from: value => Math.round(Number(value))
-                },
-                pips: {
-                    mode: "range",
-                    density: 400
-                }
-            });
-            tariffSlider1 && connectInput1 && tariffSlider1.on("update", (value => connectInput1.value = value));
-            tariffSlider2 && connectInput2 && tariffSlider2.on("update", (value => connectInput2.value = value));
+            if (connectSlider1 && connectSlider2 && connectInput1 && connectInput2) {
+                const tariffSlider1 = nouislider.create(connectSlider1, {
+                    tooltips: true,
+                    connect: [ true, false ],
+                    step: 1,
+                    start: 10,
+                    range: {
+                        min: 0,
+                        max: 40
+                    },
+                    format: {
+                        to: value => value,
+                        from: value => Math.round(Number(value))
+                    },
+                    pips: {
+                        mode: "range",
+                        density: 400
+                    }
+                });
+                const tariffSlider2 = nouislider.create(connectSlider2, {
+                    tooltips: true,
+                    connect: [ true, false ],
+                    step: 1,
+                    start: 2,
+                    range: {
+                        min: 0,
+                        max: 5
+                    },
+                    format: {
+                        to: value => value,
+                        from: value => Math.round(Number(value))
+                    },
+                    pips: {
+                        mode: "range",
+                        density: 400
+                    }
+                });
+                tariffSlider1.on("update", (value => connectInput1.value = value));
+                tariffSlider2.on("update", (value => connectInput2.value = value));
+            }
         }));
         window["FLS"] = true;
         isWebp();
