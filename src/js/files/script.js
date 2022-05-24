@@ -3,6 +3,7 @@ import { isMobile } from "./functions.js";
 import { _slideDown } from "./functions.js";
 import { _slideUp } from "./functions.js";
 import { _slideToggle } from "./functions.js";
+import { _slideLeft } from "./functions.js";
 import { bodyLockToggle } from "./functions.js";
 import { bodyUnlock } from "./functions.js";
 import { menuClose } from "./functions.js";
@@ -65,6 +66,40 @@ document.addEventListener('DOMContentLoaded', () => {
       reviewPreviewRender(reviewFileInput, reviewFilePreview);
     })
   }
+  
+  const directionsInput = document.querySelector('.search-directions__input');
+  if (directionsInput) {
+    const directionsItems = document.querySelectorAll('.tabs-directions__item');
+    directionsInput.addEventListener('input', () => {
+      const directionsResult = document.querySelector('.search-directions__result');
+      let arr = [];
+      directionsItems.forEach(directionsItem => {
+        let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
+        let directionsInputValue = directionsInput.value;
+        if (directionsInputValue !== '') {
+          if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
+            directionsItem.hidden = false;
+          } else {
+            directionsItem.hidden = true;
+          }
+        } else {
+          directionsItem.hidden = false;
+        }
+      });
+      
+      directionsItems.forEach(directionsItem => {
+        if (!directionsItem.hidden) {
+          arr.push(directionsItem)
+        }
+      })
+      if (arr.length > 0) {
+        directionsResult.innerHTML = `Найдено ${arr.length} результата`;
+      } else {
+        directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
+      }
+    })
+  }
+
   
   document.addEventListener('click', (e) => {
     if (!e.target.classList.contains('menu__link_sub') && !e.target.closest('.menu__submenu')) {

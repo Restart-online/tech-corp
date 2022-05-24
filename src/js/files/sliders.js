@@ -215,8 +215,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.videocases__arrows .swiper-button-prev',
-				nextEl: '.videocases__arrows .swiper-button-next',
+				prevEl: '.videocases__arrows .videocases_arrow_prev',
+				nextEl: '.videocases__arrows .videocases_arrow_next',
 			},
 
 			// Брейкпоинты

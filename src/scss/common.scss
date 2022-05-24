@@ -233,6 +233,9 @@
   &__bottom {
     display: grid;
     @include adaptiveValue("gap", 100, 30);
+    .page__career & {
+      gap: rem(30);
+    }
   }
 }
 .menu-sidebar {
@@ -283,5 +286,153 @@
       background-color: $blue;
       font-weight: 500;
     }
+  }
+}
+
+
+.breadcumps {
+
+  &__container {
+    @include adaptiveValue("padding-top", 55, 30);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    color: #BCBEC0;
+    font-size: rem(13);
+    gap: rem(2);
+    @media (any-hover: none){
+      &:hover{
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: rem(2);
+    &:not(:last-child) {
+      &::after{
+        content:'';
+        flex: 0 0 rem(16);
+        width: rem(16);
+        height: rem(16);
+        display: block;
+        background-image: url(../img/icons/breadcumps_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+.item-breadcumps {
+
+  &__link {
+    white-space: nowrap;
+    transition: color 0.3s ease 0s;
+    display: flex;
+    align-items: center;
+    gap: rem(2);
+    @media (any-hover: hover){
+      &:hover{
+        color: $mainColor;
+      }
+    }
+
+    &_drop {
+      span {
+        display: inline-block;
+        border-top: rem(4) solid #BCBEC0;
+        border-left: rem(4) solid transparent;
+        border-right: rem(4) solid transparent;
+        transform: translateY(rem(2));
+        @media (max-width:$mobile){
+          display: none;
+        }
+      }
+      @media (any-hover: hover){
+        &:hover{
+          &+.item-breadcumps__dropdown {
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity 0.3s ease 0s;
+    top: calc(100% - rem(8));
+    max-width: max-content;
+    left: 0;
+    padding-top: rem(8);
+    @media (any-hover: hover){
+      &:hover{
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__list {
+    background-color: #fff;
+    padding: rem(7);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+
+  &__item {
+    a {
+      transition: color 0.3s ease 0s;
+      display: inline-block;
+      white-space: nowrap;
+      padding: rem(7);
+      @media (any-hover: hover){
+        &:hover{
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+
+
+//========================================================================================================================================================
+
+.interesting {
+
+  &__list {
+    display: flex;
+    align-items: start;
+    @include adaptiveValue("gap", 60, 20);
+  }
+
+  &__item {
+    @extend .interesting
+  }
+
+  &__picture {
+  }
+
+  &__image {
+  }
+
+  &__date {
+  }
+
+  &__caption {
+  }
+
+  &__description {
+  }
+
+  &__link {
   }
 }

@@ -1,0 +1,137 @@
+.body-career {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 100, 50);
+
+  &__hero {
+  }
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+
+  &__title {
+  }
+
+  &__image {
+    &:not(:last-child) {margin-bottom: rem(30);}
+    img,
+    picture {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__tabs {
+  }
+
+  &__spollers {
+  }
+}
+.career {
+
+  &__vacancy {
+  }
+}
+.tabs-career {
+
+  &__navigation {
+    &:not(:last-child) {margin-bottom: rem(30);}
+    gap: rem(5);
+  }
+
+  &__title {
+    padding: rem(8.5) rem(20);
+    color: #636363;
+    background-color: #F9F9F9;
+    font-size: rem(14);
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background: rgba(16, 71, 200, 0.1);
+      }
+    }
+    &._tab-active {
+      background: rgba(16, 71, 200, 0.1);
+      color: $blue;
+    }
+  }
+
+  &__content {
+  }
+
+  &__body {
+  }
+}
+.spollers-career {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+
+  &__item {
+    @include adaptiveValue("padding", 30, 15);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    padding: 0;
+    padding-right: rem(40);
+    color: $blue;
+    font-weight: 600;
+    font-size: rem(20);
+    border: none;
+    &::before,
+    &::after{
+      background-color: $blue !important;
+    }
+  }
+
+  &__price {
+    color:#000;
+  }
+
+  &__body {
+  }
+
+  &__text {
+    padding: rem(30) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+      padding-left: rem(18);
+      li {
+        list-style: disc;
+      }
+    }
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+      padding-left: rem(18);
+    }
+  }
+
+  &__popuplink {
+    border: rem(1) solid $blue;
+    background-color: $blue;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: #fff;
+        color: $blue;
+      }
+    }
+  }
+}

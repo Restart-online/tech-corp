@@ -73,6 +73,44 @@
     line-height: 1.5;
   }
 
+  &__foot {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 55, 25);
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    transition: all 0.3s ease 0s;
+    svg path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: $blue;
+        svg path {
+          fill: $blue;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content:center;align-items: center;
+    flex: 0 0 rem(24);
+  }
+
+  &__number {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
   &__link {
     background-color: $blue;
     color: #fff;

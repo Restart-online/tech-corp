@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Карьера"
+	})
+	<body>
+		<div class="wrapper wrapper_lightheader">
+			@@include('html/_header.htm',{
+				"light": "header_light"
+			})
+			<main class="page page__career">
+        @@include('html/_breadcumps.htm',{
+          "second": "О компании",
+          "third": "Карьера"
+        })
+        <section class="career">
+          <div class="career__container sertificats__container">
+            <div class="career__sidebar sidebar">
+              <div data-spollers="992" class="sidebar__menu menu-sidebar">
+                <div class="menu-sidebar__spoller">
+                  <button type="button" data-spoller class="menu-sidebar__title">Навигация</button>
+                  <ul class="menu-sidebar__list">
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">О компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">История компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Наша команда</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Сертификаты</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Отзывы</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link menu-sidebar__link_active">Карьера</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Вопрос-ответ</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Партнеры</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Новости</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div data-da=".sertificats__container, 992" class="sidebar__bottom">
+                <div class="callback__text">
+                  <div class="callback__title callback__title_sidebar sectiontitle">Хочешь узнать больше об условиях работы у нас?</div>
+                  <div class="callback__label sectionlabel">Оставь свои контактные данные, и наш HR свяжется с тобой в ближайшее время.</div>
+                </div>
+                <div class="callback__form footer__callback footer__callback_light callback-footer">
+                  <form action="#" data-ajax method="post" class="callback-footer__body">
+                    <div class="callback-footer__row">
+                      <input type="text" name="" id="" data-required class="callback-footer__input">
+                      <label for="" class="callback-footer__label">имя</label>
+                    </div>
+                    <div class="callback-footer__row">
+                      <input type="text" name="" id="" data-required data-inputmask-clearincomplete="true" data-inputmask="'mask':'+7 (999) 999 99 99'" class="callback-footer__input">
+                      <label for="" class="callback-footer__label">номер телефона</label>
+                    </div>
+                    <div class="callback-footer__row">
+                      <input type="checkbox" data-required name="" id="callback-footer__checkbox" checked="checked" class="callback-footer__checkbox">
+                      <label for="callback-footer__checkbox" class="callback-footer__agree callback-footer__agree_sidebar"><span>Я согласен(а) на <a href="#" class="callback-footer__link">обработку персональных данных</a></span>
+                      </label>
+                    </div>
+                    <div class="callback-footer__row">
+                      <button type="submit" class="rectangle_btn callback-footer__submit callback-footer__submit_sidebar">Отправить</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="career__body body-career">
+              <div class="body-career__hero">
+                <div class="body-career__head">
+                  <div class="body-career__title sectiontitle">Карьера в компании TechCorp</div>
+                </div>
+                <div class="body-career__image"><img src="@img/common/career.png" alt="image"></div>
+                <p class="body-career__text">Кстати,  действия представителей оппозиции и по сей день остаются уделом либералов, которые жаждут быть в равной степени предоставлены сами себе. В своём стремлении улучшить пользовательский опыт мы упускаем, что представители современных социальных резервов являются только методом политического участия и своевременно верифицированы.</p>
+              </div>
+              <div class="career__vacancy">
+                <div class="body-career__head">
+                  <div class="body-career__title sectiontitle">Вакансии</div>
+                </div>
+                <div data-tabs class="body-career__tabs tabs-career">
+                  <nav data-tabs-titles class="tabs-career__navigation">
+                    <button type="button" class="tabs-career__title _tab-active">Программирование (3)</button>
+                    <button type="button" class="tabs-career__title">Дизайн (2)</button>
+                    <button type="button" class="tabs-career__title">Тестирование (4)</button>
+                  </nav>
+                  <div data-tabs-body class="tabs-career__content">
+                    <div class="tabs-career__body">
+                      <div data-spollers class="body-career__spollers spollers-career">
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title _spoller-active">
+                            <span>Middle front-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <p>Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                              <p>В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title">
+                            <span>Senior back-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <ul>
+                                <li>Список</li>
+                                <li>Для него тоже сделаю стили</li>
+                                <li>Вдруг пригодятся</li>
+                              </ul>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title">
+                            <span>Junior front-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <ol>
+                                <li>И для нумерованного списка</li>
+                                <li>Тоже</li>
+                                <li>Сделал</li>
+                              </ol>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs-career__body">
+                      <div data-spollers class="body-career__spollers spollers-career">
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title _spoller-active">
+                            <span>Middle front-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <p>Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                              <p>В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title">
+                            <span>Senior back-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <ul>
+                                <li>Список</li>
+                                <li>Для него тоже сделаю стили</li>
+                                <li>Вдруг пригодятся</li>
+                              </ul>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs-career__body">
+                      <div data-spollers class="body-career__spollers spollers-career">
+                        <div class="spollers-career__item">
+                          <button type="button" data-spoller class="spollers-career__title spollers__title _spoller-active">
+                            <span>Middle front-end developer</span>
+                            <div class="spollers-career__price">80 000 руб.</div>
+                          </button>
+                          <div class="spollers-career__body">
+                            <div class="spollers-career__text">
+                              <p>Заказывали в «...» систему безопасности для нашего центра. Заказ обработали быстро – уже на следующий день инженеры окружили меня и требовали разрешения начать работу.</p>
+                              <p>В течение дня установили видеонаблюдение и сигнализацию. Я думала, что это конец работ, но в течение следующей недели рабочие ежедневно приходили и проверяли работоспособность системы. Когда они убедились, что все работает исправно, предоставили сопроводительную документацию и акты. Я очень довольна работой с «Олл Корп» и буду сотрудничать с ними в будущем.</p>
+                            </div>
+                            <a href="#" data-popup="#careerPopup" class="spollers-career__popuplink rectangle_btn">Откликнуться</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup_career.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
