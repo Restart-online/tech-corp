@@ -1,0 +1,111 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.contacts__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.contacts {
+    margin-top: 117px;
+    &__title {
+        padding-bottom: 100px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+    }
+    &__address {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 30px;
+        @media (max-width: 1110px) {
+            justify-content: space-around;
+        }
+        @media (max-width: 425px) {
+            row-gap: 0px;
+        }
+        &-block input {
+            display: none;
+            &:checked+label {
+                .contacts__address-items {
+                    background: #1047C8;
+                }
+                .contacts__address-border {
+                    border-left: 1px solid #FFFFFF;
+                }
+                .contacts__address-item {
+                    color: #FFFFFF;
+                }
+                .contacts__address-mail {
+                    color: #FFFFFF;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+        &-items {
+            width: 360px;
+            min-height: 234px;
+            padding: 30px;
+
+        }
+        &-border {
+            border-left: 1px solid #EBEBEB;
+            padding-left: 40px;
+            height: 174px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &-item {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            color: #23252B;
+            line-height: 150%;
+            margin: 0 7px;
+        }
+        &-city {
+            font-weight: 700;
+        }
+        &-mail {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1047C8;
+        }
+        &-tell {
+            text-decoration: none;
+        }
+    }
+
+    &__maps {
+        width: 100%;
+        margin: 160px auto 0 auto;
+        padding-bottom: 210px;
+        @media (max-width: 1024px) {
+            padding-bottom: 150px;
+            margin-top: 100px;
+        }
+        @media (max-width: 749px) {
+            padding-bottom: 150px;
+            margin-top: 0px;
+        }
+        &-item {
+            width: 100%;
+        }
+    }
+}
+#map {
+    width: 100%;
+    height: 600px;
+    @media (max-width: 425px) {
+        height: 400px;
+    }
+}
