@@ -1,3 +1,7 @@
+:root {
+  @include adaptiveValue("--partnersgrid", 240, 130);
+}
+
 // Заголовки, общие БЄМ блоки и проче...
 [hidden] {
   display: none !important;
@@ -437,5 +441,28 @@
   }
 
   &__link {
+  }
+}
+
+.partners-page {
+
+  &__title {
+    &:not(:last-child) {margin-bottom: rem(30) !important;}
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--partnersgrid));
+    grid-auto-rows: rem(120);
+    @include adaptiveValue("gap", 30, 15);
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content:center;align-items: center;
+    img {
+      max-width: rem(118);
+    }
   }
 }

@@ -1,0 +1,116 @@
+.slide-command {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 60, 25);
+
+  &__row {
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 20, 15);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 15);
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 15, 13);
+    color: #636363;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 15);
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: rem(10);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+  }
+}
+.item-command {
+  flex: 0 0 rem(253);
+  height: rem(370);
+  position: relative;
+  overflow: hidden;
+  &:hover{
+    &>.info-command {
+      background: linear-gradient(0.07deg, rgba(41, 41, 41, 0.81) 6.98%, rgba(51, 51, 51, 0) 109.78%);
+      transform: none;
+    }
+    & .info-command__item {
+      opacity: 1;
+    }
+    & .info-command__link {
+      font-weight: 500;
+    }
+  }
+
+  &__image {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+  }
+}
+.info-command {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(40, 40, 40, 0.9) -4.3%, rgba(45, 45, 45, 0.410386) 34.54%, rgba(49, 49, 49, 0) 89.58%);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: rem(35) rem(14);
+  gap: rem(8);
+  transform: translateY(40%);
+  transition: all 0.3s ease 0s;
+
+  &__item {
+    font-size: rem(13);
+    &:not(:first-child) {
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    color: #F9F9F9;
+    &:not(:last-child) {margin-bottom: rem(5);}
+  }
+
+  &__link {
+    color: #fff;
+    font-weight: 700;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__socials {
+  }
+
+  &__soclink {
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}

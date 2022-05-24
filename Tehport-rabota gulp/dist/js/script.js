@@ -16,8 +16,8 @@ function init () {
     myMap.setCenter(activeMapCoords);
 
     // Переключатель городов
-    var RadioForMap = document.querySelectorAll('input[name="city"]');
-    RadioForMap.forEach(i => {
+    var radioForMap = document.querySelectorAll('input[name="city"]');
+    radioForMap.forEach(i => {
         i.addEventListener('click', () => {
             activeRadioForMap = document.querySelector('input[name="city"]:checked');
             activeMapCoords = activeRadioForMap.dataset.center.split(',');

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Партнеры"
+	})
+	<body>
+		<div class="wrapper wrapper_lightheader">
+			@@include('html/_header.htm',{
+				"light": "header_light"
+			})
+			<main class="page page__partners">
+        @@include('html/_breadcumps.htm',{
+          "second": "О компании",
+          "third": "Партнеры"
+        })
+        <section class="partners-page">
+          <div class="sertificats__container">
+            <div class="sertificats__sidebar sidebar">
+              <div data-spollers="992" class="sidebar__menu menu-sidebar">
+                <div class="menu-sidebar__spoller">
+                  <button type="button" data-spoller class="menu-sidebar__title">Навигация</button>
+                  <ul class="menu-sidebar__list">
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">О компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">История компании</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Наша команда</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Сертификаты</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Отзывы</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Карьера</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Вопрос-ответ</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link menu-sidebar__link_active">Партнеры</a></li>
+                    <li class="menu-sidebar__item"><a href="#" class="menu-sidebar__link">Новости</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="sertificats__body body-sertificats">
+              <div class="body-sertificats__head body-sertificats__head">
+                <h1 class="body-sertificats__title partners-page__title sectiontitle">Наши партнеры</h1>
+                <div class="body-sertificats__label sectionlabel">В своём стремлении повысить качество жизни, они забывают, что курс на социально-ориентированный национальный проект говорит о возможностях соответствующих условий активизации.</div>
+                <div class="body-sertificats__label sectionlabel">Противоположная точка зрения подразумевает, что независимые государства и по сей день остаются уделом либералов, которые жаждут быть объективно рассмотрены соответствующими инстанциями.</div>
+              </div>
+              <div class="partners-page__body">
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_1.png" alt="img"></a>
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_2.png" alt="img"></a>
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_3.png" alt="img"></a>
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_4.png" alt="img"></a>
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_5.png" alt="img"></a>
+                <a href="#" class="partners-page__item"><img src="@img/home/partners_6.png" alt="img"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

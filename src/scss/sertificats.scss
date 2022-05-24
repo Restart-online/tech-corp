@@ -32,6 +32,9 @@
   &__head {
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 60, 25);
+      .page__partners & {
+        margin-bottom: rem(30) !important;
+      }
     }
   }
 
@@ -39,6 +42,7 @@
   }
 
   &__label {
+    &:not(:last-child) {margin-bottom: rem(25);}
   }
 
   &__items {

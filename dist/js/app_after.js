@@ -16691,6 +16691,39 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             });
         }));
+        var myMap;
+        let myGeoObjects = [];
+        document.addEventListener("DOMContentLoaded", (() => {
+            if (document.querySelector(".page__contacts")) ymaps.ready(init);
+            function init() {
+                myMap = new ymaps.Map("map", {
+                    center: [ ,  ],
+                    zoom: 13
+                });
+                const mapPlacemarks = document.querySelectorAll("[data-placemark]");
+                if (mapPlacemarks.length) mapPlacemarks.forEach((e => {
+                    let mapPlacemarkCoords = e.dataset.placemark.replace(" ", "").split(",");
+                    myGeoObjects = new ymaps.Placemark(mapPlacemarkCoords, {}, {
+                        iconLayout: "default#image",
+                        iconImageHref: "img/marker.png",
+                        iconImageSize: [ 60, 80 ],
+                        iconImageOffset: [ -35, -75 ]
+                    });
+                    myMap.geoObjects.add(myGeoObjects);
+                }));
+                var activeRadioForMap = document.querySelector(".contacts__radio:checked");
+                var activeMapCoords = activeRadioForMap.dataset.center.split(",");
+                myMap.setCenter(activeMapCoords);
+                var radioForMap = document.querySelectorAll(".contacts__radio");
+                radioForMap.forEach((i => {
+                    i.addEventListener("change", (() => {
+                        activeRadioForMap = document.querySelector(".contacts__radio:checked");
+                        activeMapCoords = activeRadioForMap.dataset.center.split(",");
+                        myMap.setCenter(activeMapCoords);
+                    }));
+                }));
+            }
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();
