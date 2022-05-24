@@ -1,0 +1,84 @@
+.stage {
+
+}
+
+.stage__caption {
+  margin-bottom: rem(40);
+  @include h2();
+}
+
+.stage__list {
+
+}
+
+.stage__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $grayLight;
+  counter-increment: count;
+
+  &:not(:first-child) {
+    margin-top: rem(20);
+  }
+
+  &::after {
+    content: counter(count);
+    position: absolute;
+    top: 0;
+    right: rem(17);
+    font-weight: 700;
+    font-size: rem(128);
+    line-height: 1;
+    color: $white;
+
+    @media (max-width: $pc) {
+      font-size: rem(96);
+    }
+
+    @media (max-width: $tablet) {
+      font-size: rem(68);
+    }
+  }
+}
+
+.stage__picture {
+  min-width: rem($col2);
+  width: rem($col2);
+  min-height: rem(220);
+
+  @media (max-width: $pc) {
+    min-width: rem($col2 - $colGap);
+    width: rem($col2 - $colGap);
+    min-height: rem(183);
+  }
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.stage__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stage__description {
+  position: relative;
+  padding: rem(20) rem($colGap);
+  @include text();
+  z-index: 1;
+
+  @media (max-width: $pc) {
+    padding: rem(20) rem(30);
+  }
+
+  @media (max-width: $mobile) {
+    padding: rem(24) rem(16);
+  }
+
+  p + p {
+    margin-top: rem(20);
+  }
+}

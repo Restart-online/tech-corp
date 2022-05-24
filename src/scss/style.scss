@@ -161,6 +161,8 @@ body {
 @import "blocks/badge";
 @import "blocks/pagination";
 @import "blocks/tariff-unique";
+@import "blocks/stage";
+@import "blocks/cost";
 
 // Подключение стилей отдельных страниц
 @import "home";
@@ -170,6 +172,8 @@ body {
 @import "pages/faq";
 @import "pages/news";
 @import "pages/history";
+@import "pages/tariff";
+@import "pages/case";
 @import "about";
 @import "sertificats";
 @import "reviews";

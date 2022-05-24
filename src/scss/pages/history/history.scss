@@ -1,11 +1,27 @@
-.history__slider.history-slider.swiper {
+.history__slider {
   margin-top: rem(90);
+
+  @media (max-width: $tablet) {
+    margin-top: rem(60);
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: rem(40);
+  }
 }
 
 .history__text {
   margin-top: rem(100);
   @include text();
   color: #636363;
+
+  @media (max-width: $tablet) {
+    margin-top: rem(60);
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: rem(40);
+  }
 
   p + p {
     margin-top: rem(20);

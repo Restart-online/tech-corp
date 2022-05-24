@@ -78,7 +78,7 @@
             У вас больше <span data-computer></span> компьютеров или <span data-server></span> серверов?
           </div>
           <div class="tariff-unique__button">
-            <div class="button button--blue">Заказать расчет проекта</div>
+            <div data-popup="#blueButtonPopup" data-popup-info="Заказать расчет проекта" class="button button--blue">Заказать расчет проекта</div>
           </div>
         </div>
         <div class="computer-tariff__list">
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="tariff__button">
-              <div class="button button--blue button--block">Забронировать</div>
+              <div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
             </div>
           </div>
           <div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000">
@@ -129,7 +129,7 @@
               </div>
             </div>
             <div class="tariff__button">
-              <div class="button button--blue button--block">Забронировать</div>
+              <div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
             </div>
           </div>
           <div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000" data-fix-price>
@@ -154,7 +154,7 @@
               </div>
             </div>
             <div class="tariff__button">
-              <div class="button button--blue button--block">Забронировать</div>
+              <div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
             </div>
           </div>
         </div>
@@ -328,8 +328,7 @@
   </main>
   @@include('html/_footer.htm',{})
 </div>
-@@include('html/_modal.htm',{})
-@@include('html/_popup.htm',{})
+@@include('html/_popup_bluebutton.htm',{})
 @@include('html/_js.htm',{})
 </body>
 </html>

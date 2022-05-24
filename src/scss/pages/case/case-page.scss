@@ -1,0 +1,44 @@
+.case-page__stage,
+.case-page__cost {
+  margin-top: rem(100);
+
+  @media (max-width: $tablet) {
+    margin-bottom: rem(80);
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: rem(60);
+  }
+}
+
+.case-page__cost {
+  margin-bottom: rem(200);
+
+  @media (max-width: $pc) {
+    margin-bottom: rem(140);
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: rem(80);
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: rem(60);
+  }
+}
+
+.case-page__useful {
+  margin: rem(200) 0;
+
+  @media (max-width: $pc) {
+    margin: rem(140) 0;
+  }
+
+  @media (max-width: $tablet) {
+    margin: rem(80) 0;
+  }
+
+  @media (max-width: $mobile) {
+    margin: rem(60) 0;
+  }
+}
