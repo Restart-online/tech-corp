@@ -1,6 +1,6 @@
 @mixin articleBody() {
   padding-top: rem(140);
-  padding-bottom: rem(218);
+  padding-bottom: rem(116);
 
   @media (max-width: $pc) {
     padding-top: rem(60);
@@ -27,9 +27,19 @@
 }
 
 .article-body__content {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: rem($col3 + $colGap);
-  @include articleBody();
+  padding-top: rem(140);
+
+  @media (max-width: $pc) {
+    padding-top: rem(60);
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: rem(40);
+  }
 }
 
 .article-body__content h3 {
@@ -81,4 +91,42 @@
       display: none;
     }
   }
+}
+
+.article-body__rating {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.article-body__rate {
+  display: flex;
+  align-items: center;
+  margin-top: rem(30);
+  font-weight: 600;
+  font-size: rem(15);
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-right: rem(36);
+  }
+}
+
+.article-body__rate--like {
+  color: #379200;
+}
+
+.article-body__rate--dislike {
+  color: #B10000;
+}
+
+.article-body__icon {
+  min-width: rem(20);
+  width: rem(20);
+  height: rem(20);
+  margin-right: rem(7);
+}
+
+.article-body__icon--dislike {
+  transform: rotate(180deg);
 }

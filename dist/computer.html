@@ -7,6 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="stylesheet" href="css/style_after.min.css?_v=20220524223843">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220524234853">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -426,21 +427,29 @@
 					<div class="computer-tariff__block">
 						<div class="computer-tariff__slider">
 							<div class="computer-tariff__subtitle">Количество компьютеров</div>
-							<input type="hidden" class="computer-tariff__input computer-tariff__input--computer">
-							<div class="computer-tariff__range computer-tariff__range--computer"></div>
+							<input type="hidden" name="computer" class="computer-tariff__input js-tariff__input">
+							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="40" data-start="10"></div>
 						</div>
 						<div class="computer-tariff__slider">
 							<div class="computer-tariff__subtitle">Количество серверов</div>
-							<input type="hidden" class="computer-tariff__input computer-tariff__input--server">
-							<div class="computer-tariff__range computer-tariff__range--server"></div>
+							<input type="hidden" name="server" class="computer-tariff__input js-tariff__input">
+							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="5" data-start="2"></div>
+						</div>
+					</div>
+					<div class="computer-tariff__unique tariff-unique js-tariff__unique" data-computer="30" data-server="4">
+						<div class="tariff-unique__caption">
+							У вас больше <span data-computer></span> компьютеров или <span data-server></span> серверов?
+						</div>
+						<div class="tariff-unique__button">
+							<div class="button button--blue">Заказать расчет проекта</div>
 						</div>
 					</div>
 					<div class="computer-tariff__list">
-						<div class="tariff tariff--selected">
+						<div class="tariff js-tariff" data-computer-price="1300" data-server-price="4000" data-min-price="10000">
 							<div class="tariff__content">
 								<div class="tariff__header">
 									<div class="tariff__name">Полный пакет</div>
-									<div class="tariff__price">17 000 &#8381; / мес.</div>
+									<div class="tariff__price"><span class="js-tariff__price">10 000</span> &#8381; / мес.</div>
 								</div>
 								<div class="tariff__description">
 									<div class="tariff__option">
@@ -461,11 +470,11 @@
 								<div class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
-						<div class="tariff">
+						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000">
 							<div class="tariff__content">
 								<div class="tariff__header">
 									<div class="tariff__name">Пакет 1</div>
-									<div class="tariff__price">14 000 &#8381; / мес.</div>
+									<div class="tariff__price"><span class="js-tariff__price">10 000</span> &#8381; / мес.</div>
 								</div>
 								<div class="tariff__description">
 									<div class="tariff__option">
@@ -486,11 +495,11 @@
 								<div class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
-						<div class="tariff">
+						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000" data-fix-price>
 							<div class="tariff__content">
 								<div class="tariff__header">
 									<div class="tariff__name">Пакет 1</div>
-									<div class="tariff__price">14 000 &#8381; / мес.</div>
+									<div class="tariff__price"><span class="js-tariff__price">10 000</span> &#8381; / мес.</div>
 								</div>
 								<div class="tariff__description">
 									<div class="tariff__option">
@@ -754,6 +763,7 @@
 	</div>
 </div> -->
 	<script src="js/app_after.min.js?_v=20220524223843"></script>
+	<script src="js/app_after.min.js?_v=20220524234853"></script>
 </body>
 
 </html>

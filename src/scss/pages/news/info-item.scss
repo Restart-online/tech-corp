@@ -74,6 +74,35 @@
   &:not(:empty) {
     margin-top: rem(15);
   }
+
+  h1 {
+    @include h1();
+  }
+
+  h2 {
+    @include h2();
+  }
+
+  h3 {
+    @include h3();
+  }
+
+  h4 {
+    @include h4();
+  }
+
+  p + p {
+    margin-top: rem(15);
+  }
+
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
+    @include adaptiveValue("margin-top", 60, 28);
+    @include adaptiveValue("margin-bottom", 30, 14);
+  }
 }
 
 .info-item__link {
@@ -88,4 +117,14 @@
   &:hover {
     border-color: transparent;
   }
+}
+
+.info-item__share,
+.info-item__badge,
+.info-item__back {
+  margin-top: rem(30);
+}
+
+.ya-share2__container {
+  padding: 0;
 }

@@ -1,9 +1,18 @@
+.info-page--detail {
+  padding: rem(100) 0;
+}
+
 .info-page__form {
   margin-top: rem(60);
 }
 
 .info-page__badge {
   margin-top: rem(60);
+}
+
+.info-page__caption {
+  margin-bottom: rem(40);
+  @include h2();
 }
 
 .info-page__list {

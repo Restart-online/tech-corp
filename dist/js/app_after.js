@@ -10732,7 +10732,7 @@
                 if (isVirtual) return swiper.slides.filter((el => parseInt(el.getAttribute("data-swiper-slide-index"), 10) === index))[0];
                 return swiper.slides.eq(index)[0];
             };
-            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) swiper.visibleSlides.each((slide => {
+            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) (swiper.visibleSlides || dom([])).each((slide => {
                 activeSlides.push(slide);
             })); else for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
                 const index = swiper.activeIndex + i;
@@ -11378,6 +11378,7 @@
                 if (!el || el === ssr_window_esm_getDocument() || el === ssr_window_esm_getWindow()) return null;
                 if (el.assignedSlot) el = el.assignedSlot;
                 const found = el.closest(selector);
+                if (!found && !el.getRootNode) return null;
                 return found || __closestFrom(el.getRootNode().host);
             }
             return __closestFrom(base);
@@ -11403,7 +11404,7 @@
             if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) $targetEl = dom(event.path[0]);
             const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
             const isTargetShadow = !!(e.target && e.target.shadowRoot);
-            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, e.target) : $targetEl.closest(noSwipingSelector)[0])) {
+            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, $targetEl[0]) : $targetEl.closest(noSwipingSelector)[0])) {
                 swiper.allowClick = true;
                 return;
             }
@@ -12312,6 +12313,7 @@
                         res.children = options => $el.children(options);
                         return res;
                     }
+                    if (!$el.children) return dom($el).children(getWrapperSelector());
                     return $el.children(getWrapperSelector());
                 };
                 let $wrapperEl = getWrapper();
@@ -16589,50 +16591,107 @@ PERFORMANCE OF THIS SOFTWARE.
         }));
         var nouislider = __webpack_require__(4211);
         document.addEventListener("DOMContentLoaded", (() => {
-            const connectInput1 = document.querySelector(".computer-tariff__input--computer");
-            const connectInput2 = document.querySelector(".computer-tariff__input--server");
-            const connectSlider1 = document.querySelector(".computer-tariff__range--computer");
-            const connectSlider2 = document.querySelector(".computer-tariff__range--server");
-            if (connectSlider1 && connectSlider2 && connectInput1 && connectInput2) {
-                const tariffSlider1 = nouislider.create(connectSlider1, {
-                    tooltips: true,
-                    connect: [ true, false ],
-                    step: 1,
-                    start: 10,
-                    range: {
-                        min: 0,
-                        max: 40
-                    },
-                    format: {
-                        to: value => value,
-                        from: value => Math.round(Number(value))
-                    },
-                    pips: {
-                        mode: "range",
-                        density: 400
+            new EvilRangeCreator;
+        }));
+        function EvilRangeCreator(config) {
+            this.defaultConfig = {
+                step: 1,
+                start: 10,
+                min: 0,
+                max: 10
+            };
+            this.classNameRage = config?.className || "js-tariff__range";
+            this.classNameInput = config?.classNameInput || "js-tariff__input";
+            this.classNameTariff = config?.classNameTariff || "js-tariff";
+            this.classNameUnique = config?.classNameUnique || "js-tariff__unique";
+            this.classNameUniqueShow = config?.classNameUniqueShow || "tariff-unique--show";
+            this.inputs = [];
+            this.ranges = {};
+            this.elements = [];
+            this.tariffCards = [];
+            this.uniqueBlock = null;
+            this.countComputer = 0;
+            this.countServer = 0;
+            this.init = function() {
+                this.inputs = document.getElementsByClassName(this.classNameInput);
+                this.elements = document.getElementsByClassName(this.classNameRage);
+                this.tariffCards = document.getElementsByClassName(this.classNameTariff);
+                this.uniqueBlock = document.getElementsByClassName(this.classNameUnique)[0];
+                [ ...this.elements ].forEach(((slider, index) => {
+                    this.ranges[index] = nouislider.create(slider, {
+                        tooltips: true,
+                        connect: [ true, false ],
+                        step: +slider.dataset.step || this.defaultConfig.step,
+                        start: +slider.dataset.start || this.defaultConfig.start,
+                        range: {
+                            min: +slider.dataset.min || this.defaultConfig.min,
+                            max: +slider.dataset.max || this.defaultConfig.max
+                        },
+                        format: {
+                            to: value => value,
+                            from: value => Math.round(Number(value))
+                        },
+                        pips: {
+                            mode: "range",
+                            density: 400
+                        }
+                    });
+                    this.ranges[index].on("update", (value => {
+                        this.inputs[index].value = value;
+                        this.calculation();
+                        this.toggleUnique();
+                    }));
+                }));
+                if (this.uniqueBlock) {
+                    this.uniqueBlock.querySelector("[data-computer]").textContent = this.uniqueBlock.dataset.computer;
+                    this.uniqueBlock.querySelector("[data-server]").textContent = this.uniqueBlock.dataset.server;
+                }
+                return this.ranges;
+            };
+            this.calculation = function() {
+                [ ...this.tariffCards ].forEach((tariff => {
+                    const tariffPrice = tariff.querySelector(".js-tariff__price");
+                    if ("fixPrice" in tariff.dataset && tariff.dataset.minPrice) {
+                        tariffPrice.textContent = tariff.dataset.minPrice;
+                        return;
                     }
-                });
-                const tariffSlider2 = nouislider.create(connectSlider2, {
-                    tooltips: true,
-                    connect: [ true, false ],
-                    step: 1,
-                    start: 2,
-                    range: {
-                        min: 0,
-                        max: 5
-                    },
-                    format: {
-                        to: value => value,
-                        from: value => Math.round(Number(value))
-                    },
-                    pips: {
-                        mode: "range",
-                        density: 400
+                    this.countComputer = Number(document.querySelector('input[name="computer"]')?.value) || 0;
+                    this.countServer = Number(document.querySelector('input[name="server"]')?.value);
+                    const price = this.countComputer * Number(tariff.dataset.computerPrice) + this.countServer * Number(tariff.dataset.serverPrice);
+                    const currentPrice = Number(tariff.dataset.minPrice) > price ? Number(tariff.dataset.minPrice) : price;
+                    tariffPrice.textContent = Math.round(currentPrice).toString();
+                }));
+            };
+            this.toggleUnique = function() {
+                if (!this.uniqueBlock) return;
+                const isShow = this.countComputer > Number(this.uniqueBlock.dataset.computer) || this.countServer > Number(this.uniqueBlock.dataset.server);
+                this.uniqueBlock.classList.toggle(this.classNameUniqueShow, isShow);
+            };
+            return this.init();
+        }
+        const historySelector = ".js-history__slider";
+        const historyTextSelector = ".js-history-slider__text";
+        document.addEventListener("DOMContentLoaded", (() => {
+            const slidesText = document.querySelectorAll(historyTextSelector);
+            slidesText.forEach((item => item.dataset.text = item.textContent.trim()));
+            new core(historySelector, {
+                loop: true,
+                loopedSlides: 20,
+                slidesPerView: 5,
+                watchSlidesProgress: true,
+                slideActiveClass: "history-slider__slide--active",
+                slideVisibleClass: "history-slider__slide--visible",
+                wrapperClass: "history-slider__wrapper",
+                watchSlidesVisibility: true,
+                on: {
+                    init: swiper => {
+                        swiper.slides.forEach(((slide, index) => {
+                            const year = slide.querySelector(".history-slider__year");
+                            year.addEventListener("click", (() => swiper.slideToLoop(index)));
+                        }));
                     }
-                });
-                tariffSlider1.on("update", (value => connectInput1.value = value));
-                tariffSlider2.on("update", (value => connectInput2.value = value));
-            }
+                }
+            });
         }));
         window["FLS"] = true;
         isWebp();

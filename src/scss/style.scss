@@ -160,6 +160,7 @@ body {
 @import "blocks/feedback";
 @import "blocks/badge";
 @import "blocks/pagination";
+@import "blocks/tariff-unique";
 
 // Подключение стилей отдельных страниц
 @import "home";
@@ -168,6 +169,7 @@ body {
 @import "pages/computer";
 @import "pages/faq";
 @import "pages/news";
+@import "pages/history";
 @import "about";
 @import "sertificats";
 @import "reviews";
