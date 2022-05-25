@@ -8975,7 +8975,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 /**
- * Swiper 8.1.4
+ * Swiper 8.1.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -8983,7 +8983,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
  *
  * Released under the MIT License
  *
- * Released on: April 24, 2022
+ * Released on: May 16, 2022
  */
 
 @font-face {
@@ -9244,7 +9244,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   font-size: var(--swiper-navigation-size);
   text-transform: none !important;
   letter-spacing: 0;
-  text-transform: none;
   font-variant: initial;
   line-height: 1;
 }

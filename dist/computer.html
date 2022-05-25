@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style_after.min.css?_v=20220525134951">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220525223336">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -426,13 +426,11 @@
 					<div class="computer-tariff__block">
 						<div class="computer-tariff__slider">
 							<div class="computer-tariff__subtitle">Количество компьютеров</div>
-							<input type="hidden" name="computer" class="computer-tariff__input js-tariff__input">
-							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="40" data-start="10"></div>
+							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="40" data-start="10" data-input="computer"></div>
 						</div>
 						<div class="computer-tariff__slider">
 							<div class="computer-tariff__subtitle">Количество серверов</div>
-							<input type="hidden" name="server" class="computer-tariff__input js-tariff__input">
-							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="5" data-start="2"></div>
+							<div class="computer-tariff__range js-tariff__range" data-min="0" data-max="5" data-start="2" data-input="server"></div>
 						</div>
 					</div>
 					<div class="computer-tariff__unique tariff-unique js-tariff__unique" data-computer="30" data-server="4">
@@ -440,7 +438,7 @@
 							У вас больше <span data-computer></span> компьютеров или <span data-server></span> серверов?
 						</div>
 						<div class="tariff-unique__button">
-							<div data-popup="#blueButtonPopup" data-popup-info="Заказать расчет проекта" class="button button--blue">Заказать расчет проекта</div>
+							<div data-popup="#calculatorPopup" data-popup-info="Заказать расчет проекта" class="button button--blue">Заказать расчет проекта</div>
 						</div>
 					</div>
 					<div class="computer-tariff__list">
@@ -466,7 +464,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#calculatorPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000">
@@ -491,7 +489,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#calculatorPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 						<div class="tariff js-tariff" data-computer-price="1100" data-server-price="3000" data-min-price="10000" data-fix-price>
@@ -516,7 +514,7 @@
 								</div>
 							</div>
 							<div class="tariff__button">
-								<div data-popup="#blueButtonPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
+								<div data-popup="#calculatorPopup" data-popup-info="Забронировать" class="button button--blue button--block">Забронировать</div>
 							</div>
 						</div>
 					</div>
@@ -749,14 +747,14 @@
 			</div>
 		</footer>
 	</div>
-	<div id="blueButtonPopup" aria-hidden="true" class="popup blueButtonPopup">
+	<div id="calculatorPopup" aria-hidden="true" class="popup blueButtonPopup">
 		<div class="popup__wrapper blueButtonPopup__wrapper">
 			<div class="popup__content blueButtonPopup__content">
 				<button data-close type="button" class="popup__close blueButtonPopup__close">
 					<img src="img/icons/close.svg" alt="image">
 				</button>
 				<div class="popup__text blueButtonPopup__text">
-					<div class="footer__title callback-footer__title">МодалОчка от синей кнопки</div>
+					<div class="footer__title callback-footer__title">Забронировать</div>
 					<form action="#" data-ajax method="post" class="callback-footer__body">
 						<div class="callback-footer__row">
 							<input type="text" name="" id="" data-required class="callback-footer__input">
@@ -779,6 +777,8 @@
 							<label for="callback-footer__checkbox" class="callback-footer__agree"><span>Я согласен(а) на</span><a href="#" class="callback-footer__link">обработку персональных данных</a>
 							</label>
 						</div>
+						<input type="hidden" name="computer" data-name="computer">
+						<input type="hidden" name="server" data-name="server">
 						<input type="hidden" name="" id="" data-required class="blueButtonPopup_hidden">
 						<div class="callback-footer__row">
 							<button type="submit" class="rectangle_btn callback-footer__submit">Отправить</button>
@@ -788,7 +788,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app_after.min.js?_v=20220525134951"></script>
+
+	<script src="js/app_after.min.js?_v=20220525223336"></script>
 </body>
 
 </html>

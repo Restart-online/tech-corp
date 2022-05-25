@@ -14,11 +14,9 @@ function EvilRangeCreator(config) {
   };
 
   this.classNameRage = config?.className || 'js-tariff__range';
-  this.classNameInput = config?.classNameInput || 'js-tariff__input';
   this.classNameTariff = config?.classNameTariff || 'js-tariff';
   this.classNameUnique = config?.classNameUnique || 'js-tariff__unique';
   this.classNameUniqueShow = config?.classNameUniqueShow || 'tariff-unique--show';
-  this.inputs = [];
   this.ranges = {};
   this.elements = [];
   this.tariffCards = [];
@@ -28,7 +26,6 @@ function EvilRangeCreator(config) {
   this.countServer = 0;
 
   this.init = function () {
-    this.inputs = document.getElementsByClassName(this.classNameInput);
     this.elements = document.getElementsByClassName(this.classNameRage);
     this.tariffCards = document.getElementsByClassName(this.classNameTariff);
     this.uniqueBlock = document.getElementsByClassName(this.classNameUnique)[0];
@@ -54,7 +51,11 @@ function EvilRangeCreator(config) {
       });
 
       this.ranges[index].on('update', (value) => {
-        this.inputs[index].value = value;
+        const input = document.querySelector(`input[data-name=${ slider.dataset.input }]`);
+        if (input) {
+          input.value = value;
+        }
+
         this.calculation();
         this.toggleUnique();
       });
