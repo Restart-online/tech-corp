@@ -16308,7 +16308,7 @@ PERFORMANCE OF THIS SOFTWARE.
             if (videoCasesEls.length) videoCasesEls.forEach((e => {
                 const videoCase = e.querySelector("video");
                 const controlVideoCase = e.querySelector(".slide-videocases__control");
-                controlVideoCase.addEventListener("click", (() => {
+                if (controlVideoCase) controlVideoCase.addEventListener("click", (() => {
                     videoCase.play();
                     videoCase.controls = true;
                     controlVideoCase.remove();
@@ -16463,6 +16463,9 @@ PERFORMANCE OF THIS SOFTWARE.
             casesNavItems.forEach((e => {
                 if (e.checked) {
                     let casesNavTheme = e.getAttribute("data-cases-nav");
+                    if ("all" === casesNavTheme) casesNavItems.forEach((elem => {
+                        elem.checked = true;
+                    }));
                     casesItems.forEach((el => {
                         let casesItemTheme = el.getAttribute("data-cases-item");
                         if (casesNavTheme === casesItemTheme) el.hidden = false;
@@ -16728,7 +16731,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     let mapPlacemarkCoords = e.dataset.placemark.replace(" ", "").split(",");
                     myGeoObjects = new ymaps.Placemark(mapPlacemarkCoords, {}, {
                         iconLayout: "default#image",
-                        iconImageHref: "img/marker.png",
+                        iconImageHref: "./img/marker.png",
                         iconImageSize: [ 60, 80 ],
                         iconImageOffset: [ -35, -75 ]
                     });

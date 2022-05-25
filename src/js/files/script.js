@@ -51,11 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     videoCasesEls.forEach(e => {
       const videoCase = e.querySelector('video');
       const controlVideoCase = e.querySelector('.slide-videocases__control');
-      controlVideoCase.addEventListener('click', () => {
-        videoCase.play();
-        videoCase.controls = true;
-        controlVideoCase.remove();
-      })
+      if (controlVideoCase) {
+        controlVideoCase.addEventListener('click', () => {
+          videoCase.play();
+          videoCase.controls = true;
+          controlVideoCase.remove();
+        })
+      }
     })
   }
 
@@ -242,10 +244,15 @@ function headerMenuTop(headerMenu) {
 
 function hideShowCases(casesNavItems) {
   const casesNavItemsChecks = document.querySelectorAll('[data-cases-nav');
-  const casesItems =document.querySelectorAll('[data-cases-item]');
+  const casesItems = document.querySelectorAll('[data-cases-item]');
   casesNavItems.forEach(e => {
     if (e.checked) {
       let casesNavTheme = e.getAttribute('data-cases-nav');
+      if (casesNavTheme === 'all') {
+        casesNavItems.forEach(elem => {
+          elem.checked = true;
+        })
+      }
       casesItems.forEach(el => {
         let casesItemTheme = el.getAttribute('data-cases-item');
         if (casesNavTheme === casesItemTheme) {
