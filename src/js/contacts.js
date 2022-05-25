@@ -2,7 +2,7 @@ var myMap;
 let myGeoObjects = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('.page__contacts')) {
+  if (document.querySelector('#map')) {
     ymaps.ready(init);
   }
   function init () {

@@ -154,8 +154,8 @@ function directionsSearch(directionsInput) {
   const servicesItemsParent = document.querySelector('.body-services__items');
   directionsInput.addEventListener('input', () => {
     const directionsResult = document.querySelector('.search-directions__result');
-    let arr = [];
     directionsItems.forEach(directionsItem => {
+      let arr = [];
       let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
       let directionsInputValue = directionsInput.value;
       if (directionsInputValue.length > 0) {
@@ -164,7 +164,7 @@ function directionsSearch(directionsInput) {
         } else {
           directionsItem.hidden = true;
         }
-        if (document.querySelector('.page__services')) {
+        if (servicesItemsParent) {
           servicesNavigation.hidden = true;
           servicesItemsParent.hidden = false;
           servicesItems.forEach(el => {
@@ -182,7 +182,7 @@ function directionsSearch(directionsInput) {
           if (directionsResult) {
             directionsResult.innerHTML = `Найдено ${arr.length} результата`;
           }
-          if (document.querySelector('.page__services')) {
+          if (servicesItemsParent) {
             servicesItems.forEach(el => {
               el.querySelector('.item-services__back').hidden = true;
             })
@@ -191,7 +191,7 @@ function directionsSearch(directionsInput) {
           if (directionsResult) {
             directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
           }
-          if (document.querySelector('.page__services')) {
+          if (servicesItemsParent) {
             servicesNavigation.hidden = true;
             servicesItemsParent.hidden = true;
             servicesItems.forEach(el => {
@@ -203,7 +203,7 @@ function directionsSearch(directionsInput) {
       } else if (directionsInputValue.length <= 0) {
         directionsItem.hidden = false;
         directionsResult.innerHTML = '';
-        if (document.querySelector('.page__services')) {
+        if (servicesItemsParent) {
           servicesNavigation.hidden = false;
           servicesItemsParent.hidden = true;
           servicesItems.forEach(el => {
@@ -308,7 +308,9 @@ document.addEventListener("afterPopupOpen", function (e) {
       if (currentPopup.lastFocusEl.getAttribute('data-popup-info')) {
         let popupInfo = currentPopup.lastFocusEl.getAttribute('data-popup-info');
         popupTitle.innerHTML = popupInfo;
-        popupInput.value = popupInfo;
+        if (popupInput) {
+          popupInput.value = popupInfo;
+        }
       } else {
         setTimeout(() => {
           currentPopup.targetOpen.element.querySelector('[data-close]').click();

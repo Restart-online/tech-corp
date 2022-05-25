@@ -1,5 +1,5 @@
 .tariff-page {
-  margin: rem(140) 0 rem(180);
+  margin: 0 0 rem(180);
 
   @media (max-width: $pc) {
     margin: rem(100) 0 rem(140);
@@ -12,6 +12,10 @@
   @media (max-width: $mobile) {
     margin: rem(40) 0 rem(80);
   }
+}
+
+.tariff-page__container {
+  padding-top: rem(30);
 }
 
 .tariff-page__title {

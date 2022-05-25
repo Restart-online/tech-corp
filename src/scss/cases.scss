@@ -1,6 +1,7 @@
 .hero-cases {
 
   &__container {
+    padding-top: rem(30);
     &:not(.hero-cases__container_about) {
       @include adaptiveValue("padding-top", 117, 50);
       display: flex;
@@ -13,7 +14,6 @@
     @include adaptiveValue("gap", 117, 20, 1920, 992, 1);
     padding-bottom: rem(50);
     &_about {
-      @include adaptiveValue("padding-top", 117, 50, 1920, 992, 1);
       display: grid;
       @media (min-width:$tablet){
         grid-template-columns: rem(360) auto;
