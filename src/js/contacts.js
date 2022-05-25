@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         },{
                         iconLayout: 'default#image',
                         // Путь до нашей картинки
-                        iconImageHref: './img/marker.png', 
+                        iconImageHref: '/local/templates/althouse/img/marker.png', 
                         // Размеры иконки
                         iconImageSize: [60, 80],
                         // Смещение верхнего угла относительно основания иконки

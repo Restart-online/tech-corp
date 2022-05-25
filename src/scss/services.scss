@@ -130,9 +130,9 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-height: rem(600);
+    max-height: rem(800);
     @media (max-width:$pc){
-      max-height: rem(1200);
+      max-height: rem(1400);
     }
     @media (max-width:$mobile){
       max-height: none;

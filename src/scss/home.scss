@@ -176,6 +176,7 @@
   }
 
   &__icon {
+    cursor: pointer;
   }
 
   &__result {
@@ -277,6 +278,9 @@
         transform-origin: left center;
         transition: transform 0.3s ease 0s;
         transform: translateX(50%) scaleX(0);
+        @media (max-width:em(1400)){
+          transform: translateX(0) scaleX(0);
+        }
       }
     }
     @media (any-hover: hover){
@@ -290,6 +294,9 @@
       font-weight: 700;
       &::after{
         transform: translateX(50%) scaleX(1);
+        @media (max-width:em(1400)){
+          transform: translateX(0) scaleX(1);
+        }
       }
     }
   }
@@ -530,6 +537,7 @@
 .videocases {
 
   &__container {
+    @include adaptiveValue("padding-bottom", 200, 50);
   }
 
   &__head {
@@ -649,6 +657,7 @@
 
   &__container {
     @include adaptiveValue("padding-bottom", 215, 75);
+    @include adaptiveValue("padding-top", 200, 50);
   }
 
   &__head {

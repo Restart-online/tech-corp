@@ -154,69 +154,114 @@ function directionsSearch(directionsInput) {
   const servicesNavigation = document.querySelector('.body-services__navigation')
   const servicesItems = document.querySelectorAll('.item-services');
   const servicesItemsParent = document.querySelector('.body-services__items');
+  const directionsInputIcon = directionsInput.parentElement.querySelector('.search-directions__icon');
+  if (directionsInputIcon) {
+    directionsInputIcon.addEventListener('click', () => {
+      directionsInput.value = '';
+      directionsInput.parentElement.nextElementSibling.focus();
+      directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon);
+    })
+  }
   directionsInput.addEventListener('input', () => {
-    const directionsResult = document.querySelector('.search-directions__result');
-    directionsItems.forEach(directionsItem => {
-      let arr = [];
-      let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
-      let directionsInputValue = directionsInput.value;
-      if (directionsInputValue.length > 0) {
-        if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
-          directionsItem.hidden = false;
-        } else {
-          directionsItem.hidden = true;
+    directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon);
+  })
+}
+
+function directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon) {
+  const directionsResult = document.querySelector('.search-directions__result');
+  directionsItems.forEach(directionsItem => {
+    let arr = [];
+    let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
+    let directionsInputValue = directionsInput.value;
+    if (directionsInputValue.length > 0) {
+      if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
+        directionsItem.hidden = false;
+      } else {
+        directionsItem.hidden = true;
+      }
+      if (servicesItemsParent) {
+        servicesNavigation.hidden = true;
+        servicesItemsParent.hidden = false;
+        servicesItems.forEach(el => {
+          el.hidden = false;
+          el.querySelector('.item-services__back').hidden = true;
+        })
+      }
+      if (document.querySelectorAll('.tabs-directions__title').length) {
+        document.querySelectorAll('.tabs-directions__title').forEach(e => {
+          e.style = 'opacity: 0';
+        })
+        document.querySelectorAll('.tabs-directions__body').forEach(e => {
+          e.style.setProperty("display", "flex", "important");
+          if (e.offsetHeight > 10) {
+            e.style.setProperty("margin-bottom", "2rem");
+          } else {
+            e.style.removeProperty("margin-bottom");
+          }
+        })
+      }
+      directionsItems.forEach(directionsItem => {
+        if (!directionsItem.hidden) {
+          arr.push(directionsItem)
+        }
+      })
+  
+      if (arr.length > 0) {
+        if (directionsResult) {
+          directionsResult.innerHTML = `Количество найденных совпадений: ${arr.length}`;
         }
         if (servicesItemsParent) {
-          servicesNavigation.hidden = true;
-          servicesItemsParent.hidden = false;
           servicesItems.forEach(el => {
-            el.hidden = false;
             el.querySelector('.item-services__back').hidden = true;
           })
         }
-        directionsItems.forEach(directionsItem => {
-          if (!directionsItem.hidden) {
-            arr.push(directionsItem)
-          }
-        })
-    
-        if (arr.length > 0) {
-          if (directionsResult) {
-            directionsResult.innerHTML = `Найдено ${arr.length} результата`;
-          }
-          if (servicesItemsParent) {
-            servicesItems.forEach(el => {
-              el.querySelector('.item-services__back').hidden = true;
-            })
-          }
-        } else {
-          if (directionsResult) {
-            directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
-          }
-          if (servicesItemsParent) {
-            servicesNavigation.hidden = true;
-            servicesItemsParent.hidden = true;
-            servicesItems.forEach(el => {
-              el.hidden = false;
-              el.querySelector('.item-services__back').hidden = false;
-            })
-          }
+      } else {
+        if (directionsResult) {
+          directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
         }
-      } else if (directionsInputValue.length <= 0) {
-        directionsItem.hidden = false;
-        directionsResult.innerHTML = '';
         if (servicesItemsParent) {
-          servicesNavigation.hidden = false;
+          servicesNavigation.hidden = true;
           servicesItemsParent.hidden = true;
           servicesItems.forEach(el => {
-            el.hidden = true;
+            el.hidden = false;
             el.querySelector('.item-services__back').hidden = false;
           })
         }
       }
-    });
-    
-  })
+      if (directionsInputIcon) {
+        directionsInputIcon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 9.4L22.6 8L16 14.6L9.4 8L8 9.4L14.6 16L8 22.6L9.4 24L16 17.4L22.6 24L24 22.6L17.4 16L24 9.4Z" fill="#BCBEC0"/>
+        </svg>`;
+      }
+
+    } else if (directionsInputValue.length <= 0) {
+      directionsItem.hidden = false;
+      directionsResult.innerHTML = '';
+      if (servicesItemsParent) {
+        servicesNavigation.hidden = false;
+        servicesItemsParent.hidden = true;
+        servicesItems.forEach(el => {
+          el.hidden = true;
+          el.querySelector('.item-services__back').hidden = false;
+        })
+      }
+      if (document.querySelectorAll('.tabs-directions__title').length) {
+        document.querySelectorAll('.tabs-directions__title').forEach(e => {
+          e.style = '';
+        })
+        document.querySelectorAll('.tabs-directions__body').forEach(e => {
+          e.style = '';
+        })
+      }
+      if (directionsInputIcon) {
+        directionsInputIcon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 15L21 21" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        `;
+      }
+    }
+  });
 }
 
 

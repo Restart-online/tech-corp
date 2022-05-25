@@ -213,10 +213,16 @@
 
 //========================================================================================================================================================
 .callback {
+  .page__home & {
+    background-color: #f9f9f9;
+  }
 
   &__container {
     @include adaptiveValue("padding-top", 200, 50);
     @include adaptiveValue("padding-bottom", 200, 50);
+    .page__home & {
+      padding: 0 !important;
+    }
   }
 
   &__body {
