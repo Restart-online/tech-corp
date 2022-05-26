@@ -21,7 +21,7 @@
 		gap: rem(0);
 		padding: 0;
 	}
-	.popup-show & {
+	.lock & {
 		@media (any-hover: hover){
 			padding-right: rem(17);
 		}

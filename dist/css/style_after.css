@@ -804,6 +804,11 @@ body::after {
   }
 }
 
+.page__article .breadcumps__container,
+.page__computer .breadcumps__container {
+  padding-bottom: 1.875rem;
+}
+
 .breadcumps__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -814,6 +819,7 @@ body::after {
   color: #BCBEC0;
   font-size: 0.8125rem;
   gap: 0.125rem;
+  max-width: 100vw;
 }
 
 .breadcumps__item {
@@ -2193,6 +2199,10 @@ body::after {
   grid-template-columns: 30% 65%;
   grid-gap: 5%;
   padding-top: 1.875rem;
+}
+
+.sidebar-page__content {
+  min-width: 0;
 }
 
 .sidebar-page__caption {
@@ -11063,6 +11073,11 @@ button.swiper-pagination-bullet {
     padding-top: 4.125rem;
   }
 
+  .breadcumps__body {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
   .item-breadcumps__link_drop span {
     display: none;
   }
@@ -12142,7 +12157,7 @@ button.swiper-pagination-bullet {
     color: #282828;
   }
 
-  .popup-show .header {
+  .lock .header {
     padding-right: 1.0625rem;
   }
 

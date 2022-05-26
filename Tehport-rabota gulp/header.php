@@ -22,6 +22,11 @@ if($APPLICATION->GetCurPage(false) === '/')
 	<link rel="shortcut icon" type="image/png" href="/favicon.png">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript">
+	var __cs = __cs || [];
+	__cs.push(["setCsAccount", "Zsz9uEwQdP99wDTwBXU_yf95B5rcIvQv"]);
+	</script>
+	<script type="text/javascript" defer async src="https://app.comagic.ru/static/cs.min.js"></script>
 </head>
 <body>
 <?$APPLICATION->ShowPanel()?>

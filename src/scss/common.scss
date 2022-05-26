@@ -298,6 +298,10 @@
 
   &__container {
     @include adaptiveValue("padding-top", 55, 30);
+    .page__article &,
+    .page__computer & {
+      padding-bottom: rem(30);
+    }
   }
 
   &__body {
@@ -306,6 +310,11 @@
     color: #BCBEC0;
     font-size: rem(13);
     gap: rem(2);
+    max-width: 100vw;
+    @media (max-width:$mobile){
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
     @media (any-hover: none){
       &:hover{
         overflow-x: auto;

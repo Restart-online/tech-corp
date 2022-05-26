@@ -175,6 +175,9 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
     let directionsInputValue = directionsInput.value;
     const grayBg = document.querySelector('.directions__gray');
     if (directionsInputValue.length > 0) {
+      if (document.querySelector('.tabs-directions__navigation') && window.innerWidth <= 767) {
+        document.querySelector('.tabs-directions__navigation').hidden = true;
+      }
       if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
         directionsItem.hidden = false;
       } else {
@@ -245,6 +248,9 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
       }
     } else if (directionsInputValue.length <= 0) {
       directionsItem.hidden = false;
+      if (document.querySelector('.tabs-directions__navigation') && window.innerWidth <= 767) {
+        document.querySelector('.tabs-directions__navigation').hidden = false;
+      }
       if (directionsResult) {
         directionsResult.innerHTML = '';
         directionsResult.parentElement.style = 'gap: 11px;';

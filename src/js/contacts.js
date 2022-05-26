@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Выключаем все управление картой
         /* controls: [] */
     }); 
+    myMap.behaviors.disable('scrollZoom');
     const mapPlacemarks = document.querySelectorAll('[data-placemark]');
     if (mapPlacemarks.length) {
       mapPlacemarks.forEach(e => {
@@ -49,16 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
