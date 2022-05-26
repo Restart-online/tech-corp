@@ -21,6 +21,11 @@
 		gap: rem(0);
 		padding: 0;
 	}
+	.popup-show & {
+		@media (any-hover: hover){
+			padding-right: rem(17);
+		}
+	}
 	display: flex;
 	flex-direction: column;
 	gap: rem(25);
@@ -33,7 +38,7 @@
 
 	&__top {
 	.submenu-open & {
-		@media (min-width:$tablet){
+		@media (min-width:$tablet) and (any-hover: hover){
 			padding-right: rem(17);
 		}
 	}
@@ -41,7 +46,7 @@
 
 	&__bottom {
 	.submenu-open & {
-		@media (min-width:$tablet){
+		@media (min-width:$tablet)  and (any-hover: hover) {
 			padding-right: rem(17);
 		}
 	}

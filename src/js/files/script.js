@@ -173,6 +173,7 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
     let arr = [];
     let directionsItemText = directionsItem.querySelector('.tabs-directions__text').textContent;
     let directionsInputValue = directionsInput.value;
+    const grayBg = document.querySelector('.directions__gray');
     if (directionsInputValue.length > 0) {
       if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) {
         directionsItem.hidden = false;
@@ -193,10 +194,10 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
         })
         document.querySelectorAll('.tabs-directions__body').forEach(e => {
           e.style.setProperty("display", "flex", "important");
-          if (e.offsetHeight > 10) {
-            e.style.setProperty("margin-bottom", "2rem");
+          if (e.offsetHeight > 17) {
+            e.style.setProperty("padding-bottom", "1rem");
           } else {
-            e.style.removeProperty("margin-bottom");
+            e.style.removeProperty("padding-bottom");
           }
         })
       }
@@ -218,6 +219,7 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
       } else {
         if (directionsResult) {
           directionsResult.innerHTML = `К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте ввести другой запрос.`;
+          directionsResult.parentElement.style = 'gap: 11px;';
         }
         if (servicesItemsParent) {
           servicesNavigation.hidden = true;
@@ -233,10 +235,20 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
           <path d="M24 9.4L22.6 8L16 14.6L9.4 8L8 9.4L14.6 16L8 22.6L9.4 24L16 17.4L22.6 24L24 22.6L17.4 16L24 9.4Z" fill="#BCBEC0"/>
         </svg>`;
       }
-
+      if (grayBg) {
+        const findedItems = document.querySelectorAll('.tabs-directions__body');
+        let findedItemsHeight = 0;
+        findedItems.forEach(e => {
+          findedItemsHeight = findedItemsHeight + e.offsetHeight;
+        })
+        grayBg.style = `height: calc(34% + ${findedItemsHeight}px);`
+      }
     } else if (directionsInputValue.length <= 0) {
       directionsItem.hidden = false;
-      directionsResult.innerHTML = '';
+      if (directionsResult) {
+        directionsResult.innerHTML = '';
+        directionsResult.parentElement.style = 'gap: 11px;';
+      }
       if (servicesItemsParent) {
         servicesNavigation.hidden = false;
         servicesItemsParent.hidden = true;
@@ -259,6 +271,9 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
         <path d="M15 15L21 21" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         `;
+      }
+      if (grayBg) {
+        grayBg.style = `height: 100%`
       }
     }
   });
@@ -288,32 +303,37 @@ function headerMenuTop(headerMenu) {
 }
 
 function hideShowCases(casesNavItems) {
-  const casesNavItemsChecks = document.querySelectorAll('[data-cases-nav');
+  const casesNavItemsChecks = document.querySelectorAll('[data-cases-nav]:checked');
   const casesItems = document.querySelectorAll('[data-cases-item]');
-  casesNavItems.forEach(e => {
-    if (e.checked) {
-      let casesNavTheme = e.getAttribute('data-cases-nav');
-      if (casesNavTheme === 'all') {
-        casesNavItems.forEach(elem => {
-          elem.checked = true;
+  casesItems.forEach(el => {
+    el.hidden = true;
+  })
+  let arrItems = [];
+  if (casesNavItemsChecks.length == 0) {
+    casesItems.forEach(el => {
+      arrItems.push(el);
+    })
+  } else {
+    casesNavItems.forEach(e => {
+      if (e.checked) {
+        let casesNavTheme = e.getAttribute('data-cases-nav');
+        if (casesNavTheme === 'all') {
+          casesNavItems.forEach(elem => {
+            elem.checked = true;
+          })
+        }
+        casesItems.forEach(el => {
+          let casesItemTheme = el.getAttribute('data-cases-item').split('||');
+          console.log(casesItemTheme)
+          if (casesItemTheme.some(el => el === casesNavTheme)) {
+            arrItems.push(el);
+          }
         })
       }
-      casesItems.forEach(el => {
-        let casesItemTheme = el.getAttribute('data-cases-item');
-        if (casesNavTheme === casesItemTheme) {
-          el.hidden = false;
-        }
-      })
-    }
-    else {
-      let casesNavTheme = e.getAttribute('data-cases-nav');
-      casesItems.forEach(el => {
-        let casesItemTheme = el.getAttribute('data-cases-item');
-        if (casesNavTheme === casesItemTheme) {
-          el.hidden = true;
-        }
-      })
-    }
+    })
+  }
+  arrItems.forEach(element => {
+    element.hidden = false
   })
 }
 

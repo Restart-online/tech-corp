@@ -198,15 +198,20 @@
     top: 0;
     right: 0;
     width: 50%;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
+    height: 100%;
+    @media (max-width:$mobile){
+      display: none;
+    }
   }
 
   &__container {
+    position: relative;
+    z-index: 2;
   }
   &__searchwrap {
     display: flex;
     flex-direction: column;
-    gap: rem(11);
     flex: 0 1 rem(530);
   }
 
