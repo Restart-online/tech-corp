@@ -9,6 +9,12 @@
   display: flex;
   width: 100%;
   height: rem(350);
+  overflow: hidden;
+  img,
+  picture {
+    width: 100%;
+    object-fit: cover;
+  }
 
   @media (max-width: $mobileSmall) {
     height: rem(280);
@@ -20,11 +26,6 @@
   bottom: rem(20);
   right: rem(38);
   color: $white;
-}
-
-.interesting__image {
-  width: 100%;
-  object-fit: cover;
 }
 
 .interesting__caption {

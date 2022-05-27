@@ -608,9 +608,6 @@
       justify-content: center;
       gap: rem(100);
     }
-    @media (max-width:$tablet){
-      display: none;
-    }
   }
 
   &__pagination {

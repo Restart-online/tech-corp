@@ -16274,6 +16274,10 @@ PERFORMANCE OF THIS SOFTWARE.
         const da = new DynamicAdapt("max");
         da.init();
         document.addEventListener("DOMContentLoaded", (() => {
+            const iFrames = document.querySelectorAll("iframe");
+            if (iFrames.length) iFrames.forEach((e => {
+                e.loading = "lazy";
+            }));
             const headerSearch = document.querySelector(".search-header");
             if (headerSearch) {
                 const headerSearchIcon = document.querySelector(".search-header__icon");
@@ -16411,7 +16415,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 const grayBg = document.querySelector(".directions__gray");
                 if (directionsInputValue.length > 0) {
                     if (document.querySelector(".tabs-directions__navigation") && window.innerWidth <= 767) document.querySelector(".tabs-directions__navigation").hidden = true;
-                    if (directionsItemText.trim().toUpperCase().indexOf(directionsInputValue.trim().toUpperCase()) >= 0) directionsItem.hidden = false; else directionsItem.hidden = true;
+                    if (directionsItemText.toUpperCase().indexOf(directionsInputValue.toUpperCase()) >= 0) directionsItem.hidden = false; else directionsItem.hidden = true;
                     if (servicesItemsParent) {
                         servicesNavigation.hidden = true;
                         servicesItemsParent.hidden = false;
@@ -16495,7 +16499,7 @@ PERFORMANCE OF THIS SOFTWARE.
             const headerHeight = document.querySelector("header").offsetHeight;
             if (window.innerWidth <= 767) {
                 headerMenu.style = `top: ${headerHeight}px; height: calc(100vh - ${headerHeight}px)`;
-                headerMenu.querySelector(".menu__list").style = `height: calc(100vh - ${headerHeight}px)`;
+                headerMenu.querySelector(".menu__list").style = `height: calc(80vh - ${headerHeight}px)`;
                 document.querySelector(".bottom-header__closemenu").style = `top: ${headerHeight}px; height: calc(100vh - ${headerHeight}px)`;
             } else {
                 headerMenu.style = ``;

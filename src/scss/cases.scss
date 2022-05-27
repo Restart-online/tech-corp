@@ -222,7 +222,8 @@
     @include adaptiveValue("padding-top", 200, 50);
     @include adaptiveValue("padding-bottom", 200, 50);
     .page__home & {
-      padding: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
   }
 
@@ -248,6 +249,9 @@
     }
     img {
       width: 100%;
+      @media (max-width:$tablet){
+        display: none;
+      }
     }
   }
 
