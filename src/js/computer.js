@@ -2,6 +2,28 @@ import nouislider from "nouislider";
 import "nouislider/dist/nouislider.min.css";
 
 document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[data-popup]');
+
+  [...buttons].forEach(button => {
+    button.addEventListener('click', () => {
+      const parentBlock = button.closest('.js-tariff');
+
+      if (!parentBlock) return null;
+
+      const inputTariffName = document.querySelector(`input[data-name="tariff"]`);
+      const inputTariffPrice = document.querySelector(`input[data-name="price"]`);
+      const tariffName = parentBlock.querySelector(".js-tariff__name");
+      const tariffPrice = parentBlock.querySelector(".js-tariff__price");
+
+      if (inputTariffName && tariffName) {
+        inputTariffName.value = parentBlock.querySelector(".js-tariff__name").textContent;
+      }
+      if (inputTariffPrice && tariffPrice) {
+        inputTariffPrice.value = parentBlock.querySelector(".js-tariff__price").textContent;
+      }
+    });
+  });
+
   new EvilRangeCreator();
 });
 
