@@ -100,8 +100,8 @@ function EvilRangeCreator(config) {
         return;
       }
 
-      this.countComputer = Number(document.querySelector('input[name="computer"]')?.value) || 0;
-      this.countServer = Number(document.querySelector('input[name="server"]')?.value);
+      this.countComputer = Number(document.querySelector('input[data-name="computer"]')?.value) || 0;
+      this.countServer = Number(document.querySelector('input[data-name="server"]')?.value) || 0;
 
       const price = this.countComputer * Number(tariff.dataset.computerPrice) + this.countServer * Number(tariff.dataset.serverPrice);
       const currentPrice = Number(tariff.dataset.minPrice) > price ? Number(tariff.dataset.minPrice) : price;
