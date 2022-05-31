@@ -181,3 +181,91 @@ body {
 @import "services";
 @import "contacts";
 @import "command";
+
+
+.search-page {
+	@if ($maxWidthContainer>0) {
+		max-width: rem($maxWidthContainer);
+		box-sizing: content-box;
+		margin: 0 auto;
+	}
+	@if ($containerPadding>0) {
+		padding: 0 rem(math.div($containerPadding, 2));
+	}
+	padding-top: rem(30);
+	@include adaptiveValue("padding-bottom", 200, 50, 1920, 480, 1);
+	.text {
+		display: inline-block;
+		width: 100%;
+		&:not(:last-child) {margin-bottom: rem(30);}
+	}
+	.search-sorting {
+		display: flex;
+		align-items: center;
+		gap: rem(7);
+		a,
+		b {
+			@extend .rectangle_btn;
+			background-color: #fff;
+			color: #1047C8;
+			border: rem(1) solid #1047C8;
+			transition: all 0.3s ease 0s;
+			line-height: 1;
+			@media (any-hover: hover){
+				&:hover{
+					background-color: #1047C8;
+					color: #fff;
+				}
+			}
+		}
+		b {
+			background-color: #1047C8;
+			color: #fff;
+		}
+	}
+}
+
+.content_error {
+	@extend .search-page;
+	.error_404 {
+		display: flex;
+		justify-content:center;align-items: center;
+		flex-direction: column;
+		@include adaptiveValue("gap", 50, 25);
+		background-image: url(../img/404.png);
+		padding-top: rem(250);
+		background-size: auto rem(200);
+		background-position: top center;
+		background-repeat: no-repeat;
+		text-align: center;
+		&>span {
+			@include adaptiveValue("font-size", 36, 26);
+			&>span {
+				color: $blue;
+				@include adaptiveValue("font-size", 38, 28);
+			}
+		}
+		a {
+			@extend .search-button;
+		}
+	}
+}
+
+.search-query {
+	padding: rem(10);
+	height: 100%;
+}
+.search-button {
+	@extend .rectangle_btn;
+	background-color: #1047C8;
+	color: #fff;
+	border: rem(1) solid #1047C8;
+	transition: all 0.3s ease 0s;
+	line-height: 1;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: #fff;
+			color: $blue;
+		}
+	}
+}
