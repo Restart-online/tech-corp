@@ -168,7 +168,12 @@ function directionsSearch(directionsInput) {
       directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon);
     })
   }
-  directionsInput.addEventListener('input', () => {
+  directionsInput.addEventListener('input', (event) => {
+    event.preventDefault();
+    directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon);
+  })
+  directionsInput.addEventListener('change', (event) => {
+    event.preventDefault();
     directionSearchInput(directionsInput, directionsItems, servicesNavigation, servicesItems, servicesItemsParent, directionsInputIcon);
   })
 }
@@ -218,6 +223,7 @@ function directionSearchInput(directionsInput, directionsItems, servicesNavigati
   
       if (arr.length > 0) {
         if (directionsResult) {
+          // directionsResult.innerHTML = `Количество найденных совпадений: ${arr.length}`;
           directionsResult.innerHTML = `Количество найденных совпадений: ${arr.length}`;
         }
         if (servicesItemsParent) {

@@ -8,7 +8,7 @@ import { flsModules } from "../modules.js";
 import "inputmask/dist/inputmask.min.js";
 
 function inputMasksInit() {
-	const inputMasks = document.querySelectorAll('input');
+	const inputMasks = document.querySelectorAll('[data-inputmask]');
 	if (inputMasks.length) {
 		flsModules.inputmask = Inputmask({
 			showMaskOnHover: false,

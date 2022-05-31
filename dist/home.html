@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style_after.min.css?_v=20220527135829">
+	<link rel="stylesheet" href="css/style_after.min.css?_v=20220530032535">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -356,8 +356,8 @@
 							</nav>
 						</div>
 					</div>
-					<form data-da=".top-header__left, 767" action="#" method="post" class="bottom-header__search search-header">
-						<input type="text" name="" id="" placeholder="Запрос" class="search-header__input">
+					<form data-da=".top-header__left, 767" action="#" data-dev method="post" class="bottom-header__search search-header">
+						<input type="text" name="search-header__input" id="search-header__input" placeholder="Запрос" class="search-header__input">
 						<i class="search-header__icon">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -398,15 +398,15 @@
 					<div class="directions__head">
 						<h2 class="directions__title">Направления деятельности</h2>
 						<div class="directions__searchwrap">
-							<div class="directions__search search-directions">
-								<input type="text" name="" placeholder="Введите название услуги" id="" class="search-directions__input">
+							<form action="#" method="post" class="directions__search search-directions">
+								<input type="text" name="search" placeholder="Введите название услуги" id="search-directions__input" class="search-directions__input">
 								<i class="search-directions__icon">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 										<path d="M15 15L21 21" stroke="#BCBEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 									</svg>
 								</i>
-							</div>
+							</form>
 							<div class="search-directions__result"></div>
 						</div>
 					</div>
@@ -1141,7 +1141,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app_after.min.js?_v=20220527135829"></script>
+	<script src="js/app_after.min.js?_v=20220530032535"></script>
 </body>
 
 </html>
