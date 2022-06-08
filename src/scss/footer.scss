@@ -2,7 +2,9 @@
 .footer {
   position: relative;
   @media (min-width:$tablet){
-    background: url(../img/footer_bg.png) top right no-repeat;
+    background-image: url(../img/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: top right;
     background-size: 50% 100%;
   }
   background-color: rgba(35, 37, 43, 0.5);
@@ -124,11 +126,14 @@
     &+label {
       display: flex;
       align-items: center;
-      @include adaptiveValue("gap", 10, 5, 480, 320, 1);
       line-height: 1;
       position: relative;
       white-space: nowrap;
-      @include adaptiveValue("font-size", 15, 9, 480, 320, 1);
+      gap: rem(10);
+        @media (max-width:$mobileSmall){
+          @include adaptiveValue("font-size", 15, 9, 480, 320, 1);
+          @include adaptiveValue("gap", 10, 5, 480, 320, 1);
+        }
       &::before{
         content:'';
         display: block;

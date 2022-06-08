@@ -92,7 +92,7 @@
   }
 
   &__body {
-    @include adaptiveValue("gap", 60, 20);
+    @include adaptiveValue("gap", 60, 20, 1920, 320, 1);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(280), rem(360)));
     justify-content: center;
