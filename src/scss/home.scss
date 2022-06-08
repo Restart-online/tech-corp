@@ -53,6 +53,9 @@
   &__btns {
     display: flex;
     gap: rem(20);
+    @media (max-width:$mobileSmall){
+      flex-wrap: wrap;
+    }
   }
 
   &__button {

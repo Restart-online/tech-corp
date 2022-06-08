@@ -4,18 +4,17 @@
   @media (min-width:$tablet){
     background-image: url(../img/footer_bg.png);
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top left;
     background-size: 50% 100%;
   }
   background-color: rgba(35, 37, 43, 0.5);
   color: #fff;
   @include adaptiveValue("padding-top", 80, 40);
-  @include adaptiveValue("padding-bottom", 70, 30);
 
   &__black {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 50%;
     height: 100%;
     background-color: #23252B;
@@ -28,9 +27,9 @@
     position: relative;
     z-index: 2;
     display: grid;
-    @include adaptiveValue("gap", 90, 40);
     @media (min-width:$tablet){
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: rem(420) auto;
+      @include adaptiveValue("column-gap", 210, 10);
     }
   }
 
@@ -49,7 +48,9 @@
   }
 }
 .callback-footer {
-  @include adaptiveValue("padding-right", 100, 0);
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 75, 40, 1920, 767, 1);
+  }
   &__fileinput {
     position: absolute;
     top: 0;
@@ -128,7 +129,9 @@
       align-items: center;
       line-height: 1;
       position: relative;
-      white-space: nowrap;
+      @media (min-width:$mobileSmall){
+        white-space: nowrap;
+      }
       gap: rem(10);
         @media (max-width:$mobileSmall){
           @include adaptiveValue("font-size", 15, 9, 480, 320, 1);
@@ -230,7 +233,9 @@
   }
 }
 .contacts-footer {
-  @include adaptiveValue("padding-right", 100, 0);
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 75, 40, 1920, 767, 1);
+  }
 
   &__head {
     &:not(:last-child) {
@@ -268,6 +273,10 @@
 
   &__link {
     transition: color 0.3s ease 0s;
+    font-size: rem(14);
+    span {
+      white-space: nowrap;
+    }
     @media (any-hover: hover){
       &:hover{
         color: #aaa;
@@ -281,15 +290,15 @@
   @media (min-width:$tablet){
     grid-column-start: 1;
     grid-column-end: 3;
-    border-top: rem(1) solid rgba(255, 255, 255, 0.1);
+    border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
   }
 
   &__list {
     display: flex;
     align-items: center;
     @include adaptiveValue("gap", 40, 20);
-    @media (max-width:$mobile){
-      display: none;
+    @media (max-width:$pc){
+      flex-wrap: wrap;
     }
   }
 
@@ -299,6 +308,8 @@
 
   &__link {
     transition: color 0.3s ease 0s;
+    font-size: rem(12);
+    white-space: nowrap;
     @media (any-hover: hover){
       &:hover{
         color: #aaa;
@@ -308,3 +319,54 @@
 }
 
 //====================================================================================================
+.bottom-footer {
+  @include adaptiveValue("padding-top", 20, 10);
+  @include adaptiveValue("padding-bottom", 20, 40);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: rem(12);
+  @media (min-width:$tablet){
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width:$mobile){
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__restart {
+    transition: opacity 0.3s ease 0s;
+    max-width: rem(125);
+    img {
+      width: 100%;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    flex: 1 1 auto;
+  }
+
+  &__forminfo {
+    max-width: rem(343);
+    text-align: center;
+    @media (min-width:$mobile){
+      text-align: right;
+    }
+  }
+
+  &__link {
+    text-decoration: underline !important;
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: none !important;
+      }
+    }
+  }
+}
