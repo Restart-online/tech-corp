@@ -370,3 +370,25 @@
     }
   }
 }
+
+
+.uparrow {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  background-color: $mainColor;
+  width: rem(50);
+  height: rem(50);
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  &._hide {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  svg {
+    max-height: rem(30);
+    transform: rotate(-90deg);
+  }
+}

@@ -56,6 +56,15 @@
 	}
 }
 .top-header {
+	transition: all 0.3s ease 0s;
+	transform-origin: top center;
+	@media (min-width:$mobile){
+		._header-scroll & {
+			max-height: 0;
+			transform: scaleY(0);
+		}
+	}
+	
 	.header_light & {
 		background-color: #23252B;
 	}

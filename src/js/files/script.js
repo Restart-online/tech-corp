@@ -99,6 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
   })
+  const uparrow = document.querySelector('.uparrow');
+  if (uparrow) {
+    const offsY = uparrow.dataset.onscroll;
+    window.addEventListener('scroll', () => {
+      if (pageYOffset >= offsY) {
+        uparrow.classList.remove('_hide');
+      } else {
+        uparrow.classList.add('_hide');
+      }
+    }) 
+  }
 })
 
 

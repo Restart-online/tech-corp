@@ -1007,6 +1007,15 @@ body::after {
   padding: 0;
 }
 
+.top-header {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
+}
+
 .header_light .top-header {
   background-color: #23252B;
 }
@@ -1890,6 +1899,44 @@ body::after {
 
 .bottom-footer__link {
   text-decoration: underline !important;
+}
+
+.uparrow {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  background-color: #282828;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.uparrow._hide {
+  -webkit-transform: translateY(150%);
+      -ms-transform: translateY(150%);
+          transform: translateY(150%);
+  opacity: 0;
+}
+
+.uparrow svg {
+  max-height: 1.875rem;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 .comment {
@@ -10099,6 +10146,13 @@ button.swiper-pagination-bullet {
 @media (min-width: 47.99875em) {
   .header {
     padding: 0.9375rem 0 0 0;
+  }
+
+  ._header-scroll .top-header {
+    max-height: 0;
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0);
   }
 
   .spollers-header__title {

@@ -16343,6 +16343,13 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                 }
             }));
+            const uparrow = document.querySelector(".uparrow");
+            if (uparrow) {
+                const offsY = uparrow.dataset.onscroll;
+                window.addEventListener("scroll", (() => {
+                    if (pageYOffset >= offsY) uparrow.classList.remove("_hide"); else uparrow.classList.add("_hide");
+                }));
+            }
         }));
         function servicesActions(servicesTitles) {
             const servicesNavigation = document.querySelector(".body-services__navigation");
