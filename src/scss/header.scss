@@ -21,11 +21,6 @@
 		gap: rem(0);
 		padding: 0;
 	}
-	.lock & {
-		@media (any-hover: hover){
-			padding-right: rem(17);
-		}
-	}
 	display: flex;
 	flex-direction: column;
 	gap: rem(25);
@@ -457,8 +452,8 @@
 				}
 			}
 			._header-scroll & {
-				top: rem(105);
-				height: calc(100vh - rem(105));
+				top: rem(39);
+				height: calc(100vh - rem(39));
 			}
 			left: 0;
 			opacity: 0;

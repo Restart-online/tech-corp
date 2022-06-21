@@ -110,6 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }) 
   }
+  
+  const cookies = document.querySelector('.cookies');
+  const cookiesBtn = document.querySelector('.cookies__btn');
+  let cookiesDelay = cookies.dataset.delay;
+  let cookiesOk = sessionStorage.getItem('cookiesOk');
+  cookiesBtn.addEventListener('click', function () {
+  cookies.classList.add('_hide');
+  sessionStorage.setItem('cookiesOk', 'ok');
+  })
+  if (!cookiesOk) {
+      setTimeout(function () {
+          cookies.classList.remove('_hide');
+      }, cookiesDelay);
+  } else {
+    cookies.remove();
+  }
 })
 
 

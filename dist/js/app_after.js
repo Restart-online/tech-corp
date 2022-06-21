@@ -13311,6 +13311,41 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".partners__slider")) new core(".partners__slider", {
+                modules: [ Navigation, Pagination, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 3,
+                spaceBetween: 60,
+                speed: 800,
+                autoHeight: false,
+                pagination: {
+                    el: ".partners__body .partners__pagination",
+                    type: "fraction"
+                },
+                navigation: {
+                    prevEl: ".partners__body .partners_arrow_prev",
+                    nextEl: ".partners__body .partners_arrow_next"
+                },
+                breakpoints: {
+                    319: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1268: {
+                        spaceBetween: 60
+                    }
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -16350,6 +16385,17 @@ PERFORMANCE OF THIS SOFTWARE.
                     if (pageYOffset >= offsY) uparrow.classList.remove("_hide"); else uparrow.classList.add("_hide");
                 }));
             }
+            const cookies = document.querySelector(".cookies");
+            const cookiesBtn = document.querySelector(".cookies__btn");
+            let cookiesDelay = cookies.dataset.delay;
+            let cookiesOk = sessionStorage.getItem("cookiesOk");
+            cookiesBtn.addEventListener("click", (function() {
+                cookies.classList.add("_hide");
+                sessionStorage.setItem("cookiesOk", "ok");
+            }));
+            if (!cookiesOk) setTimeout((function() {
+                cookies.classList.remove("_hide");
+            }), cookiesDelay); else cookies.remove();
         }));
         function servicesActions(servicesTitles) {
             const servicesNavigation = document.querySelector(".body-services__navigation");

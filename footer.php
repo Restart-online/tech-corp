@@ -61,16 +61,41 @@
 					<div class="contacts-footer__body">
 						<div class="contacts-footer__item">
 							<div class="contacts-footer__subtitle">Наши услуги</div>
-							<?$APPLICATION->IncludeFile(
+							<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"footer",
+	Array(
+		"CUSTOM_SECTION_SORT" => array("UF_SORT" => "ASC"),
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "N",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "sectionsFilter",
+		"IBLOCK_ID" => "1",
+		"IBLOCK_TYPE" => "content",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array("", ""),
+		"SECTION_ID" => "",
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array("", ""),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "1",
+		"VIEW_MODE" => "LIST"
+	)
+);?>
+							<?/*$APPLICATION->IncludeFile(
 									"/local/include/footer/social.php", 
 									Array(), 
 									Array(
 										"MODE"      => "html",                                           
 										"NAME"      => "Редактирование включаемой области",      
 										"TEMPLATE"  => ""                    
-									));
+									));*/
 								?>
-									<!--
+							<!--		
 							<ul class="contacts-footer__list">
 								<li class="contacts-footer__li">
 								<a href="#" class="contacts-footer__link">Vkontakte</a>
@@ -138,7 +163,7 @@
 					</div>
 				</div>
 				<div class="footer__menu menu-footer">
-					<!-- <?$APPLICATION->IncludeComponent(
+					 <?$APPLICATION->IncludeComponent(
 						"bitrix:menu",
 						"footer",
 						Array(
@@ -150,30 +175,55 @@
 							"MENU_CACHE_TIME" => "3600",
 							"MENU_CACHE_TYPE" => "A",
 							"MENU_CACHE_USE_GROUPS" => "N",
-							"ROOT_MENU_TYPE" => "top",
+							"ROOT_MENU_TYPE" => "footer",
 							"USE_EXT" => "Y"
 						)
-					);?> -->
-					<ul class="menu-footer__list">
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">О компании</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">История компании</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">наша Команда</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">Сертификаты</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">Отзывы</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">карьера</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">вопрос-ответ</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">партнеры</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">акции</a></li>
-						<li class="menu-footer__li"><a href="#" class="menu-footer__link">новости</a></li>
-					</ul>
+					);?>					
 					
 				</div>
 				<div class="footer__bottom bottom-footer">
 					<a href="https://restart-online.com/" target="_blank" class="bottom-footer__restart">
-						<img src="/local/templates/althouse/img/restart.svg" alt="image">
+						
+						<?$APPLICATION->IncludeFile(
+									"/local/include/footer/logo.php", 
+									Array(), 
+									Array(
+										"MODE"      => "html",                                           
+										"NAME"      => "Редактирование включаемой области",      
+										"TEMPLATE"  => ""                    
+									));
+								?>
 					</a>
-					<div class="bottom-footer__copy">2022 | ООО «Альтхаус» Все права защищены</div>
-					<div class="bottom-footer__forminfo">Отправляя любую форму на сайте, вы соглашаетесь с <a href="" class="bottom-footer__link">политикой конфиденциальности</a> данного сайта.</div>
+					<div class="bottom-footer__copy"><?=date('Y')?> | 
+					<?$APPLICATION->IncludeFile(
+									"/local/include/footer/copy.php", 
+									Array(), 
+									Array(
+										"MODE"      => "text",                                           
+										"NAME"      => "Редактирование включаемой области",      
+										"TEMPLATE"  => ""                    
+									));
+								?>
+					</div>
+					<div class="bottom-footer__forminfo">
+							<?$APPLICATION->IncludeFile(
+									"/local/include/footer/police.php", 
+									Array(), 
+									Array(
+										"MODE"      => "html",                                           
+										"NAME"      => "Редактирование включаемой области",      
+										"TEMPLATE"  => ""                    
+									));
+								?>
+					</div>
+				</div>
+			</div>
+			<div class="cookies _hide" data-delay="3000">
+				<div class="cookies__container container">
+					<div class="cookies__content">
+						<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam repellendus soluta tempora dolor eaque ipsam dignissimos, cupiditate, laborum doloremque explicabo, vitae error! Impedit rerum, vero voluptas provident ad iusto ipsa.</span>
+						<button class="cookies__btn">Закрыть</button>
+					</div>
 				</div>
 			</div>
 		</footer>

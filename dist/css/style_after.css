@@ -970,6 +970,67 @@ body::after {
   max-width: 7.375rem;
 }
 
+.cookies {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: #fff;
+  font-size: 12px;
+  z-index: 999;
+}
+
+.cookies._hide {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.cookies * {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.cookies__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  color: #fff !important;
+}
+
+.cookies__content span {
+  color: #fff !important;
+}
+
+.cookies__content div {
+  color: #fff;
+  font-size: 12px;
+}
+
+.cookies__btn {
+  padding: 5px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  color: #000 !important;
+  cursor: pointer;
+  font-size: 12px;
+  min-width: 65px;
+}
+
 .header {
   position: fixed;
   color: #fff;
@@ -3282,22 +3343,16 @@ body::after {
   }
 }
 
+.partners__slider {
+  position: relative;
+}
+
+.partners__slider:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
 .partners__body {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 7.8125rem);
-}
-
-@supports (gap: clamp( 0.9375rem , -0.7108516484rem  +  8.2417582418vw , 5.625rem )) {
-  .partners__body {
-    gap: clamp( 0.9375rem , -0.7108516484rem  +  8.2417582418vw , 5.625rem );
-  }
-}
-
-@supports not (gap: clamp( 0.9375rem , -0.7108516484rem  +  8.2417582418vw , 5.625rem )) {
-  .partners__body {
-    gap: calc(0.9375rem + 4.6875 * (100vw - 20rem) / 60.6666666667);
-  }
+  position: relative;
 }
 
 .partners__item {
@@ -3310,10 +3365,27 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.partners__item picture {
+  width: 100%;
 }
 
 .partners__item img {
   max-width: 100%;
+}
+
+.partners__arrows .partners__arrow {
+  z-index: 2;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.partners__arrows .swiper-button-disabled {
+  opacity: 0;
 }
 
 @supports (padding-bottom: clamp( 4.6875rem , 1.6105769231rem  +  15.3846153846vw , 13.4375rem )) {
@@ -3473,7 +3545,8 @@ body::after {
   pointer-events: all;
 }
 
-.videocases__arrows {
+.videocases__arrows,
+.partners__arrows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3495,17 +3568,21 @@ body::after {
 }
 
 .videocases__arrows .videocases_arrow_prev,
-.videocases__arrows .videocases_arrow_next {
+.partners__arrows .videocases_arrow_prev,
+.videocases__arrows .videocases_arrow_next,
+.partners__arrows .videocases_arrow_next {
   z-index: 2;
   pointer-events: all;
   cursor: pointer;
 }
 
-.videocases__arrows .swiper-button-disabled {
+.videocases__arrows .swiper-button-disabled,
+.partners__arrows .swiper-button-disabled {
   opacity: 0;
 }
 
-.videocases__pagination {
+.videocases__pagination,
+.partners__pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3519,7 +3596,8 @@ body::after {
   font-weight: 500;
 }
 
-.videocases__pagination .swiper-pagination-total {
+.videocases__pagination .swiper-pagination-total,
+.partners__pagination .swiper-pagination-total {
   color: #636363;
 }
 
@@ -10221,8 +10299,8 @@ button.swiper-pagination-bullet {
   }
 
   ._header-scroll .menu__submenu {
-    top: 6.5625rem;
-    height: calc(100vh - 6.5625rem);
+    top: 2.4375rem;
+    height: calc(100vh - 2.4375rem);
   }
 
   .submenu-open .menu__submenu._active {
@@ -10505,7 +10583,8 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 93.75em) {
-  .videocases__arrows {
+  .videocases__arrows,
+  .partners__arrows {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
@@ -10519,7 +10598,8 @@ button.swiper-pagination-bullet {
     gap: 6.25rem;
   }
 
-  .videocases__pagination {
+  .videocases__pagination,
+  .partners__pagination {
     height: 2.875rem;
   }
 }
@@ -12457,10 +12537,6 @@ button.swiper-pagination-bullet {
 
   .item-breadcumps__item a:hover {
     color: #282828;
-  }
-
-  .lock .header {
-    padding-right: 1.0625rem;
   }
 
   .top-header__callback:hover {
