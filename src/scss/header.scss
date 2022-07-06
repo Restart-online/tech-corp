@@ -440,17 +440,14 @@
 	}
 	&__submenu {
 		@media (min-width:$mobile){
-			position: fixed;
-			min-width: 100vw;
+			position: fixed !important;
+			width: 100vw;
+			max-width: rem(1200);
+			left: 0;
+			right: 0;
+			margin: 0px auto;
 			height: calc(100vh - rem(135));
 			top: rem(145);
-			background: rgba(17, 17, 17, 0.95);
-			.header_light & {
-				background-color: rgba(235, 235, 235, 0.95);
-				svg path {
-					fill: $mainColor;
-				}
-			}
 			._header-scroll & {
 				top: rem(39);
 				height: calc(100vh - rem(39));
@@ -464,6 +461,7 @@
 			}
 		}
 		&__body {
+			position: relative;
 			@media (min-width:$mobile){
 				height: calc(100vh - rem(145));
 			}
@@ -492,15 +490,22 @@
 
 	&__sublist {
 		@include adaptiveValue("padding-top", 48, 15, 1920, 767, 1);
+		@include adaptiveValue("padding-bottom", 48, 15, 1920, 767, 1);
 		@media (min-width:$mobile){
-			position: relative;
 			margin-top: rem(10);
 			padding-left: rem(15);
 			padding-right: rem(15);
-			display: flex;
+			display: inline-flex;
 			flex-direction: column;
-			height: 98%;
+			// height: 98%;
 			gap: rem(20);
+			background: rgba(17, 17, 17, 0.95);
+			.header_light & {
+				background-color: rgba(235, 235, 235, 0.95);
+				svg path {
+					fill: $mainColor;
+				}
+			}
 		}
 	}
 
@@ -647,16 +652,27 @@
 .sub-submenu {
 	@include adaptiveValue("padding-top", 48, 15, 1920, 767, 1);
 	@media (min-width:$mobile){
+		margin-top: 0.625rem;
 		position: absolute;
-		right: 0;
+		// right: 0;
+		left: rem(327);
 		top: 0;
-		width: 100%;
-		max-width: 55%;
+		width: auto;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: rem(20);
-		max-height: calc(100vh - rem(180));
+		background: rgba(17, 17, 17, 0.95);
 		overflow: auto;
+		padding-left: rem(15);
+		padding-right: rem(15);
+		height: calc(100vh - rem(180));
+		.header_light & {
+			background-color: rgba(235, 235, 235, 0.95);
+			svg path {
+				fill: $mainColor;
+			}
+		}
+		// overflow: auto;
 	}
 	@media (max-width:$mobile){
 		position: fixed;
