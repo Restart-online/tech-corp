@@ -406,7 +406,7 @@
 				display: block;
 				width: rem(5);
 				height: rem(1);
-				background-color: #fff;
+				background-color: rgb(15, 15, 15);
 				position: absolute;
 				top: 50%;
 				transition: background-color 0.3s ease 0s;
@@ -446,11 +446,11 @@
 			left: 0;
 			right: 0;
 			margin: 0px auto;
-			height: calc(100vh - rem(135));
+			max-height: calc(100vh - rem(135));
 			top: rem(145);
 			._header-scroll & {
 				top: rem(39);
-				height: calc(100vh - rem(39));
+				max-height: calc(100vh - rem(39));
 			}
 			left: 0;
 			opacity: 0;
@@ -651,6 +651,7 @@
 
 .sub-submenu {
 	@include adaptiveValue("padding-top", 48, 15, 1920, 767, 1);
+	@include adaptiveValue("padding-bottom", 48, 15, 1920, 767, 1);
 	@media (min-width:$mobile){
 		margin-top: 0.625rem;
 		position: absolute;
@@ -665,7 +666,7 @@
 		overflow: auto;
 		padding-left: rem(15);
 		padding-right: rem(15);
-		height: calc(100vh - rem(180));
+		max-height: calc(100vh - rem(180));
 		.header_light & {
 			background-color: rgba(235, 235, 235, 0.95);
 			svg path {

@@ -3028,7 +3028,7 @@
         },
         1312: function(module) {
             /**
- * lightgallery | 2.5.0 | June 13th 2022
+ * lightgallery | 2.4.0 | January 29th 2022
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -3119,7 +3119,7 @@
         },
         5086: function(module) {
             /**
- * lightgallery | 2.5.0 | June 13th 2022
+ * lightgallery | 2.4.0 | January 29th 2022
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -5383,30 +5383,32 @@
             }));
         },
         5055: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isCallable = __webpack_require__(6282);
             var tryToString = __webpack_require__(180);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             module.exports = function(argument) {
                 if (isCallable(argument)) return argument;
-                throw $TypeError(tryToString(argument) + " is not a function");
+                throw TypeError(tryToString(argument) + " is not a function");
             };
         },
         2004: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isCallable = __webpack_require__(6282);
-            var $String = String;
-            var $TypeError = TypeError;
+            var String = global.String;
+            var TypeError = global.TypeError;
             module.exports = function(argument) {
                 if ("object" == typeof argument || isCallable(argument)) return argument;
-                throw $TypeError("Can't set " + $String(argument) + " as a prototype");
+                throw TypeError("Can't set " + String(argument) + " as a prototype");
             };
         },
         9256: (module, __unused_webpack_exports, __webpack_require__) => {
             var wellKnownSymbol = __webpack_require__(8149);
             var create = __webpack_require__(1525);
-            var defineProperty = __webpack_require__(9168).f;
+            var definePropertyModule = __webpack_require__(9168);
             var UNSCOPABLES = wellKnownSymbol("unscopables");
             var ArrayPrototype = Array.prototype;
-            if (void 0 == ArrayPrototype[UNSCOPABLES]) defineProperty(ArrayPrototype, UNSCOPABLES, {
+            if (void 0 == ArrayPrototype[UNSCOPABLES]) definePropertyModule.f(ArrayPrototype, UNSCOPABLES, {
                 configurable: true,
                 value: create(null)
             });
@@ -5422,20 +5424,22 @@
             };
         },
         3046: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isPrototypeOf = __webpack_require__(1786);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             module.exports = function(it, Prototype) {
                 if (isPrototypeOf(Prototype, it)) return it;
-                throw $TypeError("Incorrect invocation");
+                throw TypeError("Incorrect invocation");
             };
         },
         1474: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isObject = __webpack_require__(5896);
-            var $String = String;
-            var $TypeError = TypeError;
+            var String = global.String;
+            var TypeError = global.TypeError;
             module.exports = function(argument) {
                 if (isObject(argument)) return argument;
-                throw $TypeError($String(argument) + " is not an object");
+                throw TypeError(String(argument) + " is not an object");
             };
         },
         8774: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -5573,11 +5577,12 @@
             };
         },
         6589: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var aCallable = __webpack_require__(5055);
             var toObject = __webpack_require__(9473);
             var IndexedObject = __webpack_require__(7530);
             var lengthOfArrayLike = __webpack_require__(1829);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             var createMethod = function(IS_RIGHT) {
                 return function(that, callbackfn, argumentsLength, memo) {
                     aCallable(callbackfn);
@@ -5593,7 +5598,7 @@
                             break;
                         }
                         index += i;
-                        if (IS_RIGHT ? index < 0 : length <= index) throw $TypeError("Reduce of empty array with no initial value");
+                        if (IS_RIGHT ? index < 0 : length <= index) throw TypeError("Reduce of empty array with no initial value");
                     }
                     for (;IS_RIGHT ? index >= 0 : length > index; index += i) if (index in self) memo = callbackfn(memo, self[index], index, O);
                     return memo;
@@ -5605,38 +5610,40 @@
             };
         },
         4072: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var toAbsoluteIndex = __webpack_require__(9623);
             var lengthOfArrayLike = __webpack_require__(1829);
             var createProperty = __webpack_require__(2759);
-            var $Array = Array;
+            var Array = global.Array;
             var max = Math.max;
             module.exports = function(O, start, end) {
                 var length = lengthOfArrayLike(O);
                 var k = toAbsoluteIndex(start, length);
                 var fin = toAbsoluteIndex(void 0 === end ? length : end, length);
-                var result = $Array(max(fin - k, 0));
+                var result = Array(max(fin - k, 0));
                 for (var n = 0; k < fin; k++, n++) createProperty(result, n, O[k]);
                 result.length = n;
                 return result;
             };
         },
         9882: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isArray = __webpack_require__(7931);
             var isConstructor = __webpack_require__(2240);
             var isObject = __webpack_require__(5896);
             var wellKnownSymbol = __webpack_require__(8149);
             var SPECIES = wellKnownSymbol("species");
-            var $Array = Array;
+            var Array = global.Array;
             module.exports = function(originalArray) {
                 var C;
                 if (isArray(originalArray)) {
                     C = originalArray.constructor;
-                    if (isConstructor(C) && (C === $Array || isArray(C.prototype))) C = void 0; else if (isObject(C)) {
+                    if (isConstructor(C) && (C === Array || isArray(C.prototype))) C = void 0; else if (isObject(C)) {
                         C = C[SPECIES];
                         if (null === C) C = void 0;
                     }
                 }
-                return void 0 === C ? $Array : C;
+                return void 0 === C ? Array : C;
             };
         },
         2768: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -5696,12 +5703,13 @@
             };
         },
         9225: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var TO_STRING_TAG_SUPPORT = __webpack_require__(4823);
             var isCallable = __webpack_require__(6282);
             var classofRaw = __webpack_require__(1510);
             var wellKnownSymbol = __webpack_require__(8149);
             var TO_STRING_TAG = wellKnownSymbol("toStringTag");
-            var $Object = Object;
+            var Object = global.Object;
             var CORRECT_ARGUMENTS = "Arguments" == classofRaw(function() {
                 return arguments;
             }());
@@ -5712,7 +5720,7 @@
             };
             module.exports = TO_STRING_TAG_SUPPORT ? classofRaw : function(it) {
                 var O, tag, result;
-                return void 0 === it ? "Undefined" : null === it ? "Null" : "string" == typeof (tag = tryGet(O = $Object(it), TO_STRING_TAG)) ? tag : CORRECT_ARGUMENTS ? classofRaw(O) : "Object" == (result = classofRaw(O)) && isCallable(O.callee) ? "Arguments" : result;
+                return void 0 === it ? "Undefined" : null === it ? "Null" : "string" == typeof (tag = tryGet(O = Object(it), TO_STRING_TAG)) ? tag : CORRECT_ARGUMENTS ? classofRaw(O) : "Object" == (result = classofRaw(O)) && isCallable(O.callee) ? "Arguments" : result;
             };
         },
         7790: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -5991,26 +5999,22 @@
             };
         },
         2054: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var isCallable = __webpack_require__(6282);
-            var definePropertyModule = __webpack_require__(9168);
+            var createNonEnumerableProperty = __webpack_require__(1501);
             var makeBuiltIn = __webpack_require__(5903);
-            var defineGlobalProperty = __webpack_require__(7194);
+            var setGlobal = __webpack_require__(7852);
             module.exports = function(O, key, value, options) {
-                if (!options) options = {};
-                var simple = options.enumerable;
-                var name = void 0 !== options.name ? options.name : key;
+                var unsafe = options ? !!options.unsafe : false;
+                var simple = options ? !!options.enumerable : false;
+                var noTargetGet = options ? !!options.noTargetGet : false;
+                var name = options && void 0 !== options.name ? options.name : key;
                 if (isCallable(value)) makeBuiltIn(value, name, options);
-                if (options.global) if (simple) O[key] = value; else defineGlobalProperty(key, value); else {
-                    try {
-                        if (!options.unsafe) delete O[key]; else if (O[key]) simple = true;
-                    } catch (error) {}
-                    if (simple) O[key] = value; else definePropertyModule.f(O, key, {
-                        value,
-                        enumerable: false,
-                        configurable: !options.nonConfigurable,
-                        writable: !options.nonWritable
-                    });
-                }
+                if (O === global) {
+                    if (simple) O[key] = value; else setGlobal(key, value);
+                    return O;
+                } else if (!unsafe) delete O[key]; else if (!noTargetGet && O[key]) simple = true;
+                if (simple) O[key] = value; else createNonEnumerableProperty(O, key, value);
                 return O;
             };
         },
@@ -6019,22 +6023,6 @@
             module.exports = function(target, src, options) {
                 for (var key in src) defineBuiltIn(target, key, src[key], options);
                 return target;
-            };
-        },
-        7194: (module, __unused_webpack_exports, __webpack_require__) => {
-            var global = __webpack_require__(8454);
-            var defineProperty = Object.defineProperty;
-            module.exports = function(key, value) {
-                try {
-                    defineProperty(global, key, {
-                        value,
-                        configurable: true,
-                        writable: true
-                    });
-                } catch (error) {
-                    global[key] = value;
-                }
-                return value;
             };
         },
         7583: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -6229,7 +6217,7 @@
             var getOwnPropertyDescriptor = __webpack_require__(5663).f;
             var createNonEnumerableProperty = __webpack_require__(1501);
             var defineBuiltIn = __webpack_require__(2054);
-            var defineGlobalProperty = __webpack_require__(7194);
+            var setGlobal = __webpack_require__(7852);
             var copyConstructorProperties = __webpack_require__(882);
             var isForced = __webpack_require__(1949);
             module.exports = function(options, source) {
@@ -6237,10 +6225,10 @@
                 var GLOBAL = options.global;
                 var STATIC = options.stat;
                 var FORCED, target, key, targetProperty, sourceProperty, descriptor;
-                if (GLOBAL) target = global; else if (STATIC) target = global[TARGET] || defineGlobalProperty(TARGET, {}); else target = (global[TARGET] || {}).prototype;
+                if (GLOBAL) target = global; else if (STATIC) target = global[TARGET] || setGlobal(TARGET, {}); else target = (global[TARGET] || {}).prototype;
                 if (target) for (key in source) {
                     sourceProperty = source[key];
-                    if (options.dontCallGetSet) {
+                    if (options.noTargetGet) {
                         descriptor = getOwnPropertyDescriptor(target, key);
                         targetProperty = descriptor && descriptor.value;
                     } else targetProperty = target[key];
@@ -6417,16 +6405,17 @@
             };
         },
         7755: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var call = __webpack_require__(4552);
             var aCallable = __webpack_require__(5055);
             var anObject = __webpack_require__(1474);
             var tryToString = __webpack_require__(180);
             var getIteratorMethod = __webpack_require__(650);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             module.exports = function(argument, usingIterator) {
                 var iteratorMethod = arguments.length < 2 ? getIteratorMethod(argument) : usingIterator;
                 if (aCallable(iteratorMethod)) return anObject(call(iteratorMethod, argument));
-                throw $TypeError(tryToString(argument) + " is not iterable");
+                throw TypeError(tryToString(argument) + " is not iterable");
             };
         },
         9827: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -6523,16 +6512,17 @@
             }));
         },
         7530: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var uncurryThis = __webpack_require__(1768);
             var fails = __webpack_require__(6183);
             var classof = __webpack_require__(1510);
-            var $Object = Object;
+            var Object = global.Object;
             var split = uncurryThis("".split);
             module.exports = fails((function() {
-                return !$Object("z").propertyIsEnumerable(0);
+                return !Object("z").propertyIsEnumerable(0);
             })) ? function(it) {
-                return "String" == classof(it) ? split(it, "") : $Object(it);
-            } : $Object;
+                return "String" == classof(it) ? split(it, "") : Object(it);
+            } : Object;
         },
         7770: (module, __unused_webpack_exports, __webpack_require__) => {
             var isCallable = __webpack_require__(6282);
@@ -6786,19 +6776,21 @@
             module.exports = false;
         },
         1527: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var getBuiltIn = __webpack_require__(4991);
             var isCallable = __webpack_require__(6282);
             var isPrototypeOf = __webpack_require__(1786);
             var USE_SYMBOL_AS_UID = __webpack_require__(4746);
-            var $Object = Object;
+            var Object = global.Object;
             module.exports = USE_SYMBOL_AS_UID ? function(it) {
                 return "symbol" == typeof it;
             } : function(it) {
                 var $Symbol = getBuiltIn("Symbol");
-                return isCallable($Symbol) && isPrototypeOf($Symbol.prototype, $Object(it));
+                return isCallable($Symbol) && isPrototypeOf($Symbol.prototype, Object(it));
             };
         },
         1518: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var bind = __webpack_require__(1098);
             var call = __webpack_require__(4552);
             var anObject = __webpack_require__(1474);
@@ -6809,7 +6801,7 @@
             var getIterator = __webpack_require__(7755);
             var getIteratorMethod = __webpack_require__(650);
             var iteratorClose = __webpack_require__(9193);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             var Result = function(stopped, result) {
                 this.stopped = stopped;
                 this.result = result;
@@ -6835,7 +6827,7 @@
                 };
                 if (IS_ITERATOR) iterator = iterable; else {
                     iterFn = getIteratorMethod(iterable);
-                    if (!iterFn) throw $TypeError(tryToString(iterable) + " is not iterable");
+                    if (!iterFn) throw TypeError(tryToString(iterable) + " is not iterable");
                     if (isArrayIteratorMethod(iterFn)) {
                         for (index = 0, length = lengthOfArrayLike(iterable); length > index; index++) {
                             result = callFn(iterable[index]);
@@ -6943,20 +6935,20 @@
                 if ("Symbol(" === String(name).slice(0, 7)) name = "[" + String(name).replace(/^Symbol\(([^)]*)\)/, "$1") + "]";
                 if (options && options.getter) name = "get " + name;
                 if (options && options.setter) name = "set " + name;
-                if (!hasOwn(value, "name") || CONFIGURABLE_FUNCTION_NAME && value.name !== name) if (DESCRIPTORS) defineProperty(value, "name", {
+                if (!hasOwn(value, "name") || CONFIGURABLE_FUNCTION_NAME && value.name !== name) defineProperty(value, "name", {
                     value: name,
                     configurable: true
-                }); else value.name = name;
+                });
                 if (CONFIGURABLE_LENGTH && options && hasOwn(options, "arity") && value.length !== options.arity) defineProperty(value, "length", {
                     value: options.arity
                 });
-                try {
-                    if (options && hasOwn(options, "constructor") && options.constructor) {
-                        if (DESCRIPTORS) defineProperty(value, "prototype", {
+                if (options && hasOwn(options, "constructor") && options.constructor) {
+                    if (DESCRIPTORS) try {
+                        defineProperty(value, "prototype", {
                             writable: false
                         });
-                    } else if (value.prototype) value.prototype = void 0;
-                } catch (error) {}
+                    } catch (error) {}
+                } else value.prototype = void 0;
                 var state = enforceInternalState(value);
                 if (!hasOwn(state, "source")) state.source = TEMPLATE.join("string" == typeof name ? name : "");
                 return value;
@@ -6964,14 +6956,6 @@
             Function.prototype.toString = makeBuiltIn((function toString() {
                 return isCallable(this) && getInternalState(this).source || inspectSource(this);
             }), "toString");
-        },
-        1021: module => {
-            var ceil = Math.ceil;
-            var floor = Math.floor;
-            module.exports = Math.trunc || function trunc(x) {
-                var n = +x;
-                return (n > 0 ? floor : ceil)(n);
-            };
         },
         323: (module, __unused_webpack_exports, __webpack_require__) => {
             var V8_VERSION = __webpack_require__(4324);
@@ -7143,12 +7127,13 @@
             };
         },
         9168: (__unused_webpack_module, exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var DESCRIPTORS = __webpack_require__(723);
             var IE8_DOM_DEFINE = __webpack_require__(4985);
             var V8_PROTOTYPE_DEFINE_BUG = __webpack_require__(8654);
             var anObject = __webpack_require__(1474);
             var toPropertyKey = __webpack_require__(2988);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             var $defineProperty = Object.defineProperty;
             var $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
             var ENUMERABLE = "enumerable";
@@ -7177,7 +7162,7 @@
                 if (IE8_DOM_DEFINE) try {
                     return $defineProperty(O, P, Attributes);
                 } catch (error) {}
-                if ("get" in Attributes || "set" in Attributes) throw $TypeError("Accessors not supported");
+                if ("get" in Attributes || "set" in Attributes) throw TypeError("Accessors not supported");
                 if ("value" in Attributes) O[P] = Attributes.value;
                 return O;
             };
@@ -7230,20 +7215,21 @@
             exports.f = Object.getOwnPropertySymbols;
         },
         4204: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var hasOwn = __webpack_require__(8281);
             var isCallable = __webpack_require__(6282);
             var toObject = __webpack_require__(9473);
             var sharedKey = __webpack_require__(8873);
             var CORRECT_PROTOTYPE_GETTER = __webpack_require__(7401);
             var IE_PROTO = sharedKey("IE_PROTO");
-            var $Object = Object;
-            var ObjectPrototype = $Object.prototype;
-            module.exports = CORRECT_PROTOTYPE_GETTER ? $Object.getPrototypeOf : function(O) {
+            var Object = global.Object;
+            var ObjectPrototype = Object.prototype;
+            module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function(O) {
                 var object = toObject(O);
                 if (hasOwn(object, IE_PROTO)) return object[IE_PROTO];
                 var constructor = object.constructor;
                 if (isCallable(constructor) && object instanceof constructor) return constructor.prototype;
-                return object instanceof $Object ? ObjectPrototype : null;
+                return object instanceof Object ? ObjectPrototype : null;
             };
         },
         6662: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7331,16 +7317,17 @@
             };
         },
         6891: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var call = __webpack_require__(4552);
             var isCallable = __webpack_require__(6282);
             var isObject = __webpack_require__(5896);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             module.exports = function(input, pref) {
                 var fn, val;
                 if ("string" === pref && isCallable(fn = input.toString) && !isObject(val = call(fn, input))) return val;
                 if (isCallable(fn = input.valueOf) && !isObject(val = call(fn, input))) return val;
                 if ("string" !== pref && isCallable(fn = input.toString) && !isObject(val = call(fn, input))) return val;
-                throw $TypeError("Can't convert object to primitive value");
+                throw TypeError("Can't convert object to primitive value");
             };
         },
         1441: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7357,12 +7344,13 @@
             };
         },
         8734: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var call = __webpack_require__(4552);
             var anObject = __webpack_require__(1474);
             var isCallable = __webpack_require__(6282);
             var classof = __webpack_require__(1510);
             var regexpExec = __webpack_require__(5510);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             module.exports = function(R, S) {
                 var exec = R.exec;
                 if (isCallable(exec)) {
@@ -7371,7 +7359,7 @@
                     return result;
                 }
                 if ("RegExp" === classof(R)) return call(regexpExec, R, S);
-                throw $TypeError("RegExp#exec called on incompatible receiver");
+                throw TypeError("RegExp#exec called on incompatible receiver");
             };
         },
         5510: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7467,7 +7455,6 @@
                 if (that.multiline) result += "m";
                 if (that.dotAll) result += "s";
                 if (that.unicode) result += "u";
-                if (that.unicodeSets) result += "v";
                 if (that.sticky) result += "y";
                 return result;
             };
@@ -7513,11 +7500,28 @@
                 return "b" !== re.exec("b").groups.a || "bc" !== "b".replace(re, "$<a>c");
             }));
         },
-        7431: module => {
-            var $TypeError = TypeError;
+        7431: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
+            var TypeError = global.TypeError;
             module.exports = function(it) {
-                if (void 0 == it) throw $TypeError("Can't call method on " + it);
+                if (void 0 == it) throw TypeError("Can't call method on " + it);
                 return it;
+            };
+        },
+        7852: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
+            var defineProperty = Object.defineProperty;
+            module.exports = function(key, value) {
+                try {
+                    defineProperty(global, key, {
+                        value,
+                        configurable: true,
+                        writable: true
+                    });
+                } catch (error) {
+                    global[key] = value;
+                }
+                return value;
             };
         },
         820: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7543,9 +7547,9 @@
         },
         2047: (module, __unused_webpack_exports, __webpack_require__) => {
             var global = __webpack_require__(8454);
-            var defineGlobalProperty = __webpack_require__(7194);
+            var setGlobal = __webpack_require__(7852);
             var SHARED = "__core-js_shared__";
-            var store = global[SHARED] || defineGlobalProperty(SHARED, {});
+            var store = global[SHARED] || setGlobal(SHARED, {});
             module.exports = store;
         },
         1748: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7554,10 +7558,10 @@
             (module.exports = function(key, value) {
                 return store[key] || (store[key] = void 0 !== value ? value : {});
             })("versions", []).push({
-                version: "3.23.3",
+                version: "3.22.5",
                 mode: IS_PURE ? "pure" : "global",
                 copyright: "© 2014-2022 Denis Pushkarev (zloirock.ru)",
-                license: "https://github.com/zloirock/core-js/blob/v3.23.3/LICENSE",
+                license: "https://github.com/zloirock/core-js/blob/v3.22.5/LICENSE",
                 source: "https://github.com/zloirock/core-js"
             });
         },
@@ -7624,11 +7628,12 @@
                 return IndexedObject(requireObjectCoercible(it));
             };
         },
-        8037: (module, __unused_webpack_exports, __webpack_require__) => {
-            var trunc = __webpack_require__(1021);
+        8037: module => {
+            var ceil = Math.ceil;
+            var floor = Math.floor;
             module.exports = function(argument) {
                 var number = +argument;
-                return number !== number || 0 === number ? 0 : trunc(number);
+                return number !== number || 0 === number ? 0 : (number > 0 ? floor : ceil)(number);
             };
         },
         3917: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -7639,20 +7644,22 @@
             };
         },
         9473: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var requireObjectCoercible = __webpack_require__(7431);
-            var $Object = Object;
+            var Object = global.Object;
             module.exports = function(argument) {
-                return $Object(requireObjectCoercible(argument));
+                return Object(requireObjectCoercible(argument));
             };
         },
         3948: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var call = __webpack_require__(4552);
             var isObject = __webpack_require__(5896);
             var isSymbol = __webpack_require__(1527);
             var getMethod = __webpack_require__(9827);
             var ordinaryToPrimitive = __webpack_require__(6891);
             var wellKnownSymbol = __webpack_require__(8149);
-            var $TypeError = TypeError;
+            var TypeError = global.TypeError;
             var TO_PRIMITIVE = wellKnownSymbol("toPrimitive");
             module.exports = function(input, pref) {
                 if (!isObject(input) || isSymbol(input)) return input;
@@ -7662,7 +7669,7 @@
                     if (void 0 === pref) pref = "default";
                     result = call(exoticToPrim, input, pref);
                     if (!isObject(result) || isSymbol(result)) return result;
-                    throw $TypeError("Can't convert object to primitive value");
+                    throw TypeError("Can't convert object to primitive value");
                 }
                 if (void 0 === pref) pref = "number";
                 return ordinaryToPrimitive(input, pref);
@@ -7684,18 +7691,20 @@
             module.exports = "[object z]" === String(test);
         },
         7655: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
             var classof = __webpack_require__(9225);
-            var $String = String;
+            var String = global.String;
             module.exports = function(argument) {
                 if ("Symbol" === classof(argument)) throw TypeError("Cannot convert a Symbol value to a string");
-                return $String(argument);
+                return String(argument);
             };
         },
-        180: module => {
-            var $String = String;
+        180: (module, __unused_webpack_exports, __webpack_require__) => {
+            var global = __webpack_require__(8454);
+            var String = global.String;
             module.exports = function(argument) {
                 try {
-                    return $String(argument);
+                    return String(argument);
                 } catch (error) {
                     return "Object";
                 }
@@ -7760,6 +7769,18 @@
                 filter: function filter(callbackfn) {
                     return $filter(this, callbackfn, arguments.length > 1 ? arguments[1] : void 0);
                 }
+            });
+        },
+        9399: (__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+            "use strict";
+            var $ = __webpack_require__(4761);
+            var forEach = __webpack_require__(1269);
+            $({
+                target: "Array",
+                proto: true,
+                forced: [].forEach != forEach
+            }, {
+                forEach
             });
         },
         7543: (module, __unused_webpack_exports, __webpack_require__) => {
@@ -10711,7 +10732,7 @@
                 if (isVirtual) return swiper.slides.filter((el => parseInt(el.getAttribute("data-swiper-slide-index"), 10) === index))[0];
                 return swiper.slides.eq(index)[0];
             };
-            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) (swiper.visibleSlides || dom([])).each((slide => {
+            if ("auto" !== swiper.params.slidesPerView && swiper.params.slidesPerView > 1) if (swiper.params.centeredSlides) swiper.visibleSlides.each((slide => {
                 activeSlides.push(slide);
             })); else for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
                 const index = swiper.activeIndex + i;
@@ -11144,12 +11165,6 @@
             if (void 0 === index) index = 0;
             if (void 0 === speed) speed = this.params.speed;
             if (void 0 === runCallbacks) runCallbacks = true;
-            if ("string" === typeof index) {
-                const indexAsNumber = parseInt(index, 10);
-                const isValidNumber = isFinite(indexAsNumber);
-                if (!isValidNumber) throw new Error(`The passed-in 'index' (string) couldn't be converted to 'number'. [${index}] given.`);
-                index = indexAsNumber;
-            }
             const swiper = this;
             let newIndex = index;
             if (swiper.params.loop) newIndex += swiper.loopedSlides;
@@ -11363,7 +11378,6 @@
                 if (!el || el === ssr_window_esm_getDocument() || el === ssr_window_esm_getWindow()) return null;
                 if (el.assignedSlot) el = el.assignedSlot;
                 const found = el.closest(selector);
-                if (!found && !el.getRootNode) return null;
                 return found || __closestFrom(el.getRootNode().host);
             }
             return __closestFrom(base);
@@ -11389,7 +11403,7 @@
             if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) $targetEl = dom(event.path[0]);
             const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
             const isTargetShadow = !!(e.target && e.target.shadowRoot);
-            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, $targetEl[0]) : $targetEl.closest(noSwipingSelector)[0])) {
+            if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, e.target) : $targetEl.closest(noSwipingSelector)[0])) {
                 swiper.allowClick = true;
                 return;
             }
@@ -11751,12 +11765,6 @@
                 if (breakpointParams.grid.fill && "column" === breakpointParams.grid.fill || !breakpointParams.grid.fill && "column" === params.grid.fill) $el.addClass(`${params.containerModifierClass}grid-column`);
                 swiper.emitContainerClasses();
             }
-            [ "navigation", "pagination", "scrollbar" ].forEach((prop => {
-                const wasModuleEnabled = params[prop] && params[prop].enabled;
-                const isModuleEnabled = breakpointParams[prop] && breakpointParams[prop].enabled;
-                if (wasModuleEnabled && !isModuleEnabled) swiper[prop].disable();
-                if (!wasModuleEnabled && isModuleEnabled) swiper[prop].enable();
-            }));
             const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
             const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
             if (directionChanged && initialized) swiper.changeDirection();
@@ -12290,20 +12298,6 @@
                 if (needUpdate) swiper.update();
                 return swiper;
             }
-            changeLanguageDirection(direction) {
-                const swiper = this;
-                if (swiper.rtl && "rtl" === direction || !swiper.rtl && "ltr" === direction) return;
-                swiper.rtl = "rtl" === direction;
-                swiper.rtlTranslate = "horizontal" === swiper.params.direction && swiper.rtl;
-                if (swiper.rtl) {
-                    swiper.$el.addClass(`${swiper.params.containerModifierClass}rtl`);
-                    swiper.el.dir = "rtl";
-                } else {
-                    swiper.$el.removeClass(`${swiper.params.containerModifierClass}rtl`);
-                    swiper.el.dir = "ltr";
-                }
-                swiper.update();
-            }
             mount(el) {
                 const swiper = this;
                 if (swiper.mounted) return true;
@@ -12318,7 +12312,6 @@
                         res.children = options => $el.children(options);
                         return res;
                     }
-                    if (!$el.children) return dom($el).children(getWrapperSelector());
                     return $el.children(getWrapperSelector());
                 };
                 let $wrapperEl = getWrapper();
@@ -12447,8 +12440,7 @@
                     hideOnClick: false,
                     disabledClass: "swiper-button-disabled",
                     hiddenClass: "swiper-button-hidden",
-                    lockClass: "swiper-button-lock",
-                    navigationDisabledClass: "swiper-navigation-disabled"
+                    lockClass: "swiper-button-lock"
                 }
             });
             swiper.navigation = {
@@ -12483,13 +12475,11 @@
                 e.preventDefault();
                 if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
                 swiper.slidePrev();
-                emit("navigationPrev");
             }
             function onNextClick(e) {
                 e.preventDefault();
                 if (swiper.isEnd && !swiper.params.loop && !swiper.params.rewind) return;
                 swiper.slideNext();
-                emit("navigationNext");
             }
             function init() {
                 const params = swiper.params.navigation;
@@ -12525,10 +12515,8 @@
                 }
             }
             on("init", (() => {
-                if (false === swiper.params.navigation.enabled) disable(); else {
-                    init();
-                    update();
-                }
+                init();
+                update();
             }));
             on("toEdge fromEdge lock unlock", (() => {
                 update();
@@ -12553,18 +12541,7 @@
                     if ($prevEl) $prevEl.toggleClass(swiper.params.navigation.hiddenClass);
                 }
             }));
-            const enable = () => {
-                swiper.$el.removeClass(swiper.params.navigation.navigationDisabledClass);
-                init();
-                update();
-            };
-            const disable = () => {
-                swiper.$el.addClass(swiper.params.navigation.navigationDisabledClass);
-                destroy();
-            };
             Object.assign(swiper.navigation, {
-                enable,
-                disable,
                 update,
                 init,
                 destroy
@@ -12604,8 +12581,7 @@
                     clickableClass: `${pfx}-clickable`,
                     lockClass: `${pfx}-lock`,
                     horizontalClass: `${pfx}-horizontal`,
-                    verticalClass: `${pfx}-vertical`,
-                    paginationDisabledClass: `${pfx}-disabled`
+                    verticalClass: `${pfx}-vertical`
                 }
             });
             swiper.pagination = {
@@ -12778,11 +12754,9 @@
                 if (params.clickable) $el.off("click", classes_to_selector_classesToSelector(params.bulletClass));
             }
             on("init", (() => {
-                if (false === swiper.params.pagination.enabled) disable(); else {
-                    init();
-                    render();
-                    update();
-                }
+                init();
+                render();
+                update();
             }));
             on("activeIndexChange", (() => {
                 if (swiper.params.loop) update(); else if ("undefined" === typeof swiper.snapIndex) update();
@@ -12815,28 +12789,14 @@
             on("click", ((_s, e) => {
                 const targetEl = e.target;
                 const {$el} = swiper.pagination;
-                if (swiper.params.pagination.el && swiper.params.pagination.hideOnClick && $el && $el.length > 0 && !dom(targetEl).hasClass(swiper.params.pagination.bulletClass)) {
+                if (swiper.params.pagination.el && swiper.params.pagination.hideOnClick && $el.length > 0 && !dom(targetEl).hasClass(swiper.params.pagination.bulletClass)) {
                     if (swiper.navigation && (swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl || swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl)) return;
                     const isHidden = $el.hasClass(swiper.params.pagination.hiddenClass);
                     if (true === isHidden) emit("paginationShow"); else emit("paginationHide");
                     $el.toggleClass(swiper.params.pagination.hiddenClass);
                 }
             }));
-            const enable = () => {
-                swiper.$el.removeClass(swiper.params.pagination.paginationDisabledClass);
-                if (swiper.pagination.$el) swiper.pagination.$el.removeClass(swiper.params.pagination.paginationDisabledClass);
-                init();
-                render();
-                update();
-            };
-            const disable = () => {
-                swiper.$el.addClass(swiper.params.pagination.paginationDisabledClass);
-                if (swiper.pagination.$el) swiper.pagination.$el.addClass(swiper.params.pagination.paginationDisabledClass);
-                destroy();
-            };
             Object.assign(swiper.pagination, {
-                enable,
-                disable,
                 render,
                 update,
                 init,
@@ -13065,13 +13025,6 @@
                 const thumbsSwiper = swiper.thumbs.swiper;
                 if (!thumbsSwiper || thumbsSwiper.destroyed) return;
                 const slidesPerView = "auto" === thumbsSwiper.params.slidesPerView ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
-                let thumbsToActivate = 1;
-                const thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
-                if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) thumbsToActivate = swiper.params.slidesPerView;
-                if (!swiper.params.thumbs.multipleActiveThumbs) thumbsToActivate = 1;
-                thumbsToActivate = Math.floor(thumbsToActivate);
-                thumbsSwiper.slides.removeClass(thumbActiveClass);
-                if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) for (let i = 0; i < thumbsToActivate; i += 1) thumbsSwiper.$wrapperEl.children(`[data-swiper-slide-index="${swiper.realIndex + i}"]`).addClass(thumbActiveClass); else for (let i = 0; i < thumbsToActivate; i += 1) thumbsSwiper.slides.eq(swiper.realIndex + i).addClass(thumbActiveClass);
                 const autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
                 const useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
                 if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
@@ -13098,6 +13051,13 @@
                         thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : void 0);
                     }
                 }
+                let thumbsToActivate = 1;
+                const thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
+                if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) thumbsToActivate = swiper.params.slidesPerView;
+                if (!swiper.params.thumbs.multipleActiveThumbs) thumbsToActivate = 1;
+                thumbsToActivate = Math.floor(thumbsToActivate);
+                thumbsSwiper.slides.removeClass(thumbActiveClass);
+                if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) for (let i = 0; i < thumbsToActivate; i += 1) thumbsSwiper.$wrapperEl.children(`[data-swiper-slide-index="${swiper.realIndex + i}"]`).addClass(thumbActiveClass); else for (let i = 0; i < thumbsToActivate; i += 1) thumbsSwiper.slides.eq(swiper.realIndex + i).addClass(thumbActiveClass);
             }
             on("beforeInit", (() => {
                 const {thumbs} = swiper.params;
@@ -13390,14 +13350,15 @@
         window.addEventListener("load", (function(e) {
             initSliders();
         }));
-        __webpack_require__(2352);
+        __webpack_require__(9399);
         __webpack_require__(3542);
         var can_use_dom = __webpack_require__(1807);
         var can_use_dom_default = __webpack_require__.n(can_use_dom);
-        __webpack_require__(4249);
-        __webpack_require__(7692);
         __webpack_require__(8165);
         __webpack_require__(7543);
+        __webpack_require__(7692);
+        __webpack_require__(2352);
+        __webpack_require__(4249);
         __webpack_require__(3344);
         __webpack_require__(7323);
         __webpack_require__(4079);
@@ -13857,9 +13818,9 @@
             return ResizeObserver;
         }();
         __webpack_require__(7985);
+        __webpack_require__(6618);
         __webpack_require__(9989);
         __webpack_require__(8307);
-        __webpack_require__(6618);
         __webpack_require__(4390);
         var getOptions = function getOptions(obj) {
             var options = Array.prototype.reduce.call(obj, (function(acc, attribute) {
@@ -14043,8 +14004,8 @@
                 };
                 this.el = element;
                 this.minScrollbarWidth = 20;
-                this.options = Object.assign({}, SimpleBar.defaultOptions, options);
-                this.classNames = Object.assign({}, SimpleBar.defaultOptions.classNames, this.options.classNames);
+                this.options = Object.assign({}, SimpleBar.defaultOptions, {}, options);
+                this.classNames = Object.assign({}, SimpleBar.defaultOptions.classNames, {}, this.options.classNames);
                 this.axis = {
                     x: {
                         scrollOffsetAttr: "scrollLeft",
@@ -14575,7 +14536,7 @@
             }
         }), 0);
         /*!
- * lightgallery | 2.5.0 | June 13th 2022
+ * lightgallery | 2.4.0 | January 29th 2022
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -14662,8 +14623,6 @@ PERFORMANCE OF THIS SOFTWARE.
             defaultCaptionHeight: 0,
             ariaLabelledby: "",
             ariaDescribedby: "",
-            resetScrollPosition: true,
-            hideScrollbar: false,
             closable: true,
             swipeToClose: true,
             closeOnTap: true,
@@ -14672,7 +14631,6 @@ PERFORMANCE OF THIS SOFTWARE.
             loop: true,
             escKey: true,
             keyPress: true,
-            trapFocus: true,
             controls: true,
             slideEndAnimation: true,
             hideControlOnEnd: false,
@@ -15099,14 +15057,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 if (_isVideo && _isVideo.youtube) videoClass = "lg-has-youtube"; else if (_isVideo && _isVideo.vimeo) videoClass = "lg-has-vimeo"; else videoClass = "lg-has-html5";
                 return '<div class="lg-video-cont ' + videoClass + '" style="' + videoContStyle + '">\n                <div class="lg-video-play-button">\n                <svg\n                    viewBox="0 0 20 20"\n                    preserveAspectRatio="xMidYMid"\n                    focusable="false"\n                    aria-labelledby="' + playVideoString + '"\n                    role="img"\n                    class="lg-video-play-icon"\n                >\n                    <title>' + playVideoString + '</title>\n                    <polygon class="lg-video-play-icon-inner" points="1,0 20,10 1,20"></polygon>\n                </svg>\n                <svg class="lg-video-play-icon-bg" viewBox="0 0 50 50" focusable="false">\n                    <circle cx="50%" cy="50%" r="20"></circle></svg>\n                <svg class="lg-video-play-icon-circle" viewBox="0 0 50 50" focusable="false">\n                    <circle cx="50%" cy="50%" r="20"></circle>\n                </svg>\n            </div>\n            ' + (dummyImg || "") + '\n            <img class="lg-object lg-video-poster" src="' + _poster + '" />\n        </div>';
             },
-            getFocusableElements: function(container) {
-                var elements = container.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-                var visibleElements = [].filter.call(elements, (function(element) {
-                    var style = window.getComputedStyle(element);
-                    return "none" !== style.display && "hidden" !== style.visibility;
-                }));
-                return visibleElements;
-            },
             getDynamicOptions: function(items, extraProps, getCaptionFromTitleOrAlt, exThumbImage) {
                 var dynamicElements = [];
                 var availableDynamicOptions = __spreadArrays(defaultDynamicOptions, extraProps);
@@ -15164,7 +15114,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 this.lgBusy = false;
                 this.currentItemsInDom = [];
                 this.prevScrollTop = 0;
-                this.bodyPaddingRight = 0;
                 this.isDummyImageRemoved = false;
                 this.dragOrSwipeEnabled = false;
                 this.mediaContainerPosition = {
@@ -15355,29 +15304,13 @@ PERFORMANCE OF THIS SOFTWARE.
                     return utils.getDynamicOptions(this.items, this.settings.extraProps, this.settings.getCaptionFromTitleOrAlt, this.settings.exThumbImage);
                 } else return this.settings.dynamicEl || [];
             };
-            LightGallery.prototype.shouldHideScrollbar = function() {
-                return this.settings.hideScrollbar && document.body === this.settings.container;
-            };
-            LightGallery.prototype.hideScrollbar = function() {
-                if (!this.shouldHideScrollbar()) return;
-                this.bodyPaddingRight = parseFloat($LG("body").style().paddingRight);
-                var bodyRect = document.documentElement.getBoundingClientRect();
-                var scrollbarWidth = window.innerWidth - bodyRect.width;
-                $LG(document.body).css("padding-right", scrollbarWidth + this.bodyPaddingRight + "px");
-                $LG(document.body).addClass("lg-overlay-open");
-            };
-            LightGallery.prototype.resetScrollBar = function() {
-                if (!this.shouldHideScrollbar()) return;
-                $LG(document.body).css("padding-right", this.bodyPaddingRight + "px");
-                $LG(document.body).removeClass("lg-overlay-open");
-            };
             LightGallery.prototype.openGallery = function(index, element) {
                 var _this = this;
                 if (void 0 === index) index = this.settings.index;
                 if (this.lgOpened) return;
                 this.lgOpened = true;
+                this.outer.get().focus();
                 this.outer.removeClass("lg-hide-items");
-                this.hideScrollbar();
                 this.$container.addClass("lg-show");
                 var itemsToBeInsertedToDom = this.getItemsToBeInsertedToDom(index, index);
                 this.currentItemsInDom = itemsToBeInsertedToDom;
@@ -15425,9 +15358,6 @@ PERFORMANCE OF THIS SOFTWARE.
                         _this.$backdrop.addClass("in");
                         _this.$container.addClass("lg-show-in");
                     }), 10);
-                    setTimeout((function() {
-                        if (_this.settings.trapFocus && document.body === _this.settings.container) _this.trapFocus();
-                    }), _this.settings.backdropDuration + 50);
                     if (!_this.zoomFromOrigin || !transform) setTimeout((function() {
                         _this.outer.addClass("lg-visible");
                     }), _this.settings.backdropDuration);
@@ -15652,9 +15582,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     }), this.settings.startAnimationDuration + 100);
                     if (!$currentSlide.hasClass("lg-loaded")) setTimeout((function() {
                         if ("image" === _this.getSlideType(currentGalleryItem)) {
-                            var alt = currentGalleryItem.alt;
-                            var altAttr = alt ? 'alt="' + alt + '"' : "";
-                            $currentSlide.find(".lg-img-wrap").append(utils.getImgMarkup(index, src, altAttr, srcset, sizes, currentGalleryItem.sources));
+                            $currentSlide.find(".lg-img-wrap").append(utils.getImgMarkup(index, src, "", srcset, sizes, currentGalleryItem.sources));
                             if (srcset || sources) {
                                 var $img = $currentSlide.find(".lg-object");
                                 _this.initPictureFill($img);
@@ -16146,29 +16074,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     $element.off("click.lgcustom-item-" + $element.attr("data-lg-id"));
                 }
             };
-            LightGallery.prototype.trapFocus = function() {
-                var _this = this;
-                this.$container.get().focus({
-                    preventScroll: true
-                });
-                $LG(window).on("keydown.lg.global" + this.lgId, (function(e) {
-                    if (!_this.lgOpened) return;
-                    var isTabPressed = "Tab" === e.key || 9 === e.keyCode;
-                    if (!isTabPressed) return;
-                    var focusableEls = utils.getFocusableElements(_this.$container.get());
-                    var firstFocusableEl = focusableEls[0];
-                    var lastFocusableEl = focusableEls[focusableEls.length - 1];
-                    if (e.shiftKey) {
-                        if (document.activeElement === firstFocusableEl) {
-                            lastFocusableEl.focus();
-                            e.preventDefault();
-                        }
-                    } else if (document.activeElement === lastFocusableEl) {
-                        firstFocusableEl.focus();
-                        e.preventDefault();
-                    }
-                }));
-            };
             LightGallery.prototype.manageCloseGallery = function() {
                 var _this = this;
                 if (!this.settings.closable) return;
@@ -16194,7 +16099,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 var _this = this;
                 if (!this.lgOpened || !this.settings.closable && !force) return 0;
                 this.LGel.trigger(lGEvents.beforeClose);
-                if (this.settings.resetScrollPosition && !this.settings.hideScrollbar) $LG(window).scrollTop(this.prevScrollTop);
+                $LG(window).scrollTop(this.prevScrollTop);
                 var currentItem = this.items[this.index];
                 var transform;
                 if (this.zoomFromOrigin && currentItem) {
@@ -16224,7 +16129,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 setTimeout((function() {
                     if (_this.zoomFromOrigin && transform) _this.outer.removeClass("lg-zoom-from-image");
                     _this.$container.removeClass("lg-show");
-                    _this.resetScrollBar();
                     _this.$backdrop.removeAttr("style").css("transition-duration", _this.settings.backdropDuration + "ms");
                     _this.outer.removeClass("lg-closing " + _this.settings.startClass);
                     _this.getSlideItem(_this.index).removeClass("lg-start-end-progress");
@@ -16232,7 +16136,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     if (_this.lgOpened) _this.LGel.trigger(lGEvents.afterClose, {
                         instance: _this
                     });
-                    if (_this.$container.get()) _this.$container.get().blur();
+                    if (_this.outer.get()) _this.outer.get().blur();
                     _this.lgOpened = false;
                 }), removeTimeout + 100);
                 return removeTimeout + 100;
@@ -16484,10 +16388,11 @@ PERFORMANCE OF THIS SOFTWARE.
             const cookies = document.querySelector(".cookies");
             const cookiesBtn = document.querySelector(".cookies__btn");
             let cookiesDelay = cookies.dataset.delay;
-            let cookiesOk = sessionStorage.getItem("cookiesOk");
+            let cookiesOk = localStorage.getItem("cookiesOk");
+            console.log(cookiesOk);
             cookiesBtn.addEventListener("click", (function() {
                 cookies.classList.add("_hide");
-                sessionStorage.setItem("cookiesOk", "ok");
+                localStorage.setItem("cookiesOk", "ok");
             }));
             if (!cookiesOk) setTimeout((function() {
                 cookies.classList.remove("_hide");

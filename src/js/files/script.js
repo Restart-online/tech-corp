@@ -114,10 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const cookies = document.querySelector('.cookies');
   const cookiesBtn = document.querySelector('.cookies__btn');
   let cookiesDelay = cookies.dataset.delay;
-  let cookiesOk = sessionStorage.getItem('cookiesOk');
+  let cookiesOk = localStorage.getItem('cookiesOk');
+  console.log(cookiesOk);
   cookiesBtn.addEventListener('click', function () {
-  cookies.classList.add('_hide');
-  sessionStorage.setItem('cookiesOk', 'ok');
+    cookies.classList.add('_hide');
+    localStorage.setItem('cookiesOk', 'ok');
   })
   if (!cookiesOk) {
       setTimeout(function () {
