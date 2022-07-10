@@ -2280,6 +2280,13 @@ body::after {
   -webkit-transition: border-color 0.3s;
   -o-transition: border-color 0.3s;
   transition: border-color 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .tariff:hover,
@@ -2306,6 +2313,11 @@ body::after {
 
 .tariff__name {
   text-transform: uppercase;
+}
+
+.tariff__name .tippy-box {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
 .tariff__description {
@@ -2342,12 +2354,58 @@ body::after {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  margin-top: auto;
 }
 
 .tariff:hover .tariff__button,
 .tariff--selected .tariff__button {
   opacity: 1;
   visibility: visible;
+}
+
+.tariff__tippy {
+  text-transform: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0.125rem;
+  font-size: 0.625rem;
+  display: inline-block;
+  text-align: center;
+  background-color: #ccc;
+  border-radius: 50%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.tippy-tariff {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.625rem 0;
+}
+
+.tippy-tariff ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.4375rem;
+  padding-left: 0.625rem;
+}
+
+.tippy-tariff ul li::before {
+  content: "•";
+  color: #fff;
+  display: inline-block;
+  margin-left: -0.625rem;
 }
 
 .sidebar-page {
@@ -8238,6 +8296,392 @@ body::after {
   line-height: 1;
 }
 
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-tippy-root] {
+  max-width: calc(100vw - 10px);
+}
+
+.tippy-box {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  outline: 0;
+  -webkit-transition-property: visibility, opacity, -webkit-transform;
+  transition-property: visibility, opacity, -webkit-transform;
+  -o-transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity, -webkit-transform;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow:before {
+  bottom: -7px;
+  left: 0;
+  border-width: 8px 8px 0;
+  border-top-color: initial;
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: initial;
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow:before {
+  border-width: 8px 0 8px 8px;
+  border-left-color: initial;
+  right: -7px;
+  -webkit-transform-origin: center left;
+      -ms-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow:before {
+  left: -7px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: initial;
+  -webkit-transform-origin: center right;
+      -ms-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  -webkit-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+       -o-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+          transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.tippy-arrow:before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  position: relative;
+  padding: 5px 9px;
+  z-index: 1;
+}
+
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-tippy-root] {
+  max-width: calc(100vw - 10px);
+}
+
+.tippy-box {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: normal;
+  outline: 0;
+  -webkit-transition-property: visibility, opacity, -webkit-transform;
+  transition-property: visibility, opacity, -webkit-transform;
+  -o-transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity, -webkit-transform;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow:before {
+  bottom: -7px;
+  left: 0;
+  border-width: 8px 8px 0;
+  border-top-color: initial;
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: initial;
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow:before {
+  border-width: 8px 0 8px 8px;
+  border-left-color: initial;
+  right: -7px;
+  -webkit-transform-origin: center left;
+      -ms-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow:before {
+  left: -7px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: initial;
+  -webkit-transform-origin: center right;
+      -ms-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  -webkit-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+       -o-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+          transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.tippy-arrow:before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  position: relative;
+  padding: 5px 9px;
+  z-index: 1;
+}
+
+.tippy-box[data-theme~=translucent] {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent] > .tippy-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=top] > .tippy-arrow:before {
+  border-width: 7px 7px 0;
+  border-top-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=bottom] > .tippy-arrow:before {
+  border-width: 0 7px 7px;
+  border-bottom-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=left] > .tippy-arrow:before {
+  border-width: 7px 0 7px 7px;
+  border-left-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=right] > .tippy-arrow:before {
+  border-width: 7px 7px 7px 0;
+  border-right-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent] > .tippy-backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-theme~=translucent] > .tippy-svg-arrow {
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+.tippy-box[data-animation=shift-away][data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=top] {
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=bottom] {
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=left] {
+  -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=right] {
+  -webkit-transform: translateX(-10px);
+      -ms-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.tippy-box[data-placement^=top] > .tippy-backdrop {
+  -webkit-transform-origin: 0 25%;
+      -ms-transform-origin: 0 25%;
+          transform-origin: 0 25%;
+  border-radius: 40% 40% 0 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-backdrop[data-state=visible] {
+  -webkit-transform: scale(1) translate(-50%, -55%);
+      -ms-transform: scale(1) translate(-50%, -55%);
+          transform: scale(1) translate(-50%, -55%);
+}
+
+.tippy-box[data-placement^=top] > .tippy-backdrop[data-state=hidden] {
+  -webkit-transform: scale(0.2) translate(-50%, -45%);
+      -ms-transform: scale(0.2) translate(-50%, -45%);
+          transform: scale(0.2) translate(-50%, -45%);
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-backdrop {
+  -webkit-transform-origin: 0 -50%;
+      -ms-transform-origin: 0 -50%;
+          transform-origin: 0 -50%;
+  border-radius: 0 0 30% 30%;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-backdrop[data-state=visible] {
+  -webkit-transform: scale(1) translate(-50%, -45%);
+      -ms-transform: scale(1) translate(-50%, -45%);
+          transform: scale(1) translate(-50%, -45%);
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-backdrop[data-state=hidden] {
+  -webkit-transform: scale(0.2) translate(-50%);
+      -ms-transform: scale(0.2) translate(-50%);
+          transform: scale(0.2) translate(-50%);
+}
+
+.tippy-box[data-placement^=left] > .tippy-backdrop {
+  -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  border-radius: 50% 0 0 50%;
+}
+
+.tippy-box[data-placement^=left] > .tippy-backdrop[data-state=visible] {
+  -webkit-transform: scale(1) translate(-50%, -50%);
+      -ms-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+}
+
+.tippy-box[data-placement^=left] > .tippy-backdrop[data-state=hidden] {
+  -webkit-transform: scale(0.2) translate(-75%, -50%);
+      -ms-transform: scale(0.2) translate(-75%, -50%);
+          transform: scale(0.2) translate(-75%, -50%);
+}
+
+.tippy-box[data-placement^=right] > .tippy-backdrop {
+  -webkit-transform-origin: -50% 0;
+      -ms-transform-origin: -50% 0;
+          transform-origin: -50% 0;
+  border-radius: 0 50% 50% 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-backdrop[data-state=visible] {
+  -webkit-transform: scale(1) translate(-50%, -50%);
+      -ms-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+}
+
+.tippy-box[data-placement^=right] > .tippy-backdrop[data-state=hidden] {
+  -webkit-transform: scale(0.2) translate(-25%, -50%);
+      -ms-transform: scale(0.2) translate(-25%, -50%);
+          transform: scale(0.2) translate(-25%, -50%);
+}
+
+.tippy-box[data-animatefill] {
+  background-color: transparent !important;
+}
+
+.tippy-backdrop {
+  position: absolute;
+  background-color: #333;
+  border-radius: 50%;
+  width: calc(110% + 32px);
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  -webkit-transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+  -o-transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+  transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tippy-backdrop[data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-backdrop:after {
+  content: "";
+  float: left;
+  padding-top: 100%;
+}
+
+.tippy-backdrop + .tippy-content {
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  will-change: opacity;
+}
+
+.tippy-backdrop + .tippy-content[data-state=hidden] {
+  opacity: 0;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -10306,21 +10750,20 @@ button.swiper-pagination-bullet {
   }
 
   .menu__submenu {
-    position: fixed !important;
-    width: 100vw;
+    position: absolute !important;
+    width: 80vw;
     max-width: 75rem;
     left: 0;
     right: 0;
     margin: 0px auto;
     max-height: calc(100vh - 8.4375rem);
-    top: 9.0625rem;
+    top: 100%;
     left: 0;
     opacity: 0;
     pointer-events: none;
   }
 
   ._header-scroll .menu__submenu {
-    top: 2.4375rem;
     max-height: calc(100vh - 2.4375rem);
   }
 
@@ -12664,6 +13107,11 @@ button.swiper-pagination-bullet {
 
   .bottom-footer__link:hover {
     text-decoration: none !important;
+  }
+
+  .tariff__tippy:hover {
+    background-color: #1047C8;
+    color: #fff;
   }
 
   .hero__button:hover {

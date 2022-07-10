@@ -1,0 +1,1 @@
+Отправляя любую форму на сайте, вы соглашаетесь с <a href="/politika-konfidentsialnosti.php" class="bottom-footer__link">политикой конфиденциальности</a> данного сайта.

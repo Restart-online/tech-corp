@@ -1,0 +1,1 @@
+<span>inform@tech-corp.ru</span>

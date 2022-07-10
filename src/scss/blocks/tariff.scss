@@ -2,6 +2,8 @@
   background-color: #F8F8F9;
   border: rem(1) solid transparent;
   transition: border-color .3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .tariff:hover,
@@ -23,6 +25,10 @@
 
 .tariff__name {
   text-transform: uppercase;
+  .tippy-box {
+    border-radius: rem(8);
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
 }
 
 .tariff__description {
@@ -53,10 +59,55 @@
   opacity: 0;
   visibility: hidden;
   transition: .3s;
+  margin-top: auto
 }
 
 .tariff:hover .tariff__button,
 .tariff--selected .tariff__button {
   opacity: 1;
   visibility: visible;
+}
+
+
+.tariff__tippy {
+  text-transform: none;
+  width: rem(12);
+  height: rem(12);
+  padding: rem(2);
+  font-size: rem(10);
+  display: inline-block;
+  text-align: center;
+  background-color: #ccc;
+  border-radius: 50%;
+  box-sizing: content-box;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  @media (any-hover: hover){
+    &:hover{
+      background-color: #1047C8;
+      color: #fff;
+    }
+  }
+}
+
+.tippy-tariff {
+  text-transform: none;
+  font-weight: normal;
+  font-size: rem(14);
+  font-weight: 500;
+  padding: rem(10) 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: rem(7);
+    padding-left: rem(10);
+    li {
+      &::before{
+        content:'\2022';
+        color: #fff;
+        display: inline-block;
+        margin-left: rem(-10);
+      }
+    }
+  }
 }

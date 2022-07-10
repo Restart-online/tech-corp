@@ -1,0 +1,1 @@
+<picture><source srcset="<?=SITE_TEMPLATE_PATH?>/img/common/home_callback.webp" type="image/webp"><img src="<?=SITE_TEMPLATE_PATH?>/img/common/home_callback.png" alt="image"></picture>

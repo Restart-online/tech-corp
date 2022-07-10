@@ -103,8 +103,47 @@ function EvilRangeCreator(config) {
       this.countComputer = Number(document.querySelector('input[data-name="computer"]')?.value) || 0;
       this.countServer = Number(document.querySelector('input[data-name="server"]')?.value) || 0;
 
-      const price = this.countComputer * Number(tariff.dataset.computerPrice) + this.countServer * Number(tariff.dataset.serverPrice);
-      const currentPrice = Number(tariff.dataset.minPrice) > price ? Number(tariff.dataset.minPrice) : price;
+      let steps = tariff.dataset.steps;
+      let prices = tariff.dataset.computerPrice;
+      let price;
+      let noCurrentprice;
+      let currentPrice;
+      if (steps) {
+        if ('vip' in tariff.dataset) {
+          if ((steps.indexOf('||') !== -1) && (prices && prices.indexOf('||') !== -1)) {
+            steps = steps.split('||');
+            prices = prices.split('||');
+            let count = this.countComputer + this.countServer;
+            for (let i = 0; i < steps.length; i++) {
+              const step = steps[i].replaceAll(' ', '').split('-');
+              const price = prices[i];
+              if (count >= step[0] && count <= step[1]) {
+                noCurrentprice = count * price;
+              } else if (this.countComputer === 0) {
+                noCurrentprice = count * prices[0];
+              }
+            }
+          }
+        } else {
+          if ((steps.indexOf('||') !== -1) && (prices && prices.indexOf('||') !== -1)) {
+            steps = steps.split('||');
+            prices = prices.split('||');
+            for (let i = 0; i < steps.length; i++) {
+              const step = steps[i].replaceAll(' ', '').split('-');
+              const price = prices[i];
+              if (this.countComputer >= step[0] && this.countComputer <= step[1]) {
+                noCurrentprice = this.countComputer * price + this.countServer * Number(tariff.dataset.serverPrice);
+              } else if (this.countComputer === 0) {
+                noCurrentprice = this.countComputer * prices[0] + this.countServer * Number(tariff.dataset.serverPrice);
+              }
+            }
+          }
+        }
+      } else {
+        noCurrentprice = this.countComputer * Number(tariff.dataset.computerPrice) + this.countServer * Number(tariff.dataset.serverPrice);
+      }
+
+      currentPrice = Number(tariff.dataset.minPrice) > price ? Number(tariff.dataset.minPrice) : noCurrentprice;
 
       tariffPrice.textContent = Math.round(currentPrice).toString();
     })

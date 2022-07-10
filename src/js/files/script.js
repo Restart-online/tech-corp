@@ -5,6 +5,7 @@ import { _slideUp } from "./functions.js";
 import { _slideToggle } from "./functions.js";
 import { _slideLeft } from "./functions.js";
 import { bodyLockToggle } from "./functions.js";
+import { bodyLock } from "./functions.js";
 import { bodyUnlock } from "./functions.js";
 import { menuClose } from "./functions.js";
 import { formValidate } from "./forms/forms.js";
@@ -158,16 +159,25 @@ function headerSubMenuActions(menuSublinks) {
     })
     menuSublink.addEventListener('click', (e) => {
       e.preventDefault();
-      if (window.innerWidth > 767) {
-        bodyLockToggle();
-      }
       if (menuSubmenu.classList.contains('_active')) {
         setTimeout(() => {
           menuSubmenu.classList.remove('_active');
           document.documentElement.classList.remove('submenu-open');
+          if (window.innerWidth > 767) {
+            bodyUnlock();
+          }
         }, 300);
         _slideToggle(menuSubmenu);
       } else {
+        document.querySelectorAll('.menu__submenu._active').forEach(e => {
+          _slideUp(e);
+          setTimeout(() => {
+            e.classList.remove('_active');
+          }, 300);
+        })
+        if (window.innerWidth > 767) {
+          bodyLock()
+        }
         document.documentElement.classList.add('submenu-open');
         menuSubmenu.classList.add('_active');
         _slideToggle(menuSubmenu);
